@@ -1,0 +1,50 @@
+//Global Font Size
+.fontS,
+.fontS > * {
+  font-size: var(--fontS) !important;
+}
+
+.fontM,
+.fontM > * {
+  font-size: var(--fontM) !important;
+}
+
+.fontL,
+.fontL > * {
+  font-size: var(--fontL) !important;
+}
+
+.fontXL,
+.fontXL > * {
+  font-size: var(--fontXL) !important;
+}
+
+.weightLight,
+.weightLight > * {
+  font-weight: var(--weightLight) !important;
+}
+
+.weightNormal,
+.weightNormal > * {
+  font-weight: var(--weightNormal) !important;
+}
+
+.weightBold,
+.weightBold > * {
+  font-weight: var(--weightBold) !important;
+}
+
+.disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+.errorMessage {
+  color: var(--error) !important;
+  padding-top: 10px !important;
+}
+
+.kanbanSkeleton {
+  display: flex;
+  flex-direction: row;
+}

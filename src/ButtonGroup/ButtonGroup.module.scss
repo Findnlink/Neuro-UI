@@ -1,0 +1,13 @@
+.buttonGroup {
+  * {
+    border-radius: 0px;
+  }
+
+  :nth-child(1) {
+    border-radius: var(--borderRadius) 0px 0px var(--borderRadius);
+  }
+
+  :nth-last-child(1) {
+    border-radius: 0px var(--borderRadius) var(--borderRadius) 0px;
+  }
+}

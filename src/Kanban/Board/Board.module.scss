@@ -1,0 +1,28 @@
+.board {
+  display: flex;
+  user-select: none;
+}
+
+.title {
+  margin: 20px 5px;
+  font-size: var(--fontXL);
+  color: var(--text100);
+}
+
+.skeletonWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  .skeleton {
+    height: 90vh;
+    width: 300px;
+    margin-right: 10px;
+  }
+  .skeletonText {
+    margin: 10px 10px 10px 0px;
+    width: 200px;
+    height: 30px;
+  }
+}

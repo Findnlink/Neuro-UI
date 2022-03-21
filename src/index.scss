@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+* {
+  font-family: Poppins, sans-serif;
+}
+
+// Variables
+:root {
+  // Text
+  --text100: #eeeeee;
+  --text200: #d5d5d5;
+  --text300: #696969;
+  --text400: #262626;
+
+  // Background
+  --bg100: #141414;
+  --bg200: #1a1a1a;
+  --bg300: #1e1e1e;
+
+  // Primary
+  --primary: #796aff;
+  --primary70: #796aff70;
+  --primary20: #796aff20;
+
+  // Shadow
+  --dropShadow: 0px 3px 5px 0px #00000020;
+  --innerShadow: inset 0px 3px 5px 0px #00000050;
+
+  // Font
+  --fontS: 12px;
+  --fontM: 14px;
+  --fontL: 16px;
+  --fontXL: 20px;
+
+  --weightLight: 300;
+  --weightNormal: 500;
+  --weightBold: 700;
+
+  // Border
+  --borderRadius: 5px;
+  --border: 2px solid;
+  --error: #ff6a6a;
+
+  // Modal Background
+  --modal: 0, 0, 0, 0.5;
+
+  // Transition
+  --transition: all 0.2s ease-in-out;
+}
+
+body {
+  background-color: var(--bg100);
+  color: var(--text200);
+}
+
+.test {
+  color: blue;
+}

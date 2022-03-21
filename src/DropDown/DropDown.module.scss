@@ -1,0 +1,52 @@
+.dropDown {
+  transition: var(--transition);
+  color: var(--text200);
+  background-color: var(--bg200);
+  font-size: var(--fontM);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--dropShadow);
+  cursor: pointer;
+  border: var(--border) var(--text400);
+  font-weight: var(--weightMedium);
+  width: 200px;
+
+  ul {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    li {
+      padding: 10px;
+      list-style: none;
+      background-color: var(--bg200);
+      width: 180px;
+      border: var(--border) transparent;
+
+      &:last-child {
+        border-radius: 0px 0px var(--borderRadius) var(--borderRadius);
+      }
+
+      &:hover {
+        background-color: var(--bg300);
+      }
+
+      &.selected {
+        color: var(--text100);
+        border: var(--border) var(--text400);
+      }
+    }
+
+    &.open {
+      position: absolute;
+      transform: translate(-2px, 0);
+    }
+
+    &.close {
+      display: none;
+    }
+  }
+
+  .header {
+    padding: 10px;
+  }
+}

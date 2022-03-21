@@ -1,0 +1,108 @@
+@use '../../util/util.scss';
+
+.input {
+  display: flex;
+  flex-direction: column;
+  div {
+    display: flex;
+    align-items: center;
+    font-size: var(--fontL);
+    font-weight: var(--weightNormal);
+    position: relative;
+    input {
+      transition: var(--transition);
+      color: var(--text200);
+      background-color: var(--bg200);
+      border-radius: var(--borderRadius);
+      padding: 6px 12px;
+      box-shadow: var(--dropShadow);
+      cursor: text;
+      border: var(--border) var(--text400);
+
+      &::placeholder {
+        color: var(--text300);
+      }
+
+      &.icon {
+        padding-left: 30px;
+      }
+
+      &:focus {
+        background-color: var(--bg300);
+      }
+    }
+
+    .password {
+      z-index: 1;
+      transform: translate(-30px, 0);
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+
+      svg {
+        z-index: 1;
+        position: unset;
+        padding: 5px;
+      }
+
+      &.fontS {
+        input {
+          padding-right: 25px;
+        }
+      }
+
+      &.fontM {
+        input {
+          padding-right: 30px;
+        }
+      }
+
+      &.fontL {
+        input {
+          padding-right: 30px;
+        }
+      }
+      &.fontXL {
+        input {
+          padding-right: 35px;
+        }
+      }
+    }
+  }
+
+  &.error {
+    input {
+      border: var(--border) var(--error);
+    }
+  }
+
+  &.icon {
+    svg {
+      z-index: 1;
+      position: absolute;
+      left: 10px;
+    }
+    &.fontS {
+      input {
+        padding-left: calc(var(--fontS) + 17px);
+      }
+    }
+
+    &.fontM {
+      input {
+        padding-left: calc(var(--fontM) + 17px);
+      }
+    }
+
+    &.fontL {
+      input {
+        padding-left: calc(var(--fontL) + 17px);
+      }
+    }
+    &.fontXL {
+      input {
+        padding-left: calc(var(--fontXL) + 17px);
+      }
+    }
+  }
+}

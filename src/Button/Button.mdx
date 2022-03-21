@@ -1,0 +1,29 @@
+import { Button, ComponentWrapper } from "../";
+
+# Button
+
+<ComponentWrapper
+  options={[
+    { type: "bool", name: "primary", default: false },
+    { type: "bool", name: "disabled", default: true },
+    {
+      type: "array",
+      name: "scale",
+      default: "m",
+      values: ["s", "m", "l", "xl"],
+    },
+    {
+      type: "array",
+      name: "weight",
+      default: "medium",
+      values: ["light", "medium", "bold"],
+    },
+    {
+      type: "string",
+      name: "children",
+      default: "Button",
+    },
+  ]}
+>
+  <Button>Button</Button>
+</ComponentWrapper>

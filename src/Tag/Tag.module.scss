@@ -1,0 +1,10 @@
+@use '../../util/util.scss';
+
+.tag {
+  background-color: var(--primary70);
+  color: var(--text100);
+  padding: 6px 10px;
+  border-radius: var(--borderRadius);
+  width: fit-content;
+  font-size: var(--fontM);
+}

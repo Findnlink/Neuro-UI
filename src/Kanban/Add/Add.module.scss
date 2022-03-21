@@ -1,0 +1,29 @@
+.add {
+  color: var(--text200);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: var(--fontM);
+  width: calc(100% - 2 * 10px - 2 * 2px); //100% minus padding and border
+  padding: 10px;
+  margin: 3px 0px;
+  border-radius: var(--borderRadius);
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+
+  &.column {
+    min-width: calc(300px - 2 * 10px - 2 * 2px);
+    width: calc(300px - 2 * 10px - 2 * 2px);
+    height: 28px;
+    margin: 8px 5px 0px 5px;
+    padding-right: 10px;
+  }
+
+  svg {
+    margin: 5px 5px 5px 0px;
+  }
+
+  &:hover {
+    background-color: var(--bg200);
+  }
+}

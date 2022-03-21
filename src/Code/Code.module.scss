@@ -1,0 +1,47 @@
+@use "../../util/util.scss";
+
+.code {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .content {
+    color: var(--text200);
+    background-color: var(--bg200);
+    box-shadow: var(--dropShadow);
+    padding: 25px;
+    margin: 10px 0px;
+    border-radius: var(--borderRadius);
+
+    border: var(--border) var(--text400);
+    font-size: var(--fontM);
+    font-family: monospace;
+    width: 100%;
+
+    white-space: wrap;
+    word-break: break-all;
+    outline: none;
+
+    &:focus {
+      background-color: var(--bg300);
+    }
+
+    * {
+      font-family: monospace;
+    }
+  }
+
+  .buttonWrapper {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      margin: 10px 0px 0px 10px;
+      padding: 6px;
+    }
+  }
+
+  svg {
+    cursor: pointer;
+  }
+}

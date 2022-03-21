@@ -1,0 +1,19 @@
+@use '../../util/util.scss';
+
+.textarea {
+  color: var(--text200);
+  background-color: var(--bg200);
+  border-radius: var(--borderRadius);
+  padding: 6px 12px;
+  box-shadow: var(--dropShadow);
+  cursor: text;
+  border: var(--border) var(--text400);
+
+  &::placeholder {
+    color: var(--text300);
+  }
+
+  &:focus {
+    background-color: var(--bg300);
+  }
+}

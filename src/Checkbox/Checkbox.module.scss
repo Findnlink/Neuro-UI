@@ -1,0 +1,38 @@
+@use '../../util/util.scss';
+
+.checkbox {
+  color: var(--text200);
+  font-size: var(--fontM);
+  display: flex;
+  align-items: center;
+
+  input[type='checkbox'] {
+    transition: var(--transition);
+    cursor: pointer;
+    background-color: var(--bg200);
+    box-shadow: var(--dropShadow);
+    border: var(--border) var(--text400);
+    font-size: 100px;
+    width: 30px;
+    height: 30px;
+    accent-color: var(--primary);
+    border: none !important;
+
+    &:hover {
+      background-color: var(--bg300);
+      border: green;
+      scale: 1.05;
+    }
+
+    &:active {
+      transition: none;
+      box-shadow: var(--innerShadow);
+      scale: 1;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    padding-left: 10px;
+  }
+}
