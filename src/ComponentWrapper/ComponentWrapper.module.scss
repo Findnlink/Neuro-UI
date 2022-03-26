@@ -11,8 +11,9 @@
     align-items: center;
   }
   .props {
-    justify-self: end;
-
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
     .wrapper {
       display: flex;
       align-items: center;

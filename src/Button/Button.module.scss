@@ -1,4 +1,4 @@
-@use "../../util/util.scss";
+@use '../../util/util.scss';
 
 .button {
   transition: var(--transition);
@@ -11,6 +11,23 @@
   cursor: pointer;
   border: var(--border) var(--text400);
   font-weight: var(--weightMedium);
+  margin: var(--marginM);
+
+  &.paddingS {
+    padding: 2px 6px !important;
+  }
+
+  &.paddingM {
+    padding: 4px 12px !important;
+  }
+
+  &.paddingL {
+    padding: 6px 18px !important;
+  }
+
+  &.paddingXL {
+    padding: 8px 24px !important;
+  }
 
   &:enabled {
     &:hover {

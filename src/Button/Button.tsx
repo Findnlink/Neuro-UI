@@ -1,16 +1,17 @@
-import React from "react";
+import React from 'react'
 //@ts-ignore
-import scss from "./Button.module.scss";
-import { ButtonProps } from "./Button.types";
-import { _getClassNames } from "../../util/getClassNames";
+import scss from './Button.module.scss'
+import { ButtonProps } from './Button.types'
+import { _getClassNames } from '../../util/getClassNames'
 
 /** This is a special button */
 export const Button = ({
   children,
-  primary,
   href,
   onClick,
   disabled,
+  loading,
+  htmlProps,
   ...props
 }: ButtonProps) => {
   //const defaultProps = { children: 'Button', size: 'XL', ...props } as ButtonProps
@@ -20,27 +21,26 @@ export const Button = ({
       parent: scss.button,
       scss,
       disabled,
-      ...props,
-    });
-    if (primary) {
-      className.push(scss.primary);
-    }
+      loading,
+      ...props
+    })
 
-    return className.join(" ");
-  };
+    return className.join(' ')
+  }
 
   return (
     <button
-      data-testid={"button"}
+      data-testid={'button'}
       onClick={(e: any) => {
-        if (disabled) return;
-        if (onClick) onClick(e);
-        if (href) window.open(href, "_blank");
+        if (disabled || loading) return
+        if (onClick) onClick(e)
+        if (href) window.open(href, '_blank')
       }}
       className={getClassNames()}
-      {...props}
+      // Warning: Received `true` for a non-boolean attribute `primary` with {...props}
+      {...htmlProps}
     >
       {children}
     </button>
-  );
-};
+  )
+}

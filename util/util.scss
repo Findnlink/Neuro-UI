@@ -35,8 +35,11 @@
 }
 
 .disabled {
-  opacity: 0.5 !important;
+  opacity: 0.7 !important;
   cursor: not-allowed !important;
+}
+.disabled > * {
+  pointer-events: none;
 }
 
 .errorMessage {
@@ -44,7 +47,80 @@
   padding-top: 10px !important;
 }
 
-.kanbanSkeleton {
+.loading {
   display: flex;
-  flex-direction: row;
+  transition: var(--transition);
+  align-items: center;
+  justify-content: center;
+  animation: loadingAnimationOpacity 1s ease-in-out infinite alternate;
+  pointer-events: none;
+
+  &:before {
+    content: ' ';
+    display: block;
+    width: calc(var(--fontM) / 2) !important;
+    height: calc(var(--fontM) / 2) !important;
+    border-radius: 100%;
+    border: 2px solid var(--text200);
+    margin-right: 8px;
+    border-color: var(--text200) transparent var(--text200) transparent;
+    animation: loadingAnimation 1s linear infinite;
+  }
+  @keyframes loadingAnimation {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  @keyframes loadingAnimationOpacity {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.margin0 {
+  margin: var(--margin0) !important;
+}
+
+.marginS {
+  margin: var(--marginS) !important;
+}
+
+.marginM {
+  margin: var(--marginM) !important;
+}
+
+.marginL {
+  margin: var(--marginL) !important;
+}
+
+.marginXL {
+  margin: var(--marginXL) !important;
+}
+
+.padding0 {
+  padding: var(--padding0) !important;
+}
+
+.paddingS {
+  padding: var(--paddingS) !important;
+}
+
+.paddingM {
+  padding: var(--paddingM) !important;
+}
+
+.paddingL {
+  padding: var(--paddingL) !important;
+}
+
+.paddingXL {
+  padding: var(--paddingXL) !important;
 }

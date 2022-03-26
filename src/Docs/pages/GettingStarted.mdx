@@ -1,18 +1,16 @@
-import { useState } from "react";
-import { Button, ComponentWrapper } from "../..";
+import { useState } from 'react'
+import { Button, ComponentWrapper } from '../..'
 
 # Getting Started
 
 export const MyCounter = () => {
-  const [count, setCount] = useState(10);
-  return <Button onClick={() => setCount((prev) => prev + 1)}>{count}</Button>;
-};
+  const [count, setCount] = useState(10)
+  return <Button onClick={() => setCount((prev) => prev + 1)}>{count}</Button>
+}
 
 <MyCounter />
 
-<ComponentWrapper>
-  <Button>Button</Button>
-</ComponentWrapper>
+<Button>Button</Button>
 
 .content
 

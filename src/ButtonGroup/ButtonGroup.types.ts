@@ -1,9 +1,9 @@
-export interface ButtonGroupProps {
-  value: string
-  buttons: string[]
-  setValue: any
-  disabled?: boolean
-  /** Size of the button */
-  scale?: 's' | 'm' | 'l' | 'xl'
-  weight?: 'light' | 'normal' | 'bold'
+import { HTMLAttributes, ReactNode } from 'react'
+import { UtilInterface } from '../../util/interfaces'
+import { ButtonProps } from '../Button/Button.types'
+
+export interface ButtonGroupProps<>extends HTMLAttributes<HTMLElement>, UtilInterface {
+  selected: string
+  buttons: [ButtonProps]
+  setSelected: any
 }

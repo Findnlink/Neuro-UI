@@ -1,18 +1,59 @@
-import react, { useState } from "react";
-import { ButtonGroup } from "./";
+import react, { useState } from 'react'
+import { ButtonGroup, ComponentWrapper } from '../'
 
 # Button Group
 
 export const Buttongroup = () => {
-  const [value, setValue] = useState("4");
+  const [selected, setSelected] = useState('1')
   return (
-    <ButtonGroup
-      scale="l"
-      value={value}
-      setValue={setValue}
-      buttons={["1", "2", "3", "4", "5"]}
-    />
-  );
-};
+    <ComponentWrapper
+      options={[
+        { type: 'bool', name: 'primary' },
+        { type: 'bool', name: 'disabled' },
+        {
+          type: 'array',
+          name: 'scale',
+          default: 'm',
+          values: ['s', 'm', 'l', 'xl']
+        },
+        {
+          type: 'array',
+          name: 'weight',
+          default: 'medium',
+          values: ['light', 'medium', 'bold']
+        },
+        {
+          type: 'array',
+          name: 'padding',
+          default: '0',
+          values: ['0', 's', 'm', 'l', 'xl']
+        },
+        {
+          type: 'array',
+          name: 'margin',
+          default: 's',
+          values: ['0', 's', 'm', 'l', 'xl']
+        }
+      ]}
+    >
+      {/* <ButtonGroup
+        selected={selected}
+        setSelected={setSelected}
+        buttons={[
+          { children: '1', disabled: true },
+          { children: '2', disabled: true },
+          { children: '3' },
+          { children: '4', disabled: true },
+          { children: '5', disabled: true }
+        ]}
+      /> */}
+      <ButtonGroup
+        selected={selected}
+        setSelected={setSelected}
+        buttons={['1', '2', '3', '4', '5']}
+      />
+    </ComponentWrapper>
+  )
+}
 
 <Buttongroup />

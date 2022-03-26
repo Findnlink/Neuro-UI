@@ -1,4 +1,4 @@
-@use "../../util/util.scss";
+@use '../../util/util.scss';
 
 .code {
   display: flex;
@@ -36,7 +36,6 @@
     flex-direction: column;
 
     button {
-      margin: 10px 0px 0px 10px;
       padding: 6px;
     }
   }
