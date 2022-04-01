@@ -1,52 +1,36 @@
 [
   {
     "_id": "618997e64fed7d56c433e37a",
-    "title": "Findnlink Kanban",
+    "title": "",
     "projectId": "618195cb667c2ae7ca1e1664",
     "columns": [
       {
         "title": "TODO",
-        "color": "var(--text200)",
-        "position": 2,
+        "color": "#796AFF",
+        "position": 0,
         "_id": "618997e64fed7d56c433e37b",
         "items": [
           {
-            "text": "Socket Column lock (dissable complete column or without items)",
+            "text": "Im a item 👋",
             "position": 0,
+            "_id": "618997e64fed7d56c433e37c3",
+            "columnId": "6181957b59b74edd8fb95d253",
+            "createdAt": "1636407270426",
+            "updatedAt": "1636407270426"
+          },
+          {
+            "text": "Drag me",
+            "position": 1,
             "_id": "618997e64fed7d56c433e37c1",
             "columnId": "6181957b59b74edd8fb95d251",
             "createdAt": "1636407270426",
             "updatedAt": "1636407270426"
           },
           {
-            "text": "Socket Item lock",
-            "position": 1,
-            "_id": "618997e64fed7d56c433e37c4",
-            "columnId": "6181957b59b74edd8fb95d254",
-            "createdAt": "1636407270426",
-            "updatedAt": "1636407270426"
-          },
-          {
-            "text": "Testing",
+            "text": "Right click me",
             "position": 2,
-            "_id": "618997e64fed7d56c433e37d2",
+            "_id": "618997e64fed7d56c433e37c2",
             "columnId": "6181957b59b74edd8fb95d252",
-            "createdAt": "1636407270426",
-            "updatedAt": "1636407270426"
-          },
-          {
-            "text": "Bugs fixes",
-            "position": 3,
-            "_id": "618997e64fed7d56c433e37dd3",
-            "columnId": "6181957b59b74edd8fb95d253",
-            "createdAt": "1636407270426",
-            "updatedAt": "1636407270426"
-          },
-          {
-            "text": "Release: Producthunt, Kickstarter...",
-            "position": 4,
-            "_id": "618997e64fed7d56c433e37dc4",
-            "columnId": "6181957b59b74edd8fb95d254",
             "createdAt": "1636407270426",
             "updatedAt": "1636407270426"
           }
@@ -55,48 +39,15 @@
         "updatedAt": "1636407799689"
       },
       {
-        "title": "In Progress",
-        "color": "var(--text200)",
-        "position": 0,
-        "_id": "618997e64fed7d56c433e37e",
-        "items": [],
-        "createdAt": "1636407270426",
-        "updatedAt": "1636407270426"
-      },
-      {
         "title": "Done",
-        "color": "var(--text200)",
+        "color": "#FFAD1F",
         "position": 1,
         "_id": "618997e64fed7d56c433e37f",
         "items": [
           {
-            "text": "Item input design",
-            "position": 3,
-            "_id": "618997e64fed7d56c433e37c",
-            "columnId": "6181957b59b74edd8fb95d25",
-            "createdAt": "1636407270426",
-            "updatedAt": "1636407270426"
-          },
-          {
-            "text": "Reorder with position",
-            "position": 2,
-            "_id": "618997e64fed7d56c433e37d",
-            "columnId": "6181957b59b74edd8fb95d25",
-            "createdAt": "1636407270426",
-            "updatedAt": "1636407270426"
-          },
-          {
-            "text": "Reorder with socket",
+            "text": "Im done 🥳",
             "position": 0,
-            "_id": "618997e64fed7d56c433e37dd",
-            "columnId": "6181957b59b74edd8fb95d25",
-            "createdAt": "1636407270426",
-            "updatedAt": "1636407270426"
-          },
-          {
-            "text": "Reorder with socket animation?",
-            "position": 1,
-            "_id": "618997e64fed7d56c433e37dc",
+            "_id": "618997e64fed7d56c433e37c",
             "columnId": "6181957b59b74edd8fb95d25",
             "createdAt": "1636407270426",
             "updatedAt": "1636407270426"

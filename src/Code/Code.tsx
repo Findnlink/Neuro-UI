@@ -1,39 +1,40 @@
-import React, { useState, useRef, useEffect } from "react";
-import { CodeProps } from "./Code.types";
-import scss from "./Code.module.scss";
-import { Button, Icon } from "..";
-import ContentEditable from "react-contenteditable";
+import React, { useState, useRef, useEffect } from 'react'
+import { CodeProps } from './Code.types'
+//@ts-ignore
+import scss from './Code.module.scss'
+import { Button, Icon } from '..'
+import ContentEditable from 'react-contenteditable'
 
 export const Code = ({ children, editable, ...props }: CodeProps) => {
-  const [value, setValue] = useState<string>(children);
-  const codeRef = useRef<any>();
+  const [value, setValue] = useState<string>(children)
+  const codeRef = useRef<any>()
 
   useEffect(() => {
-    setValue(children);
-  }, [children]);
+    setValue(children)
+  }, [children])
 
   const copyToClipboard = (e: any) => {
     if (!navigator.clipboard) {
-      codeRef.current.select();
-      document.execCommand("copy");
+      codeRef.current.select()
+      document.execCommand('copy')
     } else {
       // replace </div> with \n
-      let regex = /<[/]div\s*[\/]?>/gi;
-      let newValue = value.replace(regex, "\n");
+      let regex = /<[/]div\s*[\/]?>/gi
+      let newValue = value.replace(regex, '\n')
 
       // remove html tags
-      regex = /(<([^>]+)>)/gi;
-      newValue = newValue.replace(regex, "");
+      regex = /(<([^>]+)>)/gi
+      newValue = newValue.replace(regex, '')
 
-      // replace html ascii
-      newValue = newValue.replaceAll("&lt;", "<");
-      newValue = newValue.replaceAll("&gt;", ">");
+      // replace html ascii < and >
+      newValue = newValue.replace(/&lt;/g, '<')
+      newValue = newValue.replace(/&gt;/g, '>')
 
-      navigator.clipboard.writeText(newValue);
+      navigator.clipboard.writeText(newValue)
     }
 
-    e.target.focus();
-  };
+    e.target.focus()
+  }
 
   return (
     <div className={scss.code}>
@@ -53,7 +54,7 @@ export const Code = ({ children, editable, ...props }: CodeProps) => {
         {editable && (
           <Button
             onClick={() => {
-              codeRef.current!.focus();
+              codeRef.current!.focus()
             }}
           >
             <Icon icon="edit" />
@@ -61,5 +62,5 @@ export const Code = ({ children, editable, ...props }: CodeProps) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}

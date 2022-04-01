@@ -3,12 +3,14 @@
 .input {
   display: flex;
   flex-direction: column;
+  margin: var(--marginM);
   div {
     display: flex;
     align-items: center;
     font-size: var(--fontL);
     font-weight: var(--weightNormal);
     position: relative;
+
     input {
       transition: var(--transition);
       color: var(--text200);
@@ -18,6 +20,8 @@
       box-shadow: var(--dropShadow);
       cursor: text;
       border: var(--border) var(--text400);
+      width: 100%;
+      font-size: var(--fontM);
 
       &::placeholder {
         color: var(--text300);
@@ -45,24 +49,24 @@
         padding: 5px;
       }
 
-      &.fontS {
+      &.scaleS {
         input {
           padding-right: 25px;
         }
       }
 
-      &.fontM {
+      &.scaleM {
         input {
           padding-right: 30px;
         }
       }
 
-      &.fontL {
+      &.scaleL {
         input {
           padding-right: 30px;
         }
       }
-      &.fontXL {
+      &.scaleXL {
         input {
           padding-right: 35px;
         }
@@ -82,24 +86,24 @@
       position: absolute;
       left: 10px;
     }
-    &.fontS {
+    &.scaleS {
       input {
         padding-left: calc(var(--fontS) + 17px);
       }
     }
 
-    &.fontM {
+    &.scaleM {
       input {
         padding-left: calc(var(--fontM) + 17px);
       }
     }
 
-    &.fontL {
+    &.scaleL {
       input {
         padding-left: calc(var(--fontL) + 17px);
       }
     }
-    &.fontXL {
+    &.scaleXL {
       input {
         padding-left: calc(var(--fontXL) + 17px);
       }

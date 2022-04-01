@@ -1,15 +1,36 @@
-import { Card, Text } from "../";
+import { Card, ComponentWrapper } from '../'
 
 # Card
 
-<Card>Card</Card>
-
-<Card>
-  <Text weight="bold" scale="xl">
-    Title
-  </Text>
-  <Spacer />
-  <Text scale="l">Text</Text>
-  <Spacer />
-  <Text scale="s">Small Text</Text>
-</Card>
+<ComponentWrapper
+  options={[
+    { type: 'bool', name: 'disabled', default: false },
+    { type: 'bool', name: 'loading', default: false },
+    {
+      type: 'array',
+      name: 'scale',
+      default: 'm',
+      values: ['s', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'weight',
+      default: 'medium',
+      values: ['light', 'medium', 'bold']
+    },
+    {
+      type: 'array',
+      name: 'padding',
+      default: 'xl',
+      values: ['0', 's', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'margin',
+      default: 'm',
+      values: ['0', 's', 'm', 'l', 'xl']
+    }
+  ]}
+>
+  <Card>Hello</Card>
+</ComponentWrapper>

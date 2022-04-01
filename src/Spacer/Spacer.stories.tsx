@@ -1,10 +1,10 @@
-import React from "react";
-import { Spacer } from "./Spacer";
+import React from 'react'
+// import { Spacer } from "./Spacer";
 
-export default {
-    title: "Spacer"
-};
+// export default {
+//     title: "Spacer"
+// };
 
-export const WithBar = () => <Spacer foo="bar" />;
+// export const WithBar = () => <Spacer foo="bar" />;
 
-export const WithBaz = () => <Spacer foo="baz" />;
+// export const WithBaz = () => <Spacer foo="baz" />;

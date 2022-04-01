@@ -1,14 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { ComponentWrapperProps } from './ComponentWrapper.types'
+//@ts-ignore
 import scss from './ComponentWrapper.module.scss'
-import { Button, ButtonGroup, Text, Code, Input } from '..'
+import { Button, ButtonGroup, Text, Code, Input, Icon } from '..'
 
 // Note: Documentation ComponentWrapper will extend the child component with interactive props and code
 
-export function ComponentWrapper({ children, options, ...props }: ComponentWrapperProps) {
-  const [newProps, setNewProps] = useState(props)
+export function ComponentWrapper({
+  children,
+  options,
+  propsUnderComponent,
+  ...props
+}: ComponentWrapperProps) {
+  const [newProps, setNewProps] = useState<any>(props)
   const [codeText, setCodeText] = useState('')
   const [newChildren, setNewChildren] = useState<any>(null)
+
+  const [selected, setSelected] = useState({ margin: 'all', padding: 'all' }) // or each
 
   const addPropsToChildren = (children: any, props: any) => {
     const addPropsToChild = (child: any, props: any) => {
@@ -110,7 +118,7 @@ export function ComponentWrapper({ children, options, ...props }: ComponentWrapp
         case 'bool':
           return (
             <div key={key} className={scss.wrapper}>
-              <Text>{option.name}</Text>
+              <Text>{option.name}:</Text>
               <Button
                 onClick={() =>
                   setNewProps((prev: any) => ({
@@ -125,13 +133,87 @@ export function ComponentWrapper({ children, options, ...props }: ComponentWrapp
           )
 
         case 'array':
+          if (option.name === 'margin' || option.name === 'padding') {
+            return (
+              <div key={key} className={scss.wrapper}>
+                <Text>{option.name}:</Text>
+                <>
+                  <Icon
+                    margin="m"
+                    onClick={() => setSelected((prev) => ({ ...prev, [option.name]: 'all' }))}
+                    icon="square"
+                  />
+                  <Icon
+                    margin="m"
+                    onClick={() => setSelected((prev) => ({ ...prev, [option.name]: 'each' }))}
+                    icon="squareLines"
+                  />
+                </>
+
+                {option.name === 'margin' && selected.margin === 'each' && (
+                  <Input
+                    value={newProps[option.name]}
+                    onChange={(e) =>
+                      setNewProps((prev: any) => ({
+                        ...prev,
+                        [option.name]: e.target.value
+                      }))
+                    }
+                    placeholder={option.name}
+                  />
+                )}
+
+                {option.name === 'margin' && selected.margin === 'all' && (
+                  <ButtonGroup
+                    selected={newProps[option.name]}
+                    setSelected={(value: any) => {
+                      setNewProps((prev: any) => ({
+                        ...prev,
+                        [option.name]: value
+                      }))
+                    }}
+                    defaultValue={option.default}
+                    buttons={option.values}
+                  />
+                )}
+
+                {option.name === 'padding' && selected.padding === 'each' && (
+                  <Input
+                    value={newProps[option.name]}
+                    onChange={(e) =>
+                      setNewProps((prev: any) => ({
+                        ...prev,
+                        [option.name]: e.target.value
+                      }))
+                    }
+                    placeholder={option.name}
+                  />
+                )}
+
+                {option.name === 'padding' && selected.padding === 'all' && (
+                  <ButtonGroup
+                    selected={newProps[option.name]}
+                    setSelected={(value: any) => {
+                      setNewProps((prev: any) => ({
+                        ...prev,
+                        [option.name]: value
+                      }))
+                    }}
+                    defaultValue={option.default}
+                    buttons={option.values}
+                  />
+                )}
+              </div>
+            )
+          }
+
           return (
             <div key={key} className={scss.wrapper}>
-              <Text>{option.name}</Text>
+              <Text>{option.name}:</Text>
               <ButtonGroup
-                selected={newChildren.props[option.name]}
+                selected={newProps[option.name]}
                 setSelected={(value: any) => {
-                  setNewProps((prev) => ({
+                  setNewProps((prev: any) => ({
                     ...prev,
                     [option.name]: value
                   }))
@@ -145,11 +227,11 @@ export function ComponentWrapper({ children, options, ...props }: ComponentWrapp
         case 'string':
           return (
             <div key={key} className={scss.wrapper}>
-              <Text>{option.name}</Text>
+              <Text>{option.name}:</Text>
               <Input
-                value={newChildren.props[option.name]}
+                value={newProps[option.name]}
                 onChange={(e) =>
-                  setNewProps((prev) => ({
+                  setNewProps((prev: any) => ({
                     ...prev,
                     [option.name]: e.target.value
                   }))
@@ -166,9 +248,21 @@ export function ComponentWrapper({ children, options, ...props }: ComponentWrapp
   }
 
   return (
-    <div className={scss.componentWrapper}>
+    <div
+      className={
+        propsUnderComponent
+          ? scss.componentWrapper + ' ' + scss.componentWrapperFlex
+          : scss.componentWrapper
+      }
+    >
       <div className={scss.component}>{newChildren && newChildren}</div>
-      <div className={scss.props}>{newChildren && showProps()}</div>
+      <div className={scss.props}>
+        {newChildren && (
+          <>
+            <Text scale="l">Props</Text> {showProps()}
+          </>
+        )}
+      </div>
       <div className={scss.code}>{codeText && <Code>{codeText.toString()}</Code>}</div>
     </div>
   )

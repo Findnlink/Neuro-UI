@@ -1,13 +1,13 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react'
+// import { render } from "@testing-library/react";
 
-import { Spacer } from "./Spacer";
-import { SpacerProps } from "./Spacer.types";
+// import { Spacer } from "./Spacer";
+// import { SpacerProps } from "./Spacer.types";
 
-describe("Spacer Component", () => {
-  const renderComponent = () => render(<Spacer foo={"foo"} />);
+// describe("Spacer Component", () => {
+//   const renderComponent = () => render(<Spacer foo={"foo"} />);
 
-  it("", () => {
-    
-  });
-});
+//   it("", () => {
+
+//   });
+// });

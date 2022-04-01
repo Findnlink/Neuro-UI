@@ -1,30 +1,62 @@
+@use '../../util/util.scss';
+
 .icon {
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
-  padding: 5px;
+  padding: var(--padding0);
 
   &.animation:hover {
     transform: scale(1.2);
   }
-}
 
-.fontS {
-  width: var(--fontS) !important;
-  height: var(--fontS) !important;
-}
+  svg * {
+    z-index: 100;
+  }
 
-.fontM {
-  width: var(--fontM) !important;
-  height: var(--fontM) !important;
-}
+  &.fontS {
+    svg {
+      width: var(--fontS) !important;
+      height: var(--fontS) !important;
+    }
+  }
 
-.fontL {
-  width: var(--fontL) !important;
-  height: var(--fontL) !important;
-}
-.fontXL {
-  width: var(--fontXL) !important;
-  height: var(--fontXL) !important;
+  &.fontM {
+    svg {
+      width: var(--fontM) !important;
+      height: var(--fontM) !important;
+    }
+  }
+
+  &.fontL {
+    svg {
+      width: var(--fontL) !important;
+      height: var(--fontL) !important;
+    }
+  }
+  &.fontXL {
+    svg {
+      width: var(--fontXL) !important;
+      height: var(--fontXL) !important;
+    }
+  }
+
+  &.weightLight {
+    svg * {
+      stroke-width: 1 !important;
+    }
+  }
+
+  &.weightMedium {
+    svg * {
+      stroke-width: 2 !important;
+    }
+  }
+
+  &.weightBold {
+    svg * {
+      stroke-width: 2.5 !important;
+    }
+  }
 }

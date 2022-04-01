@@ -4,12 +4,9 @@ import { CheckboxProps } from './Checkbox.types'
 import scss from './Checkbox.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 
-export const Checkbox = ({ children, error, size, weight, ...props }: CheckboxProps) => {
+export const Checkbox = ({ children, error, scale, weight, ...props }: CheckboxProps) => {
   const getClassNames = () => {
-    let className = _getClassNames(scss.checkbox, scss, size, weight, props.disabled)
-    if (error) {
-      className.push(scss.error)
-    }
+    let className = _getClassNames({ parent: scss.checkbox, scss, ...props })
 
     return className.join(' ')
   }

@@ -1,1 +1,30 @@
-Kanban
+import react, { useState } from 'react'
+import { Board, ComponentWrapper } from '../'
+import _data from './data.json'
+
+# Kanban
+
+export const BoardComponent = () => {
+  const [data, setData] = useState(_data[0])
+  const [editList, setEditList] = useState([])
+  return (
+    <ComponentWrapper
+      propsUnderComponent
+      options={[{ type: 'string', name: 'title', default: '' }]}
+    >
+      <Board
+        _id={data._id}
+        columns={data.columns}
+        setColumns={setData}
+        title={data.title}
+        projectId={data.projectId}
+        createdAt={data.createdAt}
+        updatedAt={data.updatedAt}
+        i18n={{ addNew: 'Add new', remove: 'Remove', edit: 'Edit' }}
+        editList={editList}
+      />
+    </ComponentWrapper>
+  )
+}
+
+<BoardComponent />

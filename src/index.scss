@@ -51,23 +51,27 @@
 
   // Padding
   --padding0: 0px;
-  --paddingS: 5px;
-  --paddingM: 10px;
-  --paddingL: 15px;
-  --paddingXL: 20px;
+  --paddingS: 4px;
+  --paddingM: 8px;
+  --paddingL: 12px;
+  --paddingXL: 16px;
 
   // Margin
   --padding0: 0px;
-  --marginS: 5px;
-  --marginM: 10px;
-  --marginL: 15px;
-  --marginXL: 20px;
+  --marginS: 4px;
+  --marginM: 8px;
+  --marginL: 12px;
+  --marginXL: 16px;
 
   // Modal Background
   --modal: 0, 0, 0, 0.5;
 
   // Transition
   --transition: all 0.2s ease-in-out;
+
+  // Media Query
+  --mobile: (max-width: 640px);
+  --tablet: (max-width: 768px);
 }
 
 body {
@@ -221,7 +225,14 @@ table {
   border-spacing: 0;
 }
 
-/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
 
 input,
 select {

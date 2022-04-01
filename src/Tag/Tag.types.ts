@@ -1,5 +1,7 @@
-export interface TagProps {
-  children: string
-  scale?: 's' | 'm' | 'l' | 'xl'
-  weight?: 'light' | 'normal' | 'bold'
+import { HTMLAttributes, ReactNode } from 'react'
+import { UtilInterface } from '../../util/interfaces'
+
+export interface TagProps<>extends HTMLAttributes<HTMLDivElement>, UtilInterface {
+  children: ReactNode
+  href?: string
 }

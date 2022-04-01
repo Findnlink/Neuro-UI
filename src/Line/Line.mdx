@@ -1,0 +1,22 @@
+import { Line, ComponentWrapper } from '../'
+
+# Line
+
+<ComponentWrapper
+  options={[
+    {
+      type: 'array',
+      name: 'weight',
+      default: 'normal',
+      values: ['light', 'normal', 'bold']
+    },
+    {
+      type: 'array',
+      name: 'margin',
+      default: 'm',
+      values: ['0', 's', 'm', 'l', 'xl']
+    }
+  ]}
+>
+  <Line />
+</ComponentWrapper>

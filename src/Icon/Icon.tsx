@@ -1,29 +1,19 @@
-import React from "react";
-import { IconProps } from "./Icon.types";
+import React from 'react'
+import { IconProps } from './Icon.types'
 //@ts-ignore
-import scss from "./Icon.module.scss";
-import { _getClassNames } from "../../util/getClassNames";
+import scss from './Icon.module.scss'
+import { _getClassNames } from '../../util/getClassNames'
 
-export const Icon = ({
-  icon,
-  color,
-  scale,
-  animation,
-  ...props
-}: IconProps) => {
+export const Icon = ({ icon, color, ...props }: IconProps) => {
   const getClassNames = () => {
-    let className = _getClassNames({ parent: scss.icon, scss, scale });
+    let className = _getClassNames({ parent: scss.icon, scss, ...props })
 
-    if (animation) {
-      className.push(scss.animation);
-    }
-
-    return className.join(" ");
-  };
+    return className.join(' ')
+  }
 
   const returnSVG = () => {
     switch (icon) {
-      case "add":
+      case 'add':
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,11 +21,7 @@ export const Icon = ({
             height="8.423"
             viewBox="0 0 8.423 8.423"
           >
-            <g
-              id="Component_33_1"
-              data-name="Component 33 – 1"
-              transform="translate(1 1)"
-            >
+            <g id="Component_33_1" data-name="Component 33 – 1" transform="translate(1 1)">
               <line
                 id="Line_845"
                 data-name="Line 845"
@@ -58,8 +44,8 @@ export const Icon = ({
               />
             </g>
           </svg>
-        );
-      case "itemMenu":
+        )
+      case 'itemMenu':
         return (
           <svg
             id="Component_31"
@@ -97,8 +83,8 @@ export const Icon = ({
               fill="var(--text200)"
             />
           </svg>
-        );
-      case "arrow":
+        )
+      case 'arrow':
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -129,8 +115,8 @@ export const Icon = ({
               strokeWidth="3"
             />
           </svg>
-        );
-      case "cross":
+        )
+      case 'cross':
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -159,9 +145,9 @@ export const Icon = ({
               strokeWidth="3"
             />
           </svg>
-        );
+        )
 
-      case "edit":
+      case 'edit':
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -177,9 +163,9 @@ export const Icon = ({
               fill="var(--text200)"
             />
           </svg>
-        );
+        )
 
-      case "remove":
+      case 'remove':
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -195,16 +181,15 @@ export const Icon = ({
               fill="var(--text200)"
             />
           </svg>
-        );
+        )
 
-      case "lock":
+      case 'lock':
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="11.92"
             height="13.623"
             viewBox="0 0 11.92 13.623"
-            className={getClassNames()}
           >
             <path
               id="Icon_awesome-lock"
@@ -213,15 +198,14 @@ export const Icon = ({
               fill="var(--text200)"
             />
           </svg>
-        );
-      case "eye":
+        )
+      case 'eye':
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
             height="11.927"
             viewBox="0 0 18 11.927"
-            className={getClassNames()}
           >
             <path
               id="Path_1084"
@@ -231,16 +215,15 @@ export const Icon = ({
               fill="var(--text200)"
             />
           </svg>
-        );
+        )
 
-      case "eyeClosed":
+      case 'eyeClosed':
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20.033"
             height="16.027"
             viewBox="0 0 20.033 16.027"
-            className={getClassNames()}
           >
             <path
               id="Path_1085"
@@ -250,9 +233,9 @@ export const Icon = ({
               fill="var(--text200)"
             />
           </svg>
-        );
+        )
 
-      case "copy":
+      case 'copy':
         return (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -267,12 +250,80 @@ export const Icon = ({
               fill="var(--text200)"
             />
           </svg>
-        );
+        )
+
+      case 'square':
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+            <g
+              id="Rectangle_6648"
+              data-name="Rectangle 6648"
+              fill="none"
+              stroke="#a7a8a8"
+              strokeWidth="2"
+            >
+              <rect width="20" height="20" rx="5" stroke="none" />
+              <rect x="1" y="1" width="18" height="18" rx="4" fill="none" />
+            </g>
+          </svg>
+        )
+
+      case 'squareLines':
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+            <g id="Component_33_15" data-name="Component 33 – 15" transform="translate(1 1)">
+              <path
+                id="top"
+                data-name="Path 1156"
+                d="M1.711-.785h9.336"
+                transform="translate(2.621 18.785)"
+                fill="none"
+                stroke="#a7a8a8"
+                strokeLinecap="round"
+                strokeWidth="2"
+              />
+              <path
+                id="right"
+                data-name="Path 1157"
+                d="M0,0H9.336"
+                transform="translate(18 4.332) rotate(90)"
+                fill="none"
+                stroke="#a7a8a8"
+                strokeLinecap="round"
+                strokeWidth="2"
+              />
+              <path
+                id="bottom"
+                data-name="Path 1158"
+                d="M1.711-.785h9.336"
+                transform="translate(2.621 0.785)"
+                fill="none"
+                stroke="#a7a8a8"
+                strokeLinecap="round"
+                strokeWidth="2"
+              />
+              <path
+                id="left"
+                data-name="Path 1159"
+                d="M0,0H9.336"
+                transform="translate(0 4.332) rotate(90)"
+                fill="none"
+                stroke="#a7a8a8"
+                strokeLinecap="round"
+                strokeWidth="2"
+              />
+            </g>
+          </svg>
+        )
 
       default:
-        return <svg></svg>;
+        return <svg></svg>
     }
-  };
+  }
 
-  return <div className={getClassNames()}>{returnSVG()}</div>;
-};
+  return (
+    <div {...props} className={getClassNames()}>
+      {returnSVG()}
+    </div>
+  )
+}

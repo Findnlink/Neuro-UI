@@ -9,8 +9,8 @@
     color: var(--text200);
     background-color: var(--bg200);
     box-shadow: var(--dropShadow);
-    padding: 25px;
-    margin: 10px 0px;
+    padding: var(--paddingXL);
+    margin: var(--marginM) 0px;
     border-radius: var(--borderRadius);
 
     border: var(--border) var(--text400);

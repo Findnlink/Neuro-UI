@@ -1,0 +1,35 @@
+@use '../../util/util.scss';
+
+.line {
+  transition: var(--transition);
+  width: 100%;
+  margin: var(--marginM) 0px;
+
+  &.weightLight {
+    border-width: 1px !important;
+  }
+
+  &.weightNormal {
+    border-width: 2px !important;
+  }
+
+  &.weightBold {
+    border-width: 3px !important;
+  }
+
+  &.marginS {
+    margin: var(--marginS) 0px !important;
+  }
+
+  &.marginM {
+    margin: var(--marginM) 0px !important;
+  }
+
+  &.marginL {
+    margin: var(--marginL) 0px !important;
+  }
+
+  &.marginXL {
+    margin: var(--marginXL) 0px !important;
+  }
+}

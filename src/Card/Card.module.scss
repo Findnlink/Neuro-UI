@@ -1,10 +1,11 @@
-@use "../../util/util.scss";
+@use '../../util/util.scss';
 
 .card {
   color: var(--text200);
   background-color: var(--bg300);
   box-shadow: var(--dropShadow);
-  padding: 25px;
-  margin: 10px 0px;
+  padding: var(--paddingXL);
+  margin: var(--marginM) 10px 0px;
   border-radius: var(--borderRadius);
+  width: 100%;
 }

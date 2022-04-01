@@ -1,1 +1,56 @@
-Drop Down
+import { react, useState } from 'react'
+import { DropDown, ComponentWrapper } from '../'
+
+# Drop Down
+
+export const Hello = () => {
+  const [selected, setSelected] = useState(null)
+  return (
+    <DropDown
+      selected={selected}
+      setSelected={setSelected}
+      items={[{ children: 'Item1' }, { children: 'Item2' }, { children: 'Item3' }]}
+      placeholder="select"
+    />
+  )
+}
+
+<ComponentWrapper
+  options={[
+    { type: 'bool', name: 'error', default: false },
+    { type: 'bool', name: 'primary', default: false },
+    { type: 'bool', name: 'disabled', default: false },
+    { type: 'bool', name: 'loading', default: false },
+    {
+      type: 'array',
+      name: 'scale',
+      default: 'm',
+      values: ['s', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'weight',
+      default: 'medium',
+      values: ['light', 'medium', 'bold']
+    },
+    {
+      type: 'array',
+      name: 'padding',
+      default: 'm',
+      values: ['0', 's', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'margin',
+      default: 'm',
+      values: ['0', 's', 'm', 'l', 'xl']
+    },
+    {
+      type: 'string',
+      name: 'children',
+      default: 'Button'
+    }
+  ]}
+>
+  <Hello />
+</ComponentWrapper>

@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": { "@util/*": ["util/*"] },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,9 +15,12 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
+    "declaration": true,
+    "outDir": "dist",
     "jsx": "react-jsx"
   },
-  "include": ["src", "./declaration.d.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "files": ["declaration.d.ts"],
+  "exclude": ["node_modules", "dist", "docs", "documentation-static", "src/**/*.mdx"],
+  "include": ["src/**/*"]
 }

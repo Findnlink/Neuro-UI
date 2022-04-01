@@ -1,10 +1,8 @@
 import { HTMLAttributes, ReactNode } from 'react'
+import { UtilInterface } from '../../util/interfaces'
 
-export interface CheckboxProps<>extends HTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps<>extends HTMLAttributes<HTMLInputElement>, UtilInterface {
   children: ReactNode
   checked: boolean
   error?: boolean
-  disabled?: boolean
-  size?: 's' | 'm' | 'l' | 'xl'
-  weight?: 'light' | 'normal' | 'bold'
 }

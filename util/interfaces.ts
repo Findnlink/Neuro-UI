@@ -1,10 +1,13 @@
 import { ReactNode } from 'react'
 
+//TODO: Fix disabled?: boolean, add animation: ???
 export interface UtilInterface {
   _class?: string
   primary?: boolean
-  disabled?: boolean | undefined
+  disabled?: boolean
   loading?: boolean
+  error?: boolean
+  animation?: boolean
   scale?: 's' | 'm' | 'l' | 'xl' | 'xxl'
   weight?: 'light' | 'normal' | 'bold'
   margin?: '0' | 's' | 'm' | 'l' | 'xl'

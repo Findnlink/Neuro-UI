@@ -1,9 +1,9 @@
-import React from "react";
-import { render } from "@testing-library/react";
+import React from 'react'
+// import { render } from "@testing-library/react";
 
-import { Modal } from "./Modal";
-import { ModalProps } from "./Modal.types";
+// import { Modal } from "./Modal";
+// import { ModalProps } from "./Modal.types";
 
-describe("Modal Component", () => {
-  it("", () => {});
-});
+// describe("Modal Component", () => {
+//   it("", () => {});
+// });

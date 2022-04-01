@@ -9,7 +9,7 @@ import {
   DragDropContext,
   Draggable,
   DraggableProvidedDraggableProps,
-  Droppable,
+  Droppable
 } from 'react-beautiful-dnd'
 import Add from '../Add/Add'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
@@ -24,7 +24,7 @@ export const Board = ({
   updatedAt,
   i18n,
   emitter,
-  editList,
+  editList
 }: BoardProps) => {
   const [newColumn, setNewColumn] = useState<boolean>(false)
 
@@ -52,7 +52,7 @@ export const Board = ({
       if (emitter)
         emitter.emit('REORDER_COLUMNS', {
           boardId: _id!,
-          columns: ordered,
+          columns: ordered
         })
     } else if (result.type === 'COLUMN') {
       // reordering items
@@ -67,7 +67,7 @@ export const Board = ({
       if (emitter)
         emitter.emit('REORDER_COLUMNS', {
           boardId: _id!,
-          columns: data,
+          columns: data
         })
     }
   }
@@ -121,7 +121,7 @@ export const Board = ({
       text: '',
       position: columns[columnIndex].items.length,
       columnId: columnId,
-      _id: Math.random().toString(36).substr(2, 9),
+      _id: Math.random().toString(36).substr(2, 9)
     })
     setColumns((prev: any) => ({ ...prev, columns: columns }))
     if (emitter)
@@ -133,7 +133,7 @@ export const Board = ({
       emitter.emit('DELETE_ITEM', {
         boardId: _id!,
         columnId: columns[columnIndex]._id,
-        itemId: columns[columnIndex].items[itemIndex]._id,
+        itemId: columns[columnIndex].items[itemIndex]._id
       })
 
     columns[columnIndex].items.splice(itemIndex, 1)
@@ -150,7 +150,7 @@ export const Board = ({
         columnId: columns[columnIndex]._id,
         itemId: columns[columnIndex].items[itemIndex]._id,
         text: text,
-        position: columns[columnIndex].items[itemIndex].position,
+        position: columns[columnIndex].items[itemIndex].position
       })
   }
 
@@ -159,7 +159,7 @@ export const Board = ({
       emitter.emit('ADD_COLUMN', {
         boardId: _id!,
         title: '',
-        color: 'var(--text200)',
+        color: 'var(--text200)'
       })
 
     setColumns((prev: any) => ({
@@ -171,9 +171,9 @@ export const Board = ({
           position: columns.length,
           color: 'var(--text200)',
           _id: Math.random().toString(36).substr(2, 9),
-          items: [],
-        },
-      ],
+          items: []
+        }
+      ]
     }))
   }
 
@@ -181,7 +181,7 @@ export const Board = ({
     if (emitter)
       emitter.emit('DELETE_COLUMN', {
         boardId: _id!,
-        columnId: columns[columnIndex]._id,
+        columnId: columns[columnIndex]._id
       })
 
     columns.splice(columnIndex, 1)
@@ -198,7 +198,7 @@ export const Board = ({
         columnId: columns[columnIndex]._id,
         title: title,
         color: color,
-        position: columns[columnIndex].position,
+        position: columns[columnIndex].position
       })
   }
 
@@ -209,7 +209,7 @@ export const Board = ({
         columnId: columns[columnIndex]._id,
         itemId: columns[columnIndex].items[itemIndex]._id,
         position: columns[columnIndex].items[itemIndex].position,
-        isEditing: isEditing,
+        isEditing: isEditing
       })
   }
 
@@ -219,12 +219,12 @@ export const Board = ({
         boardId: _id!,
         columnId: columns[columnIndex]._id,
         position: columns[columnIndex].position,
-        isEditing: isEditing,
+        isEditing: isEditing
       })
   }
 
   return (
-    <>
+    <div>
       {columns ? (
         <DragDropContext onDragEnd={onDragEnd}>
           <div className={styles.title}>{title}</div>
@@ -298,6 +298,6 @@ export const Board = ({
           />
         </SkeletonTheme>
       )}
-    </>
+    </div>
   )
 }

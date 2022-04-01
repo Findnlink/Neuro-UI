@@ -1,1 +1,61 @@
-Input
+import { useState } from 'react'
+import { Input, ComponentWrapper } from '../'
+
+# Input
+
+export const InputComponent = () => {
+  const [value, setValue] = useState('')
+  return (
+    <ComponentWrapper
+      options={[
+        { type: 'bool', name: 'primary' },
+        { type: 'bool', name: 'disabled' },
+        { type: 'bool', name: 'error' },
+        {
+          type: 'string',
+          name: 'errorMessage',
+          default: 'Something went wrong :('
+        },
+        {
+          type: 'string',
+          name: 'placeholder',
+          default: ''
+        },
+        {
+          type: 'array',
+          name: 'type',
+          default: 'normal',
+          values: ['normal', 'password', 'icon']
+        },
+        {
+          type: 'array',
+          name: 'scale',
+          default: 'm',
+          values: ['s', 'm', 'l', 'xl']
+        },
+        {
+          type: 'array',
+          name: 'weight',
+          default: 'medium',
+          values: ['light', 'medium', 'bold']
+        },
+        {
+          type: 'array',
+          name: 'padding',
+          default: '0',
+          values: ['0', 's', 'm', 'l', 'xl']
+        },
+        {
+          type: 'array',
+          name: 'margin',
+          default: 'm',
+          values: ['0', 's', 'm', 'l', 'xl']
+        }
+      ]}
+    >
+      <Input onChange={(e) => setValue(e.target.value)} value={value} />
+    </ComponentWrapper>
+  )
+}
+
+<InputComponent />

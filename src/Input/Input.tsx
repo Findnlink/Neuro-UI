@@ -1,67 +1,64 @@
-import React, { useState } from "react";
-import { InputProps } from "./Input.types";
+import React, { useState } from 'react'
+import { InputProps } from './Input.types'
 //@ts-ignore
-import scss from "./Input.module.scss";
-import { _getClassNames } from "../../util/getClassNames";
-import { Icon } from "../Icon/Icon";
+import scss from './Input.module.scss'
+import { _getClassNames } from '../../util/getClassNames'
+import { Icon } from '../Icon/Icon'
 
 export const Input = ({
   error,
   errorMessage,
-  scale,
-  weight,
   type,
+  scale,
   icon,
   limit,
   value,
-  disabled,
+  onChange,
   ...props
 }: InputProps) => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
 
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.input,
       scss,
       scale,
-      weight,
-      disabled,
-    });
-    if (error) {
-      className.push(scss.error);
-    }
+      error,
+      ...props
+    })
 
-    if (icon || type === "password") {
-      className.push(scss.icon);
+    if (icon || type === 'password') {
+      className.push(scss.icon)
     }
 
     //console.log('weight', weight, className)
 
-    return className.join(" ");
-  };
+    return className.join(' ')
+  }
 
   return (
     <div className={getClassNames()}>
       <div>
         {icon && icon}
-        {type === "password" && <Icon scale={scale} icon="lock" />}
+        {type === 'password' && <Icon padding={'0'} scale={scale} icon="lock" />}
         <input
-          type={type === "password" && showPassword ? "text" : type}
-          data-testid={"Input"}
+          type={type === 'password' && showPassword ? 'text' : type}
+          data-testid={'Input'}
           value={value}
+          onChange={onChange}
           {...props}
         />
-        {type === "password" && (
+        {type === 'password' && (
           <span
             className={scss.password}
             onClick={() => {
-              setShowPassword((prev) => !prev);
+              setShowPassword((prev) => !prev)
             }}
           >
             {showPassword ? (
-              <Icon icon={"eyeClosed"} scale={scale} />
+              <Icon padding={'0'} icon={'eyeClosed'} scale={scale} />
             ) : (
-              <Icon icon={"eye"} scale={scale} />
+              <Icon padding={'0'} icon={'eye'} scale={scale} />
             )}
           </span>
         )}
@@ -71,9 +68,7 @@ export const Input = ({
           </span>
         )}
       </div>
-      {error && errorMessage && (
-        <span className={scss.errorMessage}>{errorMessage}</span>
-      )}
+      {error && errorMessage && <span className={scss.errorMessage}>{errorMessage}</span>}
     </div>
-  );
-};
+  )
+}

@@ -3,7 +3,13 @@ import { DropDownProps, DropDownItemProps } from './DropDown.types'
 //@ts-ignore
 import scss from './DropDown.module.scss'
 
-export const DropDown = ({ items, selected, setSelected, placeholder }: DropDownProps) => {
+export const DropDown = ({
+  items,
+  selected,
+  setSelected,
+  placeholder,
+  ...props
+}: DropDownProps) => {
   const Item = ({ children, disabled, index }: DropDownItemProps) => {
     return (
       <li

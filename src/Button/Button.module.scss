@@ -6,28 +6,12 @@
   background-color: var(--bg200);
   font-size: var(--fontM);
   border-radius: var(--borderRadius);
-  padding: 4px 12px;
+  padding: var(--paddingS) var(--paddingL);
   box-shadow: var(--dropShadow);
   cursor: pointer;
   border: var(--border) var(--text400);
   font-weight: var(--weightMedium);
   margin: var(--marginM);
-
-  &.paddingS {
-    padding: 2px 6px !important;
-  }
-
-  &.paddingM {
-    padding: 4px 12px !important;
-  }
-
-  &.paddingL {
-    padding: 6px 18px !important;
-  }
-
-  &.paddingXL {
-    padding: 8px 24px !important;
-  }
 
   &:enabled {
     &:hover {

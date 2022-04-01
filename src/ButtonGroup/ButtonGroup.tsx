@@ -1,5 +1,6 @@
 import React from 'react'
 import { ButtonGroupProps } from './ButtonGroup.types'
+//@ts-ignore
 import scss from './ButtonGroup.module.scss'
 import { Button } from '../Button/Button'
 import { _getClassNames } from '../../util/getClassNames'

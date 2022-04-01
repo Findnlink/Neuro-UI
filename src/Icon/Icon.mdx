@@ -1,1 +1,47 @@
-Icon
+import { Icon, ComponentWrapper } from '../'
+
+# Icon
+
+<ComponentWrapper
+  options={[
+    {
+      type: 'string',
+      name: 'icon',
+      default: 'add'
+    },
+    {
+      type: 'string',
+      name: 'color',
+      default: 'var(--text200)'
+    },
+    { type: 'bool', name: 'primary', default: false },
+    { type: 'bool', name: 'disabled', default: false },
+    { type: 'bool', name: 'loading', default: false },
+    {
+      type: 'array',
+      name: 'scale',
+      default: 'm',
+      values: ['s', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'weight',
+      default: 'medium',
+      values: ['light', 'medium', 'bold']
+    },
+    {
+      type: 'array',
+      name: 'padding',
+      default: 'm',
+      values: ['0', 's', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'margin',
+      default: 'm',
+      values: ['0', 's', 'm', 'l', 'xl']
+    }
+  ]}
+>
+  <Icon />
+</ComponentWrapper>

@@ -1,6 +1,6 @@
-import { HTMLAttributes, ReactNode } from "react";
-import { UtilInterface } from "../../util/interfaces";
+import { HTMLAttributes, ReactNode } from 'react'
+import { UtilInterface } from '../../util/interfaces'
 
-export interface CardProps<>extends HTMLAttributes<HTMLElement>, UtilInterface {
-  children: any;
+export interface CardProps<>extends HTMLAttributes<HTMLDivElement>, UtilInterface {
+  children: any
 }

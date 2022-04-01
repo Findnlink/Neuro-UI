@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { ContextMenuProps } from './ContextMenu.types'
 //@ts-ignore
-import styles from './ContextMenu.module.scss'
+import scss from './ContextMenu.module.scss'
 
 export const ContextMenu = ({
   children,
@@ -10,7 +10,7 @@ export const ContextMenu = ({
   setOpen,
   location,
   setLocation,
-  isDisabled,
+  isDisabled
 }: ContextMenuProps) => {
   const menuRef = useRef(null)
 
@@ -47,10 +47,10 @@ export const ContextMenu = ({
         onContextMenu: (event: MouseEvent) => {
           event.preventDefault()
           handleClick(event)
-        },
+        }
       })}
       {open ? (
-        <div style={{ left: location.x, top: location.y }} ref={menuRef} className={styles.menu}>
+        <div style={{ left: location.x, top: location.y }} ref={menuRef} className={scss.menu}>
           {menu}
         </div>
       ) : null}

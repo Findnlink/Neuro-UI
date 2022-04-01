@@ -1,7 +1,9 @@
 module.exports = (componentName) => ({
-  content: `.${componentName} {
+  content: `@use '../../util/util.scss';
+  
+  .${componentName} {
   background-color: var(--primary);
 }
 `,
-  extension: `.module.scss`,
-});
+  extension: `.module.scss`
+})
