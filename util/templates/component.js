@@ -9,7 +9,7 @@ export const ${componentName} = ({ ...props }: ${componentName}Props) => {
 
   const getClassNames = () => {
     let className = _getClassNames({
-      parent: scss.${componentName},
+      parent: scss.${componentName[0].toLowerCase() + componentName.slice(1)},
       scss,
       ...props
     })

@@ -1,1 +1,27 @@
-Checkbox
+import { Checkbox, ComponentWrapper } from '../'
+
+# Checkbox
+
+<ComponentWrapper
+  options={[
+    { type: 'bool', name: 'primary', default: false },
+    { type: 'bool', name: 'disabled', default: false },
+    { type: 'bool', name: 'loading', default: false },
+    { type: 'bool', name: 'error', default: false },
+    {
+      type: 'array',
+      name: 'scale',
+      default: 'm',
+      values: ['s', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'margin',
+      default: 'm',
+      values: ['0', 's', 'm', 'l', 'xl']
+    },
+    { type: 'string', name: 'children', default: 'Checkbox' }
+  ]}
+>
+  <Checkbox />
+</ComponentWrapper>

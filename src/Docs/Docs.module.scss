@@ -23,7 +23,8 @@ hr {
   box-shadow: var(--outerShadow);
   overflow-y: auto;
   padding: 20px;
-  height: calc(100vh - 43px);
+  height: 100vh;
+  transition: var(--transition);
   .navigation {
     grid-area: 1 / 2 / 2 / 3;
 
@@ -48,8 +49,10 @@ hr {
   display: grid;
   grid-template-columns: 1fr;
   overflow-y: auto;
-  padding: 30px 50px;
+  padding: 80px;
   height: calc(100vh - 43px);
+  background-color: var(--bg100);
+  transition: var(--transition);
   .content {
     grid-area: 1 / 1 / 2 / 2;
     max-width: 830px;

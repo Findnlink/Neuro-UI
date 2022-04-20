@@ -1,4 +1,4 @@
-import { UtilInterface, _getClassNamesProps } from './interfaces'
+import { _getClassNamesProps } from './interfaces'
 
 export const _getClassNames = ({
   parent,
@@ -45,24 +45,6 @@ export const _getClassNames = ({
       break
     case 'bold':
       _className.push(scss.weightBold)
-      break
-  }
-
-  switch (margin) {
-    case '0':
-      _className.push(scss.margin0)
-      break
-    case 's':
-      _className.push(scss.marginS)
-      break
-    case 'm':
-      _className.push(scss.marginM)
-      break
-    case 'l':
-      _className.push(scss.marginL)
-      break
-    case 'xl':
-      _className.push(scss.marginXL)
       break
   }
 

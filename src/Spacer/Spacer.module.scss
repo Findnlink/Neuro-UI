@@ -1,3 +1,6 @@
+@use '../../util/util.scss';
+
 .spacer {
-  margin: 10px 0px;
+  padding: var(--paddingM) var(--padding0);
+  width: 100%;
 }

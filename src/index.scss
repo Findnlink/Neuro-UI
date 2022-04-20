@@ -3,7 +3,7 @@
   font-family: Poppins, sans-serif;
 }
 
-// Variables
+//Variables
 :root {
   --black: black;
   --white: white;
@@ -57,7 +57,7 @@
   --paddingXL: 16px;
 
   // Margin
-  --padding0: 0px;
+  --margin0: 0px;
   --marginS: 4px;
   --marginM: 8px;
   --marginL: 12px;
@@ -72,6 +72,31 @@
   // Media Query
   --mobile: (max-width: 640px);
   --tablet: (max-width: 768px);
+}
+
+.dark {
+  //default root variables
+}
+
+.light {
+  // Text
+  --text100: #2a2a2a;
+  --text200: #585757;
+  --text300: #969696;
+  --text400: #eeeeee;
+
+  // Background
+  --bg100: #fafafa;
+  --bg200: white;
+  --bg300: #f7f7f7;
+
+  // Shadow
+  --dropShadow: 0px 3px 5px 0px #00000005;
+  --innerShadow: inset 0px 3px 5px 0px #00000010;
+
+  // Border
+  --borderRadius: 5px;
+  --border: 2px solid;
 }
 
 body {
@@ -241,20 +266,25 @@ select {
 
 h1 {
   font-size: var(--fontXXL);
+  color: var(--text100);
 }
 
 h2 {
   font-size: var(--fontXL);
+  color: var(--text200);
 }
 
 h3 {
   font-size: var(--fontL);
+  color: var(--text200);
 }
 
 h4 {
   font-size: var(--fontM);
+  color: var(--text200);
 }
 
 h5 {
   font-size: var(--fontS);
+  color: var(--text200);
 }

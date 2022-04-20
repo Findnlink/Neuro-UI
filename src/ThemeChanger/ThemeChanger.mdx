@@ -1,0 +1,35 @@
+import { ThemeChanger, ComponentWrapper } from '../'
+
+# ThemeChanger
+
+<ComponentWrapper
+  options={[
+    { type: 'bool', name: 'disabled', default: false },
+    {
+      type: 'array',
+      name: 'scale',
+      default: 'm',
+      values: ['s', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'weight',
+      default: 'medium',
+      values: ['light', 'medium', 'bold']
+    },
+    {
+      type: 'array',
+      name: 'padding',
+      default: '0',
+      values: ['0', 's', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'margin',
+      default: '0',
+      values: ['0', 's', 'm', 'l', 'xl']
+    }
+  ]}
+>
+  <ThemeChanger />
+</ComponentWrapper>

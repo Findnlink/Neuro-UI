@@ -5,6 +5,7 @@ import { Checkbox } from './Checkbox'
 import { Code } from './Code'
 import { ComponentWrapper } from './ComponentWrapper'
 import { ContextMenu } from './ContextMenu'
+import { Grid } from './Grid'
 import { Icon } from './Icon'
 import { Input } from './Input'
 import { Board } from './Kanban/Board'
@@ -16,6 +17,10 @@ import { TextArea } from './TextArea'
 import { DropDown } from './DropDown'
 import { Tag } from './Tag'
 import { Collapse } from './Collapse'
+import { ThemeChanger } from './ThemeChanger'
+import { StoreProvider } from './StoreProvider'
+import { Toggle } from './Toggle'
+import { Toast } from './Toast'
 
 export {
   Button,
@@ -25,6 +30,7 @@ export {
   Code,
   ComponentWrapper,
   ContextMenu,
+  Grid,
   Icon,
   Input,
   Board,
@@ -35,5 +41,9 @@ export {
   TextArea,
   DropDown,
   Tag,
-  Collapse
+  Collapse,
+  ThemeChanger,
+  StoreProvider,
+  Toggle,
+  Toast
 }

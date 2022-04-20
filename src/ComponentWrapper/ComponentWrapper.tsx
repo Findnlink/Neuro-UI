@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { ComponentWrapperProps } from './ComponentWrapper.types'
 //@ts-ignore
 import scss from './ComponentWrapper.module.scss'
-import { Button, ButtonGroup, Text, Code, Input, Icon } from '..'
+import { ButtonGroup, Text, Code, Input, Icon, Toggle } from '..'
 
 // Note: Documentation ComponentWrapper will extend the child component with interactive props and code
 
@@ -114,21 +114,19 @@ export function ComponentWrapper({
   const showProps = () => {
     return options.map((option: any, key: number) => {
       switch (option.type) {
-        // Change to checkbox or switch
         case 'bool':
           return (
             <div key={key} className={scss.wrapper}>
               <Text>{option.name}:</Text>
-              <Button
-                onClick={() =>
+              <Toggle
+                value={newProps[option.name]}
+                onClick={(e) =>
                   setNewProps((prev: any) => ({
                     ...prev,
                     [option.name]: !prev[option.name]
                   }))
                 }
-              >
-                {option.name}
-              </Button>
+              />
             </div>
           )
 

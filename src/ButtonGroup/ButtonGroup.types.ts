@@ -4,6 +4,6 @@ import { ButtonProps } from '../Button/Button.types'
 
 export interface ButtonGroupProps<>extends HTMLAttributes<HTMLElement>, UtilInterface {
   selected: string
-  buttons: [ButtonProps]
+  buttons: ButtonProps[] | string[]
   setSelected: any
 }

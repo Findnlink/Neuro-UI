@@ -6,6 +6,7 @@
   justify-content: space-between;
 
   .content {
+    transition: var(--transition);
     color: var(--text200);
     background-color: var(--bg200);
     box-shadow: var(--dropShadow);

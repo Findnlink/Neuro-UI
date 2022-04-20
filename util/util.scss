@@ -42,6 +42,10 @@
   pointer-events: none;
 }
 
+.error {
+  border-color: var(--error) !important;
+}
+
 .errorMessage {
   color: var(--error) !important;
   padding-top: 10px !important;

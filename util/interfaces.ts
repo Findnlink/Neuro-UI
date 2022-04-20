@@ -10,8 +10,8 @@ export interface UtilInterface {
   animation?: boolean
   scale?: 's' | 'm' | 'l' | 'xl' | 'xxl'
   weight?: 'light' | 'normal' | 'bold'
-  margin?: '0' | 's' | 'm' | 'l' | 'xl'
-  padding?: '0' | 's' | 'm' | 'l' | 'xl'
+  margin?: '0' | 's' | 'm' | 'l' | 'xl' | string
+  padding?: '0' | 's' | 'm' | 'l' | 'xl' | string
   htmlProps?: any
   // key?: number
   // ref?: any

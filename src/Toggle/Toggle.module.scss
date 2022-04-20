@@ -1,0 +1,42 @@
+@use '../../util/util.scss';
+
+.switch {
+  width: 30px;
+  height: 15px;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: var(--marginM);
+  padding: var(--paddingS);
+  box-shadow: var(--dropShadow);
+  background-color: var(--bg200);
+  border: var(--border) var(--text400);
+  transition: var(--transition);
+  user-select: none;
+
+  &:hover {
+    background-color: var(--bg300);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    box-shadow: var(--innerShadow);
+    transform: scale(1);
+  }
+
+  &[data-isOn='true'] {
+    justify-content: flex-end;
+
+    .handle {
+      background-color: var(--primary);
+    }
+  }
+
+  .handle {
+    width: 15px;
+    height: 15px;
+    background-color: var(--text100);
+    border-radius: 40px;
+  }
+}

@@ -1,1 +1,55 @@
-Modal
+import react, { useState } from 'react'
+import { Modal, Button, ComponentWrapper } from '../'
+
+# Modal
+
+export const ModalComponent = () => {
+  const [open, setOpen] = useState(false)
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Open Modal</Button>
+      <ComponentWrapper
+        options={[
+          {
+            type: 'array',
+            name: 'type',
+            default: 'modal',
+            values: ['modal', 'confirm']
+          },
+          {
+            type: 'array',
+            name: 'scale',
+            default: 'm',
+            values: ['s', 'm', 'l', 'xl']
+          },
+          {
+            type: 'array',
+            name: 'padding',
+            default: '0',
+            values: ['0', 's', 'm', 'l', 'xl']
+          },
+          {
+            type: 'array',
+            name: 'margin',
+            default: 's',
+            values: ['0', 's', 'm', 'l', 'xl']
+          },
+          {
+            type: 'string',
+            name: 'children',
+            default: 'Modal Text'
+          }
+        ]}
+      >
+        <Modal
+          open={open}
+          onClose={() => {
+            setOpen(false)
+          }}
+        />
+      </ComponentWrapper>
+    </>
+  )
+}
+
+<ModalComponent />

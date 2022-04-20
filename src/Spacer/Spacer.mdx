@@ -1,1 +1,22 @@
-Spacer
+import { Spacer, ComponentWrapper } from '../'
+
+# Spacer
+
+<ComponentWrapper
+  options={[
+    {
+      type: 'array',
+      name: 'padding',
+      default: 'm 0',
+      values: ['0', 's', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'margin',
+      default: '0',
+      values: ['0', 's', 'm', 'l', 'xl']
+    }
+  ]}
+>
+  <Spacer />
+</ComponentWrapper>
