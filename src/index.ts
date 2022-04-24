@@ -1,12 +1,13 @@
 import { Button } from './Button'
 import { ButtonGroup } from './ButtonGroup'
-import { Card } from './Card'
+import { Card, CardHeader, CardContent } from './Card'
 import { Checkbox } from './Checkbox'
 import { Code } from './Code'
 import { ComponentWrapper } from './ComponentWrapper'
 import { ContextMenu } from './ContextMenu'
 import { Grid } from './Grid'
 import { Icon } from './Icon'
+import { Image } from './Image'
 import { Input } from './Input'
 import { Board } from './Kanban/Board'
 import { Line } from './Line'
@@ -15,9 +16,11 @@ import { Spacer } from './Spacer'
 import { Text } from './Text'
 import { TextArea } from './TextArea'
 import { DropDown } from './DropDown'
+import { Flex } from './Flex'
 import { Tag } from './Tag'
 import { Collapse } from './Collapse'
 import { ThemeChanger } from './ThemeChanger'
+import { SplashScreen } from './SplashScreen'
 import { StoreProvider } from './StoreProvider'
 import { Toggle } from './Toggle'
 import { Toast } from './Toast'
@@ -26,12 +29,15 @@ export {
   Button,
   ButtonGroup,
   Card,
+  CardHeader,
+  CardContent,
   Checkbox,
   Code,
   ComponentWrapper,
   ContextMenu,
   Grid,
   Icon,
+  Image,
   Input,
   Board,
   Line,
@@ -40,9 +46,11 @@ export {
   Text,
   TextArea,
   DropDown,
+  Flex,
   Tag,
   Collapse,
   ThemeChanger,
+  SplashScreen,
   StoreProvider,
   Toggle,
   Toast

@@ -9,5 +9,10 @@ export default defineConfig({
       '@': resolve(__dirname, '../src')
     }
   },
-  plugins: [reactRefresh(), mdx()]
+  plugins: [reactRefresh(), mdx()],
+  build: {
+    rollupOptions: {
+      external: ['react-lottie-player']
+    }
+  }
 })

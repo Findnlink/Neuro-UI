@@ -315,7 +315,6 @@ export const Icon = ({ icon, color, ...props }: IconProps) => {
             </g>
           </svg>
         )
-
       default:
         return <svg></svg>
     }

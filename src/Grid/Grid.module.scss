@@ -1,5 +1,17 @@
 @use '../../util/util.scss';
-  
-  .grid {
-  background-color: var(--primary);
+
+.grid {
+  --min: 15ch;
+  --gap: 1rem;
+
+  display: grid;
+  grid-gap: var(--gap);
+  width: 100%;
+  /* min() with 100% prevents overflow
+  in extra narrow spaces */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+
+  &.center {
+    place-content: center;
+  }
 }

@@ -4,11 +4,14 @@ export interface UtilInterface {
     disabled?: boolean;
     loading?: boolean;
     error?: boolean;
+    pointer?: boolean;
     animation?: boolean;
+    color?: string;
+    backgroundColor?: string;
     scale?: 's' | 'm' | 'l' | 'xl' | 'xxl';
     weight?: 'light' | 'normal' | 'bold';
-    margin?: '0' | 's' | 'm' | 'l' | 'xl';
-    padding?: '0' | 's' | 'm' | 'l' | 'xl';
+    margin?: '0' | 's' | 'm' | 'l' | 'xl' | string;
+    padding?: '0' | 's' | 'm' | 'l' | 'xl' | string;
     htmlProps?: any;
 }
 export interface _getClassNamesProps extends UtilInterface {

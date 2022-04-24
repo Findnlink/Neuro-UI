@@ -24,13 +24,17 @@
   --primary70: #796aff70;
   --primary20: #796aff20;
 
-  // Primary
+  // Secondary
   --secondary: #3121bd;
   --secondary70: #3121bd70;
   --secondary20: #3121bd20;
 
+  // Tag Background: --primary but 10% lighter
+  --tagBg: #6051e6;
+
   // Shadow
   --dropShadow: 0px 3px 5px 0px #00000020;
+  --dropShadowHover: 0px 3px 10px 0px #00000070;
   --innerShadow: inset 0px 3px 5px 0px #00000050;
 
   // Font
@@ -90,8 +94,12 @@
   --bg200: white;
   --bg300: #f7f7f7;
 
+  // --primary but 10% lighter
+  --tagBg: #9384ff;
+
   // Shadow
-  --dropShadow: 0px 3px 5px 0px #00000005;
+  --dropShadow: 0px 2px 5px 0px #00000020;
+  --dropShadowHover: 0px 3px 10px 0px #00000030;
   --innerShadow: inset 0px 3px 5px 0px #00000010;
 
   // Border

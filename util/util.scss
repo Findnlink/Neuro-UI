@@ -51,6 +51,10 @@
   padding-top: 10px !important;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .loading {
   display: flex;
   transition: var(--transition);
@@ -297,4 +301,22 @@
 
 .paddingLeftXL {
   padding-left: var(--paddingXL) !important;
+}
+
+// Background Color
+.backgroundColor--primary {
+  background-color: var(--primary) !important;
+}
+
+.backgroundColor--text100 {
+  background-color: var(--text100) !important;
+}
+
+// Color
+.color--primary {
+  color: var(--primary) !important;
+}
+
+.color--text100 {
+  color: var(--text100) !important;
 }

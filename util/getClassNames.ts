@@ -8,10 +8,13 @@ export const _getClassNames = ({
   disabled,
   loading,
   error,
+  pointer,
   scale,
   weight,
   margin,
-  padding
+  padding,
+  color,
+  backgroundColor
 }: _getClassNamesProps) => {
   let _className = [parent]
 
@@ -20,6 +23,9 @@ export const _getClassNames = ({
   if (disabled) _className.push(scss.disabled)
   if (loading) _className.push(scss.loading)
   if (error) _className.push(scss.error)
+  if (pointer) _className.push(scss.pointer)
+  if (color) _className.push(scss['color' + color])
+  if (backgroundColor) _className.push(scss['backgroundColor' + backgroundColor])
 
   switch (scale) {
     case 's':

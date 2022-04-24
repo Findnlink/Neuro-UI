@@ -5,8 +5,14 @@ import { useStore } from '../store'
 import { Toast } from '../Toast'
 //@ts-ignore
 import scss from './StoreProvider.module.scss'
+import { SplashScreen } from '../SplashScreen'
 
-export const StoreProvider = ({ children, defaultTheme, ...props }: StoreProviderProps) => {
+export const StoreProvider = ({
+  children,
+  defaultTheme,
+  disableSplashScreen,
+  ...props
+}: StoreProviderProps) => {
   const [theme, setTheme, toasts] = useStore((s) => [s.theme, s.setTheme, s.toasts])
 
   useEffect(() => {
@@ -31,6 +37,7 @@ export const StoreProvider = ({ children, defaultTheme, ...props }: StoreProvide
   return (
     <div data-testid={'StoreProvider'} className={theme}>
       {showToasts()}
+      {!disableSplashScreen && <SplashScreen />}
       {children}
     </div>
   )

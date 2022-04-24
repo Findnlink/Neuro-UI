@@ -1,3 +1,3 @@
 export interface GridProps {
-    foo: string;
+  children: any
 }

@@ -1,10 +1,22 @@
 @use '../../util/util.scss';
 
 .tag {
-  background-color: var(--primary70);
-  color: var(--text100);
-  padding: 6px 10px;
+  background-color: var(--tagBg);
+  color: var(--white);
+  padding: var(--paddingS) var(--paddingM);
   border-radius: var(--borderRadius);
   width: fit-content;
   font-size: var(--fontM);
+  font-weight: var(--weightNormal);
+  box-shadow: var(--dropShadow);
+  margin: var(--marginS);
+  text-align: center;
+  word-break: break-word; /* Chrome, Safari */
+  overflow-wrap: anywhere; /* Firefox */
+  text-decoration: none;
+  transition: var(--transition);
+
+  &:hover {
+    transform: scale(1.05) !important;
+  }
 }

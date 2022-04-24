@@ -1,11 +1,10 @@
-import React from "react";
-import { GridProps } from "./Grid.types";
+import React from 'react'
+import { GridProps } from './Grid.types'
 //@ts-ignore
-import scss from "./Grid.module.scss";
+import scss from './Grid.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 
-export const Grid = ({ ...props }: GridProps) => {
-
+export const Grid = ({ children, ...props }: GridProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.grid,
@@ -13,12 +12,14 @@ export const Grid = ({ ...props }: GridProps) => {
       ...props
     })
 
+    className.push(scss.center)
+
     return className.join(' ')
   }
 
   return (
     <div data-testid={'Grid'} className={getClassNames()}>
-      Grid
+      {children}
     </div>
   )
 }

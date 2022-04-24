@@ -7,7 +7,10 @@ export interface UtilInterface {
   disabled?: boolean
   loading?: boolean
   error?: boolean
+  pointer?: boolean
   animation?: boolean
+  color?: string
+  backgroundColor?: string
   scale?: 's' | 'm' | 'l' | 'xl' | 'xxl'
   weight?: 'light' | 'normal' | 'bold'
   margin?: '0' | 's' | 'm' | 'l' | 'xl' | string

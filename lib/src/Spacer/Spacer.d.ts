@@ -1,3 +1,3 @@
 /// <reference types="react" />
 import { SpacerProps } from './Spacer.types';
-export declare const Spacer: ({}: SpacerProps) => JSX.Element;
+export declare const Spacer: ({ ...props }: SpacerProps) => JSX.Element;

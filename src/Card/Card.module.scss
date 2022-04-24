@@ -4,8 +4,25 @@
   color: var(--text200);
   background-color: var(--bg300);
   box-shadow: var(--dropShadow);
-  padding: var(--paddingXL);
-  margin: var(--marginM) 10px 0px;
+  padding: var(--padding0);
+  margin: var(--marginM);
   border-radius: var(--borderRadius);
-  width: 100%;
+  //width: 100%;
+  word-wrap: break-word;
+  transition: var(--transition);
+  transition-property: box-shadow;
+
+  .header {
+    padding: var(--paddingM);
+    margin: var(--marginXL);
+  }
+
+  .content {
+    padding: var(--paddingM);
+    margin: var(--marginM);
+  }
+
+  &:hover {
+    box-shadow: var(--dropShadowHover);
+  }
 }

@@ -3,6 +3,8 @@ import create from 'zustand'
 type Store = {
   theme: string
   setTheme: (theme: string) => void
+  isLoading: boolean
+  setIsLoading: (isLoading: boolean) => void
   toasts: { children: string; id: number }[]
   addToast: (toast: { children: string; id: number }) => void
   removeToast: (id: number) => void
@@ -11,6 +13,8 @@ type Store = {
 export const useStore = create<Store>((set, get) => ({
   theme: 'dark',
   setTheme: (theme) => set({ theme }),
+  isLoading: true,
+  setIsLoading: (isLoading) => set({ isLoading }),
   toasts: [],
   addToast: (toast) =>
     set((state) => {

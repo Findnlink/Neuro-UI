@@ -13,7 +13,7 @@ export default defineConfig({
       fileName: (format) => `neuro-ui.${format}.js`
     },
     rollupOptions: {
-      external: ['react'],
+      external: ['react', 'react-lottie-player'],
       output: {
         globals: {
           react: 'React'

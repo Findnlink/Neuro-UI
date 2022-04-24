@@ -38,7 +38,7 @@ import { useNavigate, Routes, Route } from 'react-router-dom'
 export default function Docs() {
   let navigate = useNavigate()
   return (
-    <StoreProvider defaultTheme="dark">
+    <StoreProvider disableSplashScreen defaultTheme="dark">
       <div className={scss.docs}>
         <div className={scss.left}>
           <div className={scss.navigation}>

@@ -1,8 +1,10 @@
-export interface ModalProps {
+import { HTMLAttributes } from 'react';
+import { UtilInterface } from '../../util/interfaces';
+export interface ModalProps extends HTMLAttributes<HTMLDivElement>, UtilInterface {
     children: any;
     open: boolean;
     onClose: () => void;
-    type?: string;
+    type?: null | 'confirm';
     onConfirm?: () => void;
     i18n?: {
         yes: string;
