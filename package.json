@@ -1,4 +1,40 @@
 {
+  "name": "@findnlink/neuro-ui",
+  "version": "1.0.4",
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/neuro-ui.umd.js",
+  "module": "./lib/neuro-ui.es.js",
+  "exports": {
+    ".": {
+      "import": "./lib/neuro-ui.es.js",
+      "require": "./lib/neuro-ui.umd.js"
+    },
+    "./lib/style.css": "./lib/style.css"
+  },
+  "types": "./lib/src/index.d.ts",
+  "private": false,
+  "description": "Findnlink design system",
+  "author": "<contact@findnlink.com>",
+  "license": "MIT",
+  "homepage": "https://www.findnlink.com",
+  "keywords": [
+    "Findnlink",
+    "React",
+    "Vite",
+    "UI",
+    "UX",
+    "SCSS",
+    "Storybook"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Findnlink/Neuro-UI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Findnlink/Neuro-UI/issues"
+  },
   "scripts": {
     "start": "yarn build:vite-plugin-mdx && yarn install && yarn dev",
     "dev": "start http://localhost:3000 && vite",
@@ -6,7 +42,8 @@
     "build:doc": "vite build --config ./build/doc.config.ts",
     "build:lib": "tsc --outDir lib && vite build --config ./build/lib.config.ts && yarn build:types",
     "preview": "vite preview",
-    "generate": "node ./util/create-component"
+    "generate": "node ./util/create-component",
+    "publishNpm": "npm publish --access public"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
