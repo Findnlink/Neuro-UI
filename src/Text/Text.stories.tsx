@@ -2,7 +2,7 @@ import React from 'react'
 import { Text } from './Text'
 
 export default {
-  title: 'Text',
+  title: 'Text'
 }
 
 export const _Text = () => <Text>This is a text</Text>

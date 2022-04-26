@@ -18,7 +18,7 @@ export const Grid = ({ children, ...props }: GridProps) => {
   }
 
   return (
-    <div data-testid={'Grid'} className={getClassNames()}>
+    <div {...props} data-testid={'Grid'} className={getClassNames()}>
       {children}
     </div>
   )
