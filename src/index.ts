@@ -24,6 +24,7 @@ import { SplashScreen } from './SplashScreen'
 import { StoreProvider } from './StoreProvider'
 import { Toggle } from './Toggle'
 import { Toast } from './Toast'
+import { Tabs } from './Tabs'
 
 export {
   Button,
@@ -53,5 +54,6 @@ export {
   SplashScreen,
   StoreProvider,
   Toggle,
-  Toast
+  Toast,
+  Tabs
 }

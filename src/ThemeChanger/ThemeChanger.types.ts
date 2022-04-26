@@ -1,3 +1,1 @@
-export interface ThemeChangerProps {
-    foo: string;
-}
+export interface ThemeChangerProps {}

@@ -31,14 +31,15 @@ import ThemeChangerMDX from '../ThemeChanger/ThemeChanger.mdx'
 import StoreProviderMDX from '../StoreProvider/StoreProvider.mdx'
 import ToggleMDX from '../Toggle/Toggle.mdx'
 import ToastMDX from '../Toast/Toast.mdx'
+import TabsMDX from '../Tabs/Tabs.mdx'
 
-import { Text, Collapse, Spacer, Line, StoreProvider } from '../index'
+import { Text, Collapse, Spacer, Line, StoreProvider, ThemeChanger } from '../index'
 import { useNavigate, Routes, Route } from 'react-router-dom'
 
 export default function Docs() {
   let navigate = useNavigate()
   return (
-    <StoreProvider disableSplashScreen defaultTheme="dark">
+    <StoreProvider defaultTheme="dark">
       <div className={scss.docs}>
         <div className={scss.left}>
           <div className={scss.navigation}>
@@ -51,6 +52,7 @@ export default function Docs() {
                 <Text href="https://www.github.com" scale="s">
                   View on GitHub
                 </Text>
+                <ThemeChanger />
               </div>
             </div>
             <div className={scss.dropdown}>
@@ -82,7 +84,8 @@ export default function Docs() {
                   'Theme Changer',
                   'Toast',
                   'Toggle',
-                  'Store Provider'
+                  'Store Provider',
+                  'Tabs'
                 ]}
               >
                 Components
@@ -133,6 +136,7 @@ export default function Docs() {
               <Route path="/toast" element={<ToastMDX />} />
               <Route path="/toggle" element={<ToggleMDX />} />
               <Route path="/storeprovider" element={<StoreProviderMDX />} />
+              <Route path="/tabs" element={<TabsMDX />} />
               <Route path="/icons" element={<Icons />} />
             </Routes>
           </div>

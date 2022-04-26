@@ -4,6 +4,8 @@
   transition: var(--transition);
   width: 100%;
   margin: var(--marginM) 0px;
+  border-color: var(--text400);
+  border-width: 1px !important;
 
   &.weightLight {
     border-width: 1px !important;

@@ -1,0 +1,54 @@
+@use '../../util/util.scss';
+
+.tabs {
+  ul,
+  li {
+    list-style: none;
+  }
+
+  ul {
+    display: flex;
+    width: 100%;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    padding: var(--paddingM) var(--paddingL);
+    margin: var(--marginS);
+    position: relative;
+    border-radius: var(--borderRadius);
+    transition: var(--transition);
+    color: var(--text200);
+
+    .item {
+      z-index: 3;
+    }
+
+    &.selected {
+      color: var(--text100);
+    }
+
+    &:hover {
+      background: var(--bg300);
+      color: var(--text100);
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: var(--text400);
+    border-radius: var(--borderRadius);
+    z-index: 2;
+  }
+}
