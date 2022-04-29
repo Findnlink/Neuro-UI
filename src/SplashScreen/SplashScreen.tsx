@@ -4,9 +4,9 @@ import { SplashScreenProps } from './SplashScreen.types'
 import scss from './SplashScreen.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 //@ts-ignore
-import Lottie from 'react-lottie-player'
-import * as _animationDarkData from '../../assets/logoAnimationDark.json'
-import * as _animationLightData from '../../assets/logoAnimationLight.json'
+// import Lottie from 'react-lottie-player'
+// import * as _animationDarkData from '../../assets/logoAnimationDark.json'
+// import * as _animationLightData from '../../assets/logoAnimationLight.json'
 import { motion } from 'framer-motion'
 import { useStore } from '../store'
 
@@ -37,12 +37,12 @@ export const SplashScreen = ({ ...props }: SplashScreenProps) => {
         }}
         transition={spring}
       >
-        <Lottie
+        {/* <Lottie
           animationData={theme === 'dark' ? _animationDarkData : _animationLightData}
           play
           speed={1.2}
           style={{ width: 300, height: 300 }}
-        />
+        /> */}
       </motion.div>
     </div>
   )

@@ -21,6 +21,14 @@
     "jsx": "react-jsx"
   },
   "files": ["declaration.d.ts"],
-  "exclude": ["node_modules", "dist", "docs", "documentation-static", "src/**/*.mdx"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "assets",
+    "docs",
+    "documentation-static",
+    "src/**/*.mdx"
+  ],
   "include": ["src/**/*"]
 }

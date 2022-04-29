@@ -35,6 +35,7 @@ export const Flex = ({ children, ...props }: FlexProps) => {
         height: props.height || 'auto',
         maxWidth: props.maxWidth || 'none'
       }}
+      {...props}
     >
       {children}
     </div>

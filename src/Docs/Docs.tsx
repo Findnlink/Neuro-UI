@@ -32,6 +32,7 @@ import StoreProviderMDX from '../StoreProvider/StoreProvider.mdx'
 import ToggleMDX from '../Toggle/Toggle.mdx'
 import ToastMDX from '../Toast/Toast.mdx'
 import TabsMDX from '../Tabs/Tabs.mdx'
+import ErrorMessageMDX from '../ErrorMessage/ErrorMessage.mdx'
 
 import { Text, Collapse, Spacer, Line, StoreProvider, ThemeChanger } from '../index'
 import { useNavigate, Routes, Route } from 'react-router-dom'
@@ -70,6 +71,7 @@ export default function Docs() {
                   'Collapse',
                   'Component Wrapper',
                   'Context Menu',
+                  'Error Message',
                   'Grid',
                   'Dropdown',
                   'Icon',
@@ -112,6 +114,7 @@ export default function Docs() {
               <Route path="/gettingstarted" element={<GettingStarted />} />
               <Route path="/documentation" element={<Documentation />} />
               <Route path="/demo" element={<Demo />} />
+              <Route path="/errormessage" element={<ErrorMessageMDX />} />
               <Route path="/templates" element={<Templates />} />
               <Route path="/button" element={<Button />} />
               <Route path="/buttongroup" element={<ButtonGroup />} />

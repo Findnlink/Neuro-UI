@@ -24,4 +24,5 @@ import { SplashScreen } from './SplashScreen';
 import { StoreProvider } from './StoreProvider';
 import { Toggle } from './Toggle';
 import { Toast } from './Toast';
-export { Button, ButtonGroup, Card, CardHeader, CardContent, Checkbox, Code, ComponentWrapper, ContextMenu, Grid, Icon, Image, Input, Board, Line, Modal, Spacer, Text, TextArea, DropDown, Flex, Tag, Collapse, ThemeChanger, SplashScreen, StoreProvider, Toggle, Toast };
+import { Tabs } from './Tabs';
+export { Button, ButtonGroup, Card, CardHeader, CardContent, Checkbox, Code, ComponentWrapper, ContextMenu, Grid, Icon, Image, Input, Board, Line, Modal, Spacer, Text, TextArea, DropDown, Flex, Tag, Collapse, ThemeChanger, SplashScreen, StoreProvider, Toggle, Toast, Tabs };

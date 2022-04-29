@@ -5,6 +5,7 @@ import { Checkbox } from './Checkbox'
 import { Code } from './Code'
 import { ComponentWrapper } from './ComponentWrapper'
 import { ContextMenu } from './ContextMenu'
+import { ErrorMessage } from './ErrorMessage'
 import { Grid } from './Grid'
 import { Icon } from './Icon'
 import { Image } from './Image'
@@ -36,6 +37,7 @@ export {
   Code,
   ComponentWrapper,
   ContextMenu,
+  ErrorMessage,
   Grid,
   Icon,
   Image,

@@ -12,7 +12,6 @@ import {
   Droppable
 } from 'react-beautiful-dnd'
 import Add from '../Add/Add'
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
 export const Board = ({
   columns,
@@ -225,7 +224,7 @@ export const Board = ({
 
   return (
     <div>
-      {columns ? (
+      {columns && (
         <DragDropContext onDragEnd={onDragEnd}>
           <div className={styles.title}>{title}</div>
           <Droppable droppableId={String(_id)} direction="horizontal" type="BOARD">
@@ -284,19 +283,6 @@ export const Board = ({
             )}
           </Droppable>
         </DragDropContext>
-      ) : (
-        <SkeletonTheme baseColor="var(--bg200)" highlightColor="var(--bg300)">
-          <Skeleton
-            containerClassName={styles.skeletonWrapper}
-            className={styles.skeletonText}
-            count={1}
-          />
-          <Skeleton
-            containerClassName={styles.skeletonWrapper}
-            className={styles.skeleton}
-            count={3}
-          />
-        </SkeletonTheme>
       )}
     </div>
   )

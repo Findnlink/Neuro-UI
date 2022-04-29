@@ -4,6 +4,8 @@ import { InputProps } from './Input.types'
 import scss from './Input.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 import { Icon } from '../Icon/Icon'
+import { ErrorMessage } from '../'
+import { AnimatePresence } from 'framer-motion'
 
 export const Input = ({
   error,
@@ -37,10 +39,41 @@ export const Input = ({
   }
 
   return (
-    <div className={getClassNames()}>
-      <div>
-        {icon && icon}
-        {type === 'password' && <Icon padding={'0'} scale={scale} icon="lock" />}
+    // <div className={getClassNames()}>
+    //   <div>
+    //     {icon && icon}
+    //     {type === 'password' && <Icon padding={'0'} scale={scale} icon="lock" />}
+    //     <input
+    //       type={type === 'password' && showPassword ? 'text' : type}
+    //       data-testid={'Input'}
+    //       value={value}
+    //       onChange={onChange}
+    //       {...props}
+    //     />
+    //     {type === 'password' && (
+    //       <span
+    //         className={scss.password}
+    //         onClick={() => {
+    //           setShowPassword((prev) => !prev)
+    //         }}
+    //       >
+    //         {showPassword ? (
+    //           <Icon padding={'0'} icon={'eyeClosed'} scale={scale} />
+    //         ) : (
+    //           <Icon padding={'0'} icon={'eye'} scale={scale} />
+    //         )}
+    //       </span>
+    //     )}
+    //     {limit && (
+    //       <span className={scss.limit}>
+    //         {value.length}/{props.maxLength}
+    //       </span>
+    //     )}
+    //   </div>
+    //   {error && errorMessage && <span className={scss.errorMessage}>{errorMessage}</span>}
+    // </div>
+    <AnimatePresence>
+      <div className={getClassNames()}>
         <input
           type={type === 'password' && showPassword ? 'text' : type}
           data-testid={'Input'}
@@ -48,27 +81,8 @@ export const Input = ({
           onChange={onChange}
           {...props}
         />
-        {type === 'password' && (
-          <span
-            className={scss.password}
-            onClick={() => {
-              setShowPassword((prev) => !prev)
-            }}
-          >
-            {showPassword ? (
-              <Icon padding={'0'} icon={'eyeClosed'} scale={scale} />
-            ) : (
-              <Icon padding={'0'} icon={'eye'} scale={scale} />
-            )}
-          </span>
-        )}
-        {limit && (
-          <span className={scss.limit}>
-            {value.length}/{props.maxLength}
-          </span>
-        )}
+        <ErrorMessage isVisible={error}>{errorMessage}</ErrorMessage>
       </div>
-      {error && errorMessage && <span className={scss.errorMessage}>{errorMessage}</span>}
-    </div>
+    </AnimatePresence>
   )
 }

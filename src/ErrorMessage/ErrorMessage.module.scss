@@ -1,0 +1,6 @@
+@use '../../util/util.scss';
+
+.errorMessage {
+  transition: var(--transition);
+  color: var(--error);
+}
