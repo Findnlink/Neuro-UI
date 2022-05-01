@@ -1,8 +1,24 @@
 @use '../../util/util.scss';
 
 .input {
-  transition: var(--transition);
+  //transition: var(--transition);
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &.icon {
+    > input {
+      padding-left: 30px;
+    }
+  }
+
+  &.password {
+    > input {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
   input {
     transition: var(--transition);
     color: var(--text200);
@@ -14,18 +30,34 @@
     border: var(--border) var(--text400);
     width: 100%;
     font-size: var(--fontM);
+    grid-area: 1 / 1 / 2 / 3;
+
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 
     &::placeholder {
       color: var(--text300);
     }
 
-    &.icon {
-      padding-left: 30px;
-    }
-
     &:focus {
       background-color: var(--bg300);
     }
+  }
+
+  .iconWrapper {
+    align-self: center;
+    justify-self: start;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .passwordWrapper {
+    align-self: center;
+    justify-self: end;
+    grid-area: 1 / 2 / 2 / 3;
+    z-index: 1;
+    cursor: pointer;
   }
 }
 

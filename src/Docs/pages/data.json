@@ -1,0 +1,63 @@
+[
+  {
+    "_id": "618997e64fed7d56c433e37a",
+    "title": "",
+    "projectId": "618195cb667c2ae7ca1e1664",
+    "columns": [
+      {
+        "title": "TODO",
+        "color": "#796AFF",
+        "position": 0,
+        "_id": "618997e64fed7d56c433e37b",
+        "items": [
+          {
+            "text": "Im a item 👋",
+            "position": 0,
+            "_id": "618997e64fed7d56c433e37c3",
+            "columnId": "6181957b59b74edd8fb95d253",
+            "createdAt": "1636407270426",
+            "updatedAt": "1636407270426"
+          },
+          {
+            "text": "Drag me",
+            "position": 1,
+            "_id": "618997e64fed7d56c433e37c1",
+            "columnId": "6181957b59b74edd8fb95d251",
+            "createdAt": "1636407270426",
+            "updatedAt": "1636407270426"
+          },
+          {
+            "text": "Right click me",
+            "position": 2,
+            "_id": "618997e64fed7d56c433e37c2",
+            "columnId": "6181957b59b74edd8fb95d252",
+            "createdAt": "1636407270426",
+            "updatedAt": "1636407270426"
+          }
+        ],
+        "createdAt": "1636407270426",
+        "updatedAt": "1636407799689"
+      },
+      {
+        "title": "Done",
+        "color": "#FFAD1F",
+        "position": 1,
+        "_id": "618997e64fed7d56c433e37f",
+        "items": [
+          {
+            "text": "Im done 🥳",
+            "position": 0,
+            "_id": "618997e64fed7d56c433e37c",
+            "columnId": "6181957b59b74edd8fb95d25",
+            "createdAt": "1636407270426",
+            "updatedAt": "1636407270426"
+          }
+        ],
+        "createdAt": "1636407270427",
+        "updatedAt": "1636407270427"
+      }
+    ],
+    "createdAt": "1636407270427",
+    "updatedAt": "1636407799690"
+  }
+]

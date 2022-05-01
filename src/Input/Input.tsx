@@ -4,8 +4,7 @@ import { InputProps } from './Input.types'
 import scss from './Input.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 import { Icon } from '../Icon/Icon'
-import { ErrorMessage } from '../'
-import { AnimatePresence } from 'framer-motion'
+import { ErrorMessage, Flex, Grid } from '../'
 
 export const Input = ({
   error,
@@ -29,9 +28,8 @@ export const Input = ({
       ...props
     })
 
-    if (icon || type === 'password') {
-      className.push(scss.icon)
-    }
+    if (icon) className.push(scss.icon)
+    if (type === 'password') className.push(scss.password)
 
     //console.log('weight', weight, className)
 
@@ -72,17 +70,40 @@ export const Input = ({
     //   </div>
     //   {error && errorMessage && <span className={scss.errorMessage}>{errorMessage}</span>}
     // </div>
-    <AnimatePresence>
-      <div className={getClassNames()}>
-        <input
-          type={type === 'password' && showPassword ? 'text' : type}
-          data-testid={'Input'}
-          value={value}
-          onChange={onChange}
-          {...props}
-        />
-        <ErrorMessage isVisible={error}>{errorMessage}</ErrorMessage>
-      </div>
-    </AnimatePresence>
+    <div className={getClassNames()}>
+      <input
+        type={type === 'password' && showPassword ? 'text' : type}
+        data-testid={'Input'}
+        value={value}
+        onChange={onChange}
+        {...props}
+      />
+      {icon && (
+        <div className={scss.iconWrapper}>
+          <Icon margin="m l" icon={'edit'} />
+        </div>
+      )}
+      {type === 'password' && (
+        <>
+          <div className={scss.iconWrapper}>
+            <Icon margin="m l" icon={'lock'} />
+          </div>
+          <div
+            className={scss.passwordWrapper}
+            onClick={() => {
+              setShowPassword((prev) => !prev)
+            }}
+          >
+            {showPassword ? (
+              <Icon margin="m l" icon={'eyeClosed'} />
+            ) : (
+              <Icon margin="m l" icon={'eye'} />
+            )}
+          </div>
+        </>
+      )}
+
+      {/* <ErrorMessage isVisible={error}>{errorMessage}</ErrorMessage> */}
+    </div>
   )
 }

@@ -15,7 +15,8 @@ export const Collapse = ({ children, items, scale, weight, ...props }: CollapseP
       parent: scss.collapse,
       scss,
       scale,
-      weight
+      weight,
+      ...props
     })
 
     if (open) {

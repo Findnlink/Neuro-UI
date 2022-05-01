@@ -4,7 +4,7 @@ import { ImageProps } from './Image.types'
 import scss from './Image.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 
-export const Image = ({ src, ...props }: ImageProps) => {
+export const Image = ({ src, width, height, ...props }: ImageProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.image,

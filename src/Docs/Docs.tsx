@@ -7,6 +7,7 @@ import Templates from './pages/Templates.mdx'
 import Documentation from './pages/Documentation.mdx'
 import QuickStart from './pages/QuickStart.mdx'
 import Icons from './pages/Icons.mdx'
+import Introduction from './pages/Introduction.mdx'
 
 import Button from '../Button/Button.mdx'
 import ButtonGroup from '../ButtonGroup/ButtonGroup.mdx'
@@ -33,83 +34,32 @@ import ToggleMDX from '../Toggle/Toggle.mdx'
 import ToastMDX from '../Toast/Toast.mdx'
 import TabsMDX from '../Tabs/Tabs.mdx'
 import ErrorMessageMDX from '../ErrorMessage/ErrorMessage.mdx'
+import NavigationMDX from '../Navigation/Navigation.mdx'
 
-import { Text, Collapse, Spacer, Line, StoreProvider, ThemeChanger } from '../index'
-import { useNavigate, Routes, Route } from 'react-router-dom'
+import {
+  Text,
+  Collapse,
+  Spacer,
+  Line,
+  StoreProvider,
+  ThemeChanger,
+  Grid,
+  Navigation
+} from '../index'
+import { Routes, Route } from 'react-router-dom'
 
 export default function Docs() {
-  let navigate = useNavigate()
   return (
-    <StoreProvider defaultTheme="dark">
-      <div className={scss.docs}>
-        <div className={scss.left}>
-          <div className={scss.navigation}>
-            <div className={scss.logo}>
-              <img src="../../assets/logo.svg" />
-              <div className={scss.text}>
-                <Text scale="xl" weight="bold">
-                  Neuro UI
-                </Text>
-                <Text href="https://www.github.com" scale="s">
-                  View on GitHub
-                </Text>
-                <ThemeChanger />
-              </div>
-            </div>
-            <div className={scss.dropdown}>
-              <Collapse items={['Quick start', 'Getting started', 'Documentation']}>
-                Getting Started
-              </Collapse>
-              <Line margin="s" />
-              <Collapse
-                items={[
-                  'Button',
-                  'Button Group',
-                  'Card',
-                  'Checkbox',
-                  'Code',
-                  'Collapse',
-                  'Component Wrapper',
-                  'Context Menu',
-                  'Error Message',
-                  'Grid',
-                  'Dropdown',
-                  'Icon',
-                  'Input',
-                  'Kanban',
-                  'Line',
-                  'Modal',
-                  'Spacer',
-                  'Tag',
-                  'Text',
-                  'Text Area',
-                  'Theme Changer',
-                  'Toast',
-                  'Toggle',
-                  'Store Provider',
-                  'Tabs'
-                ]}
-              >
-                Components
-              </Collapse>
-              <Line margin="s" />
-              <Collapse onClick={() => navigate('/icons')}>Icons</Collapse>
-              <Line margin="s" />
-              <Collapse onClick={() => navigate('/demo')}>Demo</Collapse>
-              <Line margin="s" />
-              <Collapse onClick={() => navigate('/templates')}>Templates</Collapse>
-            </div>
-            <div className={scss.footer}>
-              <Text scale="s">
-                © 2022 Findnlink · <Text href="https://www.twitter.com">jaemil</Text>
-              </Text>
-            </div>
-          </div>
-        </div>
-        <div className={scss.right}>
-          <div className={scss.content}>
+    <StoreProvider disableSplashScreen defaultTheme="dark">
+      <Grid layout="f-pattern">
+        <div />
+        <div />
+        <Navigation children={[]} type={'vertical'}></Navigation>
+        <div>
+          <div>
             <Routes>
               <Route path="/" element={'Home'} />
+              <Route path="/introduction" element={<Introduction />} />
               <Route path="/quickstart" element={<QuickStart />} />
               <Route path="/gettingstarted" element={<GettingStarted />} />
               <Route path="/documentation" element={<Documentation />} />
@@ -141,10 +91,11 @@ export default function Docs() {
               <Route path="/storeprovider" element={<StoreProviderMDX />} />
               <Route path="/tabs" element={<TabsMDX />} />
               <Route path="/icons" element={<Icons />} />
+              <Route path="/navigation" element={<NavigationMDX />} />
             </Routes>
           </div>
         </div>
-      </div>
+      </Grid>
     </StoreProvider>
   )
 }
