@@ -1,14 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.scss";
-import Docs from "./Docs/Docs";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.scss'
+import Docs from './Docs/Docs'
+import { BrowserRouter } from 'react-router-dom'
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('react-root'))
+
+root.render(
   <BrowserRouter>
     <React.StrictMode>
       <Docs />
     </React.StrictMode>
-  </BrowserRouter>,
-  document.getElementById("react-root")
-);
+  </BrowserRouter>
+)
