@@ -1,57 +1,18 @@
 @use '../../util/util.scss';
 
 .grid {
-  // --min: 15ch;
-  // --gap: 1rem;
+  --min: 15ch;
+  --gap: 1rem;
 
-  // display: grid;
-  // grid-gap: var(--gap);
-  // width: 100%;
-  // /* min() with 100% prevents overflow
-  // in extra narrow spaces */
-  // grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+  display: grid;
+  grid-gap: var(--gap);
+  width: 100%;
+  /* min() with 100% prevents overflow
+  in extra narrow spaces */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 
-  // &.center {
-  //   place-content: center;
-  // }
-
-  &[data-layout='f-pattern'] {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    grid-template-rows: 50px 1fr;
-    grid-template-areas:
-      '. .'
-      'navigation content';
-
-    > :nth-child(1),
-    > :nth-child(2) {
-      grid-area: '.';
-      border-bottom: solid 1px var(--text400);
-    }
-
-    > :nth-child(3) {
-      grid-area: navigation;
-      border-right: solid 1px var(--text400);
-      overflow-y: auto;
-      height: calc(100vh - 50px);
-    }
-
-    > :nth-child(4) {
-      grid-area: content;
-      overflow-y: auto;
-      height: calc(100vh - 50px);
-      display: flex;
-      justify-content: center;
-      width: 100%;
-
-      > div {
-        width: 100%;
-        min-width: 0px;
-        max-width: 800px;
-        margin-top: 50px;
-        padding: 0 var(--paddingXL);
-      }
-    }
+  &.center {
+    place-content: center;
   }
 }
 

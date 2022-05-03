@@ -27,6 +27,7 @@ import { Toggle } from './Toggle'
 import { Toast } from './Toast'
 import { Tabs } from './Tabs'
 import { Navigation } from './Navigation'
+import { Layout } from './Layout'
 
 export {
   Button,
@@ -59,5 +60,6 @@ export {
   Toggle,
   Toast,
   Tabs,
-  Navigation
+  Navigation,
+  Layout
 }

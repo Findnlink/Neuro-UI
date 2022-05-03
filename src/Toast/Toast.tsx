@@ -20,10 +20,10 @@ export const Toast = ({ children, id, type, ...props }: ToastProps) => {
       }, 2500)
     }, 2000)
 
-    return () => {
-      clearTimeout(timeout)
-      removeToast(id)
-    }
+    // return () => {
+    //   clearTimeout(timeout)
+    //   removeToast(id)
+    // }
   }, [])
 
   const getClassNames = () => {

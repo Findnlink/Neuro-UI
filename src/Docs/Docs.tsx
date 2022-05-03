@@ -1,6 +1,8 @@
 import React from 'react'
 import scss from './Docs.module.scss'
 
+import Logo from './assets/logo.svg'
+
 import GettingStarted from './pages/GettingStarted.mdx'
 import Demo from './pages/Demo.mdx'
 import Templates from './pages/Templates.mdx'
@@ -44,17 +46,32 @@ import {
   StoreProvider,
   ThemeChanger,
   Grid,
-  Navigation
+  Navigation,
+  Layout,
+  Image,
+  Flex,
+  Tabs
 } from '../index'
 import { Routes, Route } from 'react-router-dom'
 
 export default function Docs() {
   return (
     <StoreProvider disableSplashScreen defaultTheme="dark">
-      <Grid layout="f-pattern">
-        <div />
-        <div />
-        <Navigation children={[]} type={'vertical'}></Navigation>
+      <Layout layout="f-pattern">
+        <Flex padding="0 xl" flexDirection="row" alignItems="center">
+          <Image width={'20px'} src={Logo} />
+          <div className={scss.text}>
+            <Text color="text100" padding="0 xl" scale="xl" weight="bold">
+              Neuro UI
+            </Text>
+          </div>
+        </Flex>
+        <Flex flexDirection="row" alignItems="center" justifyContent="flex-end">
+          {/* <Text padding="0 xl" href="https://github.com/Findnlink/Neuro-UI" scale="s"></Text> */}
+          <Tabs>{['GitHub', 'NPM']}</Tabs>
+          <ThemeChanger margin="0 xl 0 l" />
+        </Flex>
+        <Navigation padding="s 0 0 0" children={[]} type={'vertical'}></Navigation>
         <div>
           <div>
             <Routes>
@@ -95,7 +112,7 @@ export default function Docs() {
             </Routes>
           </div>
         </div>
-      </Grid>
+      </Layout>
     </StoreProvider>
   )
 }

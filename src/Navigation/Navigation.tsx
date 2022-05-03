@@ -21,18 +21,9 @@ export const Navigation = ({ logo, children, ...props }: NavigationProps) => {
 
   return (
     <nav data-testid={'Navigation'} className={getClassNames()}>
-      <div className={scss.logo}>
-        <Image padding="0 xl" src="../../assets/logo.svg" />
-        <div className={scss.text}>
-          <Text padding="0 xl" scale="xl" weight="bold">
-            Neuro UI
-          </Text>
-          <Text padding="0 xl" href="https://www.github.com" scale="s">
-            View on GitHub
-          </Text>
-          <ThemeChanger />
-        </div>
-      </div>
+      {/* <div className={scss.logo}>
+        
+      </div> */}
       <div className={scss.dropdown}>
         <Collapse
           padding="0 xl"
@@ -88,7 +79,7 @@ export const Navigation = ({ logo, children, ...props }: NavigationProps) => {
         </Collapse>
       </div>
       <div className={scss.footer}>
-        <Text scale="s">
+        <Text scale="s" padding="xl">
           © {new Date().getFullYear()} Findnlink ·{' '}
           <Text href="https://www.twitter.com">jaemil</Text>
         </Text>

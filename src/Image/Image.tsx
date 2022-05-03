@@ -15,5 +15,13 @@ export const Image = ({ src, width, height, ...props }: ImageProps) => {
     return className.join(' ')
   }
 
-  return <img loading="lazy" src={src} data-testid={'Image'} className={getClassNames()} />
+  return (
+    <img
+      loading="lazy"
+      style={{ width: width, height: height }}
+      src={src}
+      data-testid={'Image'}
+      className={getClassNames()}
+    />
+  )
 }

@@ -2,8 +2,9 @@
 
 .tabs {
   ul,
-  li {
+  a {
     list-style: none;
+    text-decoration: none;
   }
 
   ul {
@@ -11,12 +12,10 @@
     width: 100%;
   }
 
-  li {
+  a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex: 1;
-    min-width: 0;
     width: 100%;
     position: relative;
     cursor: pointer;

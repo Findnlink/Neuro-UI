@@ -5,7 +5,7 @@ import scss from './Tabs.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 import { AnimatePresence, motion } from 'framer-motion'
 
-export const Tabs = ({ children, ...props }: TabsProps) => {
+export const Tabs = ({ children, href, ...props }: TabsProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.tabs,
@@ -19,24 +19,25 @@ export const Tabs = ({ children, ...props }: TabsProps) => {
   const [selectedTab, setSelectedTab] = useState(children[0])
 
   return (
-    <div data-testid={'Tabs'} className={getClassNames()}>
+    <div {...props} data-testid={'Tabs'} className={getClassNames()}>
       <ul>
         {children.map((item: any, index: number) => (
-          <motion.li
-            key={item}
+          <motion.a
+            key={item + index}
             className={item === selectedTab ? scss.selected : ''}
             onClick={() => setSelectedTab(item)}
+            href={href && href[index] !== '' ? href[index] : '//:0'}
           >
             {item === selectedTab ? (
-              <motion.div className={scss.overlay} layoutId="overlay" />
+              <motion.div key={item + index} className={scss.overlay} layoutId="overlay" />
             ) : null}
 
             <span className={scss.item}>{item}</span>
-          </motion.li>
+          </motion.a>
         ))}
       </ul>
 
-      <AnimatePresence exitBeforeEnter>
+      {/* <AnimatePresence exitBeforeEnter>
         <motion.div
           key={selectedTab ? selectedTab : 'empty'}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +47,7 @@ export const Tabs = ({ children, ...props }: TabsProps) => {
         >
           {selectedTab ? selectedTab : '😋'}
         </motion.div>
-      </AnimatePresence>
+      </AnimatePresence> */}
     </div>
   )
 }

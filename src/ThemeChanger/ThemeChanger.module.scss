@@ -1,4 +1,7 @@
 @use '../../util/util.scss';
 
 .themeChanger {
+  padding: var(--paddingM);
+  cursor: pointer;
+  margin: var(--marginM);
 }

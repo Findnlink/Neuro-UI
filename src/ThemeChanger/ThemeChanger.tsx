@@ -3,7 +3,7 @@ import { ThemeChangerProps } from './ThemeChanger.types'
 //@ts-ignore
 import scss from './ThemeChanger.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
-import { ButtonGroup } from '../'
+import { ButtonGroup, Icon } from '../'
 import { useStore } from '../store'
 
 export const ThemeChanger = ({ ...props }: ThemeChangerProps) => {
@@ -25,8 +25,14 @@ export const ThemeChanger = ({ ...props }: ThemeChangerProps) => {
   }
 
   return (
-    <div data-testid={'ThemeChanger'} className={getClassNames()}>
-      <ButtonGroup buttons={['dark', 'light']} selected={theme} setSelected={changeTheme} />
+    <div
+      data-testid={'ThemeChanger'}
+      onClick={() => {
+        theme === 'dark' ? changeTheme('light') : changeTheme('dark')
+      }}
+      className={getClassNames()}
+    >
+      {theme === 'dark' ? <Icon icon={'moon'} /> : <Icon icon={'sun'} />}
     </div>
   )
 }

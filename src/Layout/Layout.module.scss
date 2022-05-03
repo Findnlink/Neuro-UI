@@ -1,0 +1,47 @@
+@use '../../util/util.scss';
+
+.layout {
+  &[data-layout='f-pattern'] {
+    background-color: var(--bg100);
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 65px 1fr;
+    grid-template-areas:
+      'logo tabs'
+      'navigation content';
+
+    > :nth-child(1) {
+      grid-area: logo;
+      border-bottom: solid 1px var(--text400);
+    }
+
+    > :nth-child(2) {
+      grid-area: tabs;
+      border-bottom: solid 1px var(--text400);
+    }
+
+    > :nth-child(3) {
+      grid-area: navigation;
+      border-right: solid 1px var(--text400);
+      overflow-y: auto;
+      height: calc(100vh - 50px);
+    }
+
+    > :nth-child(4) {
+      grid-area: content;
+      overflow-y: auto;
+      height: calc(100vh - 50px);
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      > div {
+        width: 100%;
+        min-width: 0px;
+        max-width: 800px;
+        margin-top: 50px;
+        padding: 0 var(--paddingXL);
+      }
+    }
+  }
+}

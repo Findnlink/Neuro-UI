@@ -2,5 +2,6 @@
 
 .image {
   width: 100%;
-  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  max-width: 100%;
+  border-radius: var(--borderRadius);
 }

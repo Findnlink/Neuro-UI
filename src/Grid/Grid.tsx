@@ -4,7 +4,7 @@ import { GridProps } from './Grid.types'
 import scss from './Grid.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 
-export const Grid = ({ children, layout, center, ...props }: GridProps) => {
+export const Grid = ({ children, center, ...props }: GridProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.grid,
@@ -18,7 +18,7 @@ export const Grid = ({ children, layout, center, ...props }: GridProps) => {
   }
 
   return (
-    <div {...props} data-testid={'Grid'} className={getClassNames()} data-layout={layout}>
+    <div {...props} data-testid={'Grid'} className={getClassNames()}>
       {children}
     </div>
   )
