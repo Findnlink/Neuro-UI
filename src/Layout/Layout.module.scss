@@ -1,11 +1,13 @@
 @use '../../util/util.scss';
 
+$navbar-height: 65px;
+
 .layout {
   &[data-layout='f-pattern'] {
     background-color: var(--bg100);
     display: grid;
     grid-template-columns: 250px 1fr;
-    grid-template-rows: 65px 1fr;
+    grid-template-rows: $navbar-height 1fr;
     grid-template-areas:
       'logo tabs'
       'navigation content';
@@ -24,13 +26,13 @@
       grid-area: navigation;
       border-right: solid 1px var(--text400);
       overflow-y: auto;
-      height: calc(100vh - 50px);
+      height: calc(100vh - $navbar-height);
     }
 
     > :nth-child(4) {
       grid-area: content;
       overflow-y: auto;
-      height: calc(100vh - 50px);
+      height: calc(100vh - $navbar-height);
       display: flex;
       justify-content: center;
       width: 100%;
