@@ -27,4 +27,5 @@ import { Toggle } from './Toggle';
 import { Toast } from './Toast';
 import { Tabs } from './Tabs';
 import { Navigation } from './Navigation';
-export { Button, ButtonGroup, Card, CardHeader, CardContent, Checkbox, Code, ComponentWrapper, ContextMenu, ErrorMessage, Grid, Icon, Image, Input, Board, Line, Modal, Spacer, Text, TextArea, DropDown, Flex, Tag, Collapse, ThemeChanger, SplashScreen, StoreProvider, Toggle, Toast, Tabs, Navigation };
+import { Layout } from './Layout';
+export { Button, ButtonGroup, Card, CardHeader, CardContent, Checkbox, Code, ComponentWrapper, ContextMenu, ErrorMessage, Grid, Icon, Image, Input, Board, Line, Modal, Spacer, Text, TextArea, DropDown, Flex, Tag, Collapse, ThemeChanger, SplashScreen, StoreProvider, Toggle, Toast, Tabs, Navigation, Layout };
