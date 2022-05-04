@@ -21,7 +21,7 @@
     cursor: pointer;
     user-select: none;
     padding: var(--paddingM) var(--paddingL);
-    margin: var(--marginS);
+
     position: relative;
     border-radius: var(--borderRadius);
     transition: var(--transition);
@@ -35,9 +35,13 @@
       color: var(--text100);
     }
 
-    &:hover {
-      background: var(--bg300);
-      color: var(--text100);
+    &[data-hover='false'] {
+      margin: var(--marginS);
+
+      &:hover {
+        background: var(--bg300);
+        color: var(--text100);
+      }
     }
   }
 

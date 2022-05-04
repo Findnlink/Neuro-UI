@@ -7,6 +7,7 @@ import { Tabs, ComponentWrapper } from '../'
     { type: 'bool', name: 'primary', default: false },
     { type: 'bool', name: 'disabled', default: false },
     { type: 'bool', name: 'loading', default: false },
+    { type: 'bool', name: 'hover', default: false },
     {
       type: 'array',
       name: 'scale',
@@ -33,5 +34,9 @@ import { Tabs, ComponentWrapper } from '../'
     }
   ]}
 >
-  <Tabs>{['Tab1', 'Tab2tab', 'Tab3', 'Tab4tabtabtab']}</Tabs>
+  <Tabs tabs={['Tab1', 'Tab2tab', 'Tab3', 'Tab4tabtabtab']}>
+    {['test', 'test2', 'test3', 'test4']}
+  </Tabs>
 </ComponentWrapper>
+
+Note: If you want to use multiple tabs in the same page, you must pass an unique ID.

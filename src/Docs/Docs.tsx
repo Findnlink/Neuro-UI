@@ -67,8 +67,16 @@ export default function Docs() {
           </div>
         </Flex>
         <Flex flexDirection="row" alignItems="center" justifyContent="flex-end">
-          {/* <Text padding="0 xl" href="https://github.com/Findnlink/Neuro-UI" scale="s"></Text> */}
-          <Tabs>{['GitHub', 'NPM']}</Tabs>
+          <Tabs
+            id="navigation"
+            hover
+            tabs={['Findnlink', 'GitHub', 'NPM']}
+            href={[
+              'https://www.findnlink.com',
+              'https://github.com/Findnlink/Neuro-UI',
+              'https://www.npmjs.com/package/@findnlink/neuro-ui'
+            ]}
+          />
           <ThemeChanger margin="0 xl 0 l" />
         </Flex>
         <Navigation padding="s 0 0 0" children={[]} type={'vertical'}></Navigation>
