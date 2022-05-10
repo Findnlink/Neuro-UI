@@ -10,13 +10,12 @@ $navbar-height: 65px;
     flex-direction: column;
 
     > :nth-child(1) {
-      height: 65px;
+      height: $navbar-height;
       position: fixed;
     }
 
     > :nth-child(2) {
-      height: calc(100vh - 65px);
-      margin-top: 65px;
+      margin-top: $navbar-height;
     }
   }
 
