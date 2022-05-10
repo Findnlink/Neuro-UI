@@ -20,7 +20,7 @@ export const StoreProvider = ({
       const _theme = localStorage.getItem('theme')
       setTheme(_theme || 'dark')
     }
-  }, [localStorage])
+  }, [])
 
   const showToasts = () => {
     return (
