@@ -12,10 +12,12 @@ $navbar-height: 65px;
     > :nth-child(1) {
       height: $navbar-height;
       position: fixed;
+      width: 100%;
     }
 
     > :nth-child(2) {
       margin-top: $navbar-height;
+      width: 100%;
     }
   }
 
