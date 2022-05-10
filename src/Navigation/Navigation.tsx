@@ -60,7 +60,8 @@ export const Navigation = ({ logo, children, ...props }: NavigationProps) => {
             'Toggle',
             'Store Provider',
             'Tabs',
-            'Layout'
+            'Layout',
+            'Footer'
           ]}
         >
           Components

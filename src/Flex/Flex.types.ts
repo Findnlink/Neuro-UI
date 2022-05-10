@@ -1,4 +1,7 @@
-export interface FlexProps {
+import { HTMLAttributes, ReactNode } from 'react'
+import { UtilInterface } from '../../util/interfaces'
+
+export interface FlexProps<>extends HTMLAttributes<HTMLDivElement>, UtilInterface {
   children?: any
   className?: string
   container?: boolean

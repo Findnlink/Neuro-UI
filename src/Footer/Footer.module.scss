@@ -1,0 +1,15 @@
+@use '../../util/util.scss';
+
+.footer {
+  padding: var(--paddingXL);
+  background-color: var(--bg300);
+  .footerItem {
+    padding: var(--paddingXL);
+  }
+}
+@media only screen and (max-width: 640px) {
+  .footer {
+    background-color: blue;
+    flex-direction: column !important;
+  }
+}

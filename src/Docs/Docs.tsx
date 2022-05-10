@@ -38,6 +38,7 @@ import TabsMDX from '../Tabs/Tabs.mdx'
 import ErrorMessageMDX from '../ErrorMessage/ErrorMessage.mdx'
 import NavigationMDX from '../Navigation/Navigation.mdx'
 import LayoutMDX from '../Layout/Layout.mdx'
+import FooterMDX from '../Footer/Footer.mdx'
 
 import {
   Text,
@@ -122,6 +123,7 @@ export default function Docs() {
               <Route path="/icons" element={<Icons />} />
               <Route path="/navigation" element={<NavigationMDX />} />
               <Route path="/layout" element={<LayoutMDX />} />
+              <Route path="/footer" element={<FooterMDX />} />
             </Routes>
           </div>
         </div>

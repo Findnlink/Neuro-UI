@@ -18,6 +18,7 @@ import { Text } from './Text'
 import { TextArea } from './TextArea'
 import { DropDown } from './DropDown'
 import { Flex } from './Flex'
+import { Footer, FooterItem } from './Footer'
 import { Tag } from './Tag'
 import { Collapse } from './Collapse'
 import { ThemeChanger } from './ThemeChanger'
@@ -52,6 +53,8 @@ export {
   TextArea,
   DropDown,
   Flex,
+  Footer,
+  FooterItem,
   Tag,
   Collapse,
   ThemeChanger,
