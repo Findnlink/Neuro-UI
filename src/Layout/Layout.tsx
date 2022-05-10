@@ -4,7 +4,7 @@ import { LayoutProps } from './Layout.types'
 import scss from './Layout.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 
-export const Layout = ({ children, layout, ...props }: LayoutProps) => {
+export const Layout = ({ children, type, ...props }: LayoutProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.layout,
@@ -16,7 +16,7 @@ export const Layout = ({ children, layout, ...props }: LayoutProps) => {
   }
 
   return (
-    <div data-testid={'Layout'} className={getClassNames()} data-layout={layout}>
+    <div data-testid={'Layout'} className={getClassNames()} data-type={type}>
       {children}
     </div>
   )

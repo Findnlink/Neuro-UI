@@ -3,7 +3,24 @@
 $navbar-height: 65px;
 
 .layout {
-  &[data-layout='f-pattern'] {
+  width: 100%;
+
+  &[data-type='default'] {
+    display: flex;
+    flex-direction: column;
+
+    > :nth-child(1) {
+      height: 65px;
+      position: fixed;
+    }
+
+    > :nth-child(2) {
+      height: calc(100vh - 65px);
+      margin-top: 65px;
+    }
+  }
+
+  &[data-type='docs'] {
     background-color: var(--bg100);
     display: grid;
     grid-template-columns: 250px 1fr;

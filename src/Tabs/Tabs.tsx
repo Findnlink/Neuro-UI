@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
-import { TabsProps } from './Tabs.types'
+import React, { useContext, useEffect, useState } from 'react'
+import {
+  TabsProps,
+  TabsHeaderProps,
+  TabProps,
+  TabsContentProps,
+  TabsContextProps
+} from './Tabs.types'
 //@ts-ignore
 import scss from './Tabs.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 import { AnimatePresence, motion } from 'framer-motion'
+import { ComponentContext, ComponentProvider } from '../../util/component-context'
 
-export const Tabs = ({ tabs, children, href, hover, id, ...props }: TabsProps) => {
+export const Tabs = ({ children, hover, id, ...props }: TabsProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.tabs,
@@ -16,65 +23,129 @@ export const Tabs = ({ tabs, children, href, hover, id, ...props }: TabsProps) =
     return className.join(' ')
   }
 
-  const [selectedTab, setSelectedTab] = useState(hover ? null : tabs[0])
-  const [selectedIndex, setSelectedIndex] = useState(hover ? null : 0)
+  const [_selectedIndex, _setSelectedIndex] = useState<null | number>(null)
+
+  const ctx: TabsContextProps = {
+    selectedIndex: _selectedIndex,
+    setSelectedIndex: _setSelectedIndex,
+    hover: hover ? hover : false,
+    id: id ? id : 'id'
+  }
 
   return (
-    <div {...props} data-testid={'Tabs'} className={getClassNames()}>
-      <ul>
-        {tabs.map((item: any, index: number) => (
-          <motion.a
-            key={item + index}
-            className={item === selectedTab ? scss.selected : ''}
-            onClick={() => {
-              if (hover) return
-              setSelectedTab(item)
-              setSelectedIndex(index)
-            }}
-            onHoverStart={() => {
-              if (!hover) return
-              setSelectedTab(item)
-              setSelectedIndex(index)
-            }}
-            onHoverEnd={() => {
-              if (!hover) return
-              setSelectedTab(null)
-              setSelectedIndex(null)
-            }}
-            href={href && href[index] !== '' ? href[index] : '//:0'}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-hover={hover}
-          >
-            {item === selectedTab ? (
-              <motion.div
-                key={item + index}
-                className={scss.overlay}
-                transition={spring}
-                layoutId={'overlay' + id}
-                animate={{ opacity: 1 }}
-              />
-            ) : null}
+    <ComponentProvider value={ctx}>
+      <div {...props} data-testid={'Tabs'} className={getClassNames()}>
+        {children}
+      </div>
+    </ComponentProvider>
+  )
+}
 
-            <span className={scss.item}>{item}</span>
-          </motion.a>
-        ))}
-      </ul>
+export const TabsHeader = ({ children, ...props }: TabsHeaderProps) => {
+  const getClassNames = () => {
+    let className = _getClassNames({
+      parent: scss.tabsHeader,
+      scss,
+      ...props
+    })
 
-      {children && (
-        <AnimatePresence exitBeforeEnter>
-          <motion.div
-            key={selectedTab ? selectedTab : 'empty'}
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.15 }}
-          >
-            {selectedIndex !== null ? children[selectedIndex] : null}
-          </motion.div>
-        </AnimatePresence>
-      )}
+    return className.join(' ')
+  }
+
+  const ctx: TabsContextProps = useContext(ComponentContext)
+
+  // set default to first element
+  useEffect(() => {
+    if (!ctx.hover) {
+      ctx.setSelectedIndex(0)
+    }
+  }, [])
+
+  return (
+    <div className={getClassNames()}>
+      <ul>{children}</ul>
     </div>
+  )
+}
+
+export const Tab = ({ children, href, index, ...props }: TabProps) => {
+  const getClassNames = () => {
+    let className = _getClassNames({
+      parent: scss.tab,
+      scss,
+      ...props
+    })
+
+    if (index === ctx.selectedIndex) className.push(scss.selected)
+
+    return className.join(' ')
+  }
+
+  const ctx: TabsContextProps = useContext(ComponentContext)
+
+  return (
+    <motion.a
+      className={getClassNames()}
+      key={index}
+      onClick={(e) => {
+        if (href && href === '') e.preventDefault()
+        if (ctx.hover) return
+        ctx.setSelectedIndex(index)
+      }}
+      onHoverStart={() => {
+        if (!ctx.hover) return
+        ctx.setSelectedIndex(index)
+      }}
+      onHoverEnd={() => {
+        if (!ctx.hover) return
+        ctx.setSelectedIndex(null)
+      }}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-hover={ctx.hover}
+    >
+      {index === ctx.selectedIndex ? (
+        <motion.div
+          key={index}
+          className={scss.overlay}
+          transition={spring}
+          layoutId={'overlay' + ctx.id}
+          animate={{ opacity: 1 }}
+        />
+      ) : null}
+
+      <span className={scss.item}>{children}</span>
+    </motion.a>
+  )
+}
+
+export const TabsContent = ({ children, id, ...props }: TabsContentProps) => {
+  const getClassNames = () => {
+    let className = _getClassNames({
+      parent: scss.tabsContent,
+      scss,
+      ...props
+    })
+
+    return className.join(' ')
+  }
+
+  const ctx = useContext(ComponentContext)
+
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <motion.div
+        key={ctx.selectedTab ? ctx.selectedTab : 'empty'}
+        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 20 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.15 }}
+        className={getClassNames()}
+      >
+        {ctx.selectedIndex !== null ? children[ctx.selectedIndex] : null}
+      </motion.div>
+    </AnimatePresence>
   )
 }
 

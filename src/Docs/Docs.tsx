@@ -37,27 +37,26 @@ import ToastMDX from '../Toast/Toast.mdx'
 import TabsMDX from '../Tabs/Tabs.mdx'
 import ErrorMessageMDX from '../ErrorMessage/ErrorMessage.mdx'
 import NavigationMDX from '../Navigation/Navigation.mdx'
+import LayoutMDX from '../Layout/Layout.mdx'
 
 import {
   Text,
-  Collapse,
-  Spacer,
-  Line,
   StoreProvider,
   ThemeChanger,
-  Grid,
   Navigation,
   Layout,
   Image,
   Flex,
-  Tabs
+  Tabs,
+  TabsHeader,
+  Tab
 } from '../index'
 import { Routes, Route } from 'react-router-dom'
 
 export default function Docs() {
   return (
     <StoreProvider disableSplashScreen defaultTheme="dark">
-      <Layout layout="f-pattern">
+      <Layout type="docs">
         <Flex padding="0 xl" flexDirection="row" alignItems="center">
           <Image width={'20px'} src={Logo} />
           <div className={scss.text}>
@@ -67,17 +66,22 @@ export default function Docs() {
           </div>
         </Flex>
         <Flex flexDirection="row" alignItems="center" justifyContent="flex-end">
-          <Tabs
-            id="navigation"
-            hover
-            tabs={['Findnlink', 'GitHub', 'NPM']}
-            href={[
-              'https://www.findnlink.com',
-              'https://github.com/Findnlink/Neuro-UI',
-              'https://www.npmjs.com/package/@findnlink/neuro-ui'
-            ]}
-          />
-          <ThemeChanger margin="0 xl 0 l" />
+          <Tabs id="navigation" hover margin="0 m 0 0">
+            <TabsHeader>
+              <Tab href="https://www.findnlink.com" index={0}>
+                Findnlink
+              </Tab>
+              <Tab href="https://github.com/Findnlink/Neuro-UI" index={1}>
+                GitHub
+              </Tab>
+              <Tab href="https://www.npmjs.com/package/@findnlink/neuro-ui'" index={2}>
+                NPM
+              </Tab>
+              <Tab index={3}>
+                <ThemeChanger />
+              </Tab>
+            </TabsHeader>
+          </Tabs>
         </Flex>
         <Navigation padding="s 0 0 0" children={[]} type={'vertical'}></Navigation>
         <div>
@@ -117,6 +121,7 @@ export default function Docs() {
               <Route path="/tabs" element={<TabsMDX />} />
               <Route path="/icons" element={<Icons />} />
               <Route path="/navigation" element={<NavigationMDX />} />
+              <Route path="/layout" element={<LayoutMDX />} />
             </Routes>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Tabs, ComponentWrapper } from '../'
+import { Tabs, Tab, TabsContent, TabsHeader, ComponentWrapper } from '../'
 
 # Tabs
 
@@ -34,8 +34,14 @@ import { Tabs, ComponentWrapper } from '../'
     }
   ]}
 >
-  <Tabs tabs={['Tab1', 'Tab2tab', 'Tab3', 'Tab4tabtabtab']}>
-    {['test', 'test2', 'test3', 'test4']}
+  <Tabs>
+    <TabsHeader>
+      <Tab index={0}>Tab1</Tab>
+      <Tab index={1}>Tab2</Tab>
+      <Tab index={2}>Tab3</Tab>
+      <Tab index={3}>Tab4</Tab>
+    </TabsHeader>
+    <TabsContent>{['Tab1', 'Tab2']}</TabsContent>
   </Tabs>
 </ComponentWrapper>
 

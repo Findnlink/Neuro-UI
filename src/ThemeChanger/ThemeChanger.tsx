@@ -3,7 +3,7 @@ import { ThemeChangerProps } from './ThemeChanger.types'
 //@ts-ignore
 import scss from './ThemeChanger.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
-import { ButtonGroup, Icon } from '../'
+import { Icon } from '../'
 import { useStore } from '../store'
 
 export const ThemeChanger = ({ ...props }: ThemeChangerProps) => {

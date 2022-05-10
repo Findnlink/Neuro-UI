@@ -25,7 +25,7 @@ import { SplashScreen } from './SplashScreen'
 import { StoreProvider } from './StoreProvider'
 import { Toggle } from './Toggle'
 import { Toast } from './Toast'
-import { Tabs } from './Tabs'
+import { Tabs, TabsContent, TabsHeader, Tab } from './Tabs'
 import { Navigation } from './Navigation'
 import { Layout } from './Layout'
 
@@ -60,6 +60,9 @@ export {
   Toggle,
   Toast,
   Tabs,
+  TabsContent,
+  TabsHeader,
+  Tab,
   Navigation,
   Layout
 }

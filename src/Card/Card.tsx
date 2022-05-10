@@ -5,11 +5,6 @@ import scss from './Card.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 import { motion } from 'framer-motion'
 
-const card = {
-  hidden: { scale: 0.8, opacity: 0.1 },
-  show: { scale: 1, opacity: 1 }
-}
-
 export const Card = ({ children, loading, ...props }: CardProps) => {
   const getClassNames = () => {
     let className = _getClassNames({

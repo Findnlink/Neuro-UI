@@ -2,23 +2,23 @@ import { Layout, ComponentWrapper } from '../'
 
 # Layout
 
-<ComponentWrapper
-  options={[
-    {
-      type: 'array',
-      name: 'type',
-      default: 'm',
-      values: ['s', 'm', 'l', 'xl']
-    },
-]}
+<br />
 
->
+## type="default"
 
-  <Layout>
-    <div />
-    <div />
-    <div />
-    <div />
-    <div />
-  </Layout>
-</ComponentWrapper>
+<Layout type="default">
+  <div>Fixed Navigation</div>
+  <div>Content</div>
+</Layout>
+
+<br />
+<br />
+
+## type="docs"
+
+<Layout type="docs">
+  <div>Fixed Logo</div>
+  <div>Fixed Navigation</div>
+  <div>Fixed Sidebar</div>
+  <div>Centered Content</div>
+</Layout>
