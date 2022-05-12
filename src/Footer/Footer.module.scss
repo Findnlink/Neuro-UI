@@ -1,6 +1,7 @@
 @use '../../util/util.scss';
 
 .footer {
+  transition: var(--transition);
   padding: var(--paddingXL);
   background-color: var(--bg300);
   .footerItem {
@@ -9,7 +10,6 @@
 }
 @media only screen and (max-width: 640px) {
   .footer {
-    background-color: blue;
     flex-direction: column !important;
   }
 }

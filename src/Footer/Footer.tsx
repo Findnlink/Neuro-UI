@@ -19,7 +19,7 @@ export const Footer = ({ children, ...props }: FooterProps) => {
   return (
     <Flex
       flexDirection="row"
-      justifyContent="space-between"
+      justifyContent="space-around"
       data-testid={'Footer'}
       className={getClassNames()}
     >

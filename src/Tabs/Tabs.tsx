@@ -68,7 +68,7 @@ export const TabsHeader = ({ children, ...props }: TabsHeaderProps) => {
   )
 }
 
-export const Tab = ({ children, href, index, ...props }: TabProps) => {
+export const Tab = ({ children, href, index, onClick, ...props }: TabProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.tab,
@@ -88,6 +88,7 @@ export const Tab = ({ children, href, index, ...props }: TabProps) => {
       className={getClassNames()}
       key={index}
       onClick={(e) => {
+        if (onClick) onClick(e)
         if (href && href === '') e.preventDefault()
         if (ctx.hover) return
         ctx.setSelectedIndex(index)

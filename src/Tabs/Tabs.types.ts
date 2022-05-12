@@ -14,6 +14,7 @@ export interface TabsHeaderProps<>extends HTMLAttributes<HTMLUListElement>, Util
 export interface TabProps<>extends HTMLAttributes<HTMLDivElement>, UtilInterface {
   children: string | ReactNode
   href?: string
+  onClick?: (e: any) => void
   index: number
 }
 

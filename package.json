@@ -1,6 +1,6 @@
 {
   "name": "@findnlink/neuro-ui",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "files": [
     "lib"
   ],
@@ -37,7 +37,7 @@
   },
   "scripts": {
     "start": "yarn build:vite-plugin-mdx && yarn install && yarn dev",
-    "dev": "start http://localhost:3000 && vite",
+    "dev": "start http://localhost:2000 && vite --port 2000",
     "build:types": "tsc src/index.ts --declaration --emitDeclarationOnly --resolveJsonModule --jsx react --esModuleInterop --outDir lib",
     "build:doc": "vite build --config ./build/doc.config.ts",
     "build:lib": "tsc --outDir lib && vite build --config ./build/lib.config.ts && yarn build:types",
