@@ -29,6 +29,7 @@ import { Toast } from './Toast'
 import { Tabs, TabsContent, TabsHeader, Tab } from './Tabs'
 import { Navigation } from './Navigation'
 import { Layout } from './Layout'
+import { ImageGallery } from './ImageGallery'
 
 export {
   Button,
@@ -67,5 +68,6 @@ export {
   TabsHeader,
   Tab,
   Navigation,
-  Layout
+  Layout,
+  ImageGallery
 }

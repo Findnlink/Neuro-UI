@@ -39,6 +39,7 @@ import ErrorMessageMDX from '../ErrorMessage/ErrorMessage.mdx'
 import NavigationMDX from '../Navigation/Navigation.mdx'
 import LayoutMDX from '../Layout/Layout.mdx'
 import FooterMDX from '../Footer/Footer.mdx'
+import ImageGalleryMDX from '../ImageGallery/ImageGallery.mdx'
 
 import {
   Text,
@@ -124,6 +125,7 @@ export default function Docs() {
               <Route path="/navigation" element={<NavigationMDX />} />
               <Route path="/layout" element={<LayoutMDX />} />
               <Route path="/footer" element={<FooterMDX />} />
+              <Route path="/imagegallery" element={<ImageGalleryMDX />} />
             </Routes>
           </div>
         </div>

@@ -61,7 +61,8 @@ export const Navigation = ({ logo, children, ...props }: NavigationProps) => {
             'Store Provider',
             'Tabs',
             'Layout',
-            'Footer'
+            'Footer',
+            'Image Gallery'
           ]}
         >
           Components
