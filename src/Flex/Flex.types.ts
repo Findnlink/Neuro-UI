@@ -6,7 +6,7 @@ export interface FlexProps<>extends HTMLAttributes<HTMLDivElement>, UtilInterfac
   className?: string
   container?: boolean
   /****** Container Props ********/
-  flexDirection?: 'row' | 'column'
+  flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
   justifyContent?:
     | 'flex-start'
     | 'flex-end'
