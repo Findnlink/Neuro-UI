@@ -2,18 +2,9 @@
 
 .tabs {
   .tabsHeader {
-    ul,
     a {
       list-style: none;
       text-decoration: none;
-    }
-
-    ul {
-      display: flex;
-      width: 100%;
-    }
-
-    a {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -21,7 +12,6 @@
       cursor: pointer;
       user-select: none;
       padding: var(--paddingM) var(--paddingL);
-
       position: relative;
       border-radius: var(--borderRadius);
       transition: var(--transition);
@@ -57,5 +47,17 @@
   }
 
   .tabsContent {
+    margin: var(--marginS);
+    padding: var(--paddingM);
+  }
+}
+
+@media (max-width: 640px) {
+  .tabs {
+    &[data-responsive='true'] {
+      .tabsHeader {
+        flex-direction: column !important;
+      }
+    }
   }
 }

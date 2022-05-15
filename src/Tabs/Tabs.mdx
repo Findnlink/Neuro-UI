@@ -9,6 +9,11 @@ import { Tabs, Tab, TabsContent, TabsHeader, ComponentWrapper } from '../'
     { type: 'bool', name: 'loading', default: false },
     { type: 'bool', name: 'hover', default: false },
     {
+      type: 'bool',
+      name: 'responsive',
+      default: false
+    },
+    {
       type: 'array',
       name: 'scale',
       default: 'm',
@@ -31,6 +36,12 @@ import { Tabs, Tab, TabsContent, TabsHeader, ComponentWrapper } from '../'
       name: 'margin',
       default: 'm',
       values: ['0', 's', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'direction',
+      default: 'row',
+      values: ['row', 'column']
     }
   ]}
 >

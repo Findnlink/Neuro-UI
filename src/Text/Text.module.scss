@@ -5,4 +5,14 @@
   line-height: 1.2;
   font-size: var(--fontM);
   margin: var(--marginM) 0px;
+
+  &.aligncenter {
+    text-align: center;
+  }
+  &.alignleft {
+    text-align: left;
+  }
+  &.alignright {
+    text-align: right;
+  }
 }

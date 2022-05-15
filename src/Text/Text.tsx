@@ -4,13 +4,15 @@ import { TextProps } from './Text.types'
 import scss from './Text.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 
-export const Text = ({ children, href, ...props }: TextProps) => {
+export const Text = ({ children, href, align, ...props }: TextProps) => {
   const getClassNames = () => {
     let _className = _getClassNames({
       parent: scss.text,
       scss,
       ...props
     })
+
+    if (align) _className.push(scss['align' + align])
 
     return _className.join(' ')
   }
