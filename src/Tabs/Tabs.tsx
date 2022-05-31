@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ComponentContext, ComponentProvider } from '../../util/component-context'
 import { Flex } from '../'
 
-export const Tabs = ({ children, hover, id, responsive, direction, ...props }: TabsProps) => {
+export const Tabs = ({ children, hover, id, direction, ...props }: TabsProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.tabs,
@@ -31,13 +31,12 @@ export const Tabs = ({ children, hover, id, responsive, direction, ...props }: T
     setSelectedIndex: _setSelectedIndex,
     hover: hover ? hover : false,
     id: id ? id : 'id',
-    responsive: responsive ? responsive : false,
     direction: direction ? direction : 'row'
   }
 
   return (
     <ComponentProvider value={ctx}>
-      <div {...props} data-testid={'Tabs'} data-responsive={responsive} className={getClassNames()}>
+      <div {...props} data-testid={'Tabs'} className={getClassNames()}>
         {children}
       </div>
     </ComponentProvider>
@@ -45,6 +44,8 @@ export const Tabs = ({ children, hover, id, responsive, direction, ...props }: T
 }
 
 export const TabsHeader = ({ children, ...props }: TabsHeaderProps) => {
+  const [openMenu, setOpenMenu] = useState(false)
+
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.tabsHeader,

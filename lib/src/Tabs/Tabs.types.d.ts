@@ -4,6 +4,8 @@ export interface TabsProps extends HTMLAttributes<HTMLDivElement>, UtilInterface
     children: ReactNode;
     id?: string;
     hover?: boolean;
+    responsive?: boolean;
+    direction?: 'row' | 'column';
 }
 export interface TabsHeaderProps extends HTMLAttributes<HTMLUListElement>, UtilInterface {
     children: ReactNode;
@@ -11,6 +13,7 @@ export interface TabsHeaderProps extends HTMLAttributes<HTMLUListElement>, UtilI
 export interface TabProps extends HTMLAttributes<HTMLDivElement>, UtilInterface {
     children: string | ReactNode;
     href?: string;
+    onClick?: (e: any) => void;
     index: number;
 }
 export interface TabsContentProps extends HTMLAttributes<HTMLDivElement>, UtilInterface {
@@ -21,4 +24,6 @@ export interface TabsContextProps {
     setSelectedIndex: (selectedIndex: number | null) => void;
     hover: boolean;
     id: string;
+    responsive?: boolean;
+    direction?: 'row' | 'column';
 }

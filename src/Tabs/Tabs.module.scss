@@ -1,7 +1,12 @@
 @use '../../util/util.scss';
 
 .tabs {
+  //overflow-x: auto;
   .tabsHeader {
+    &[data-responsive='true'] {
+      display: none;
+    }
+
     a {
       list-style: none;
       text-decoration: none;

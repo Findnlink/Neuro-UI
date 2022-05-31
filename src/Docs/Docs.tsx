@@ -51,41 +51,110 @@ import {
   Flex,
   Tabs,
   TabsHeader,
-  Tab
+  Tab,
+  Collapse,
+  Line
 } from '../index'
-import { Routes, Route } from 'react-router-dom'
+
+import { Routes, Route, useNavigate } from 'react-router-dom'
 
 export default function Docs() {
+  let navigate = useNavigate()
+
   return (
     <StoreProvider disableSplashScreen defaultTheme="dark">
       <Layout type="docs">
         <Flex padding="0 xl" flexDirection="row" alignItems="center">
-          <Image width={'20px'} src={Logo} />
-          <div className={scss.text}>
-            <Text color="text100" padding="0 xl" scale="xl" weight="bold">
-              Neuro UI
+          <Image width="20px" src={Logo} />
+          <Text color="text100" padding="0 xl" scale="xl" weight="bold">
+            Neuro UI
+          </Text>
+        </Flex>
+        <Navigation type="top">
+          <Flex flexDirection="row" alignItems="center" justifyContent="flex-end">
+            <Tabs id="navigation" hover margin="0 m 0 0">
+              <TabsHeader>
+                <Tab href="https://www.findnlink.com" index={0}>
+                  Findnlink
+                </Tab>
+                <Tab href="https://github.com/Findnlink/Neuro-UI" index={1}>
+                  GitHub
+                </Tab>
+                <Tab href="https://www.npmjs.com/package/@findnlink/neuro-ui'" index={2}>
+                  NPM
+                </Tab>
+                <Tab index={3}>
+                  <ThemeChanger />
+                </Tab>
+              </TabsHeader>
+            </Tabs>
+          </Flex>
+        </Navigation>
+
+        <Navigation
+          type="side"
+          footer={
+            <Text scale="s" margin="0" padding="xl">
+              © {new Date().getFullYear()} Findnlink ·{' '}
+              <Text href="https://www.twitter.com">jaemil</Text>
             </Text>
-          </div>
-        </Flex>
-        <Flex flexDirection="row" alignItems="center" justifyContent="flex-end">
-          <Tabs id="navigation" hover margin="0 m 0 0">
-            <TabsHeader>
-              <Tab href="https://www.findnlink.com" index={0}>
-                Findnlink
-              </Tab>
-              <Tab href="https://github.com/Findnlink/Neuro-UI" index={1}>
-                GitHub
-              </Tab>
-              <Tab href="https://www.npmjs.com/package/@findnlink/neuro-ui'" index={2}>
-                NPM
-              </Tab>
-              <Tab index={3}>
-                <ThemeChanger />
-              </Tab>
-            </TabsHeader>
-          </Tabs>
-        </Flex>
-        <Navigation padding="s 0 0 0" children={[]} type={'vertical'}></Navigation>
+          }
+        >
+          <Collapse
+            padding="0 xl"
+            items={['Introduction', 'Quick start', 'Contribute', 'Documentation']}
+          >
+            Getting Started
+          </Collapse>
+          <Line margin="s" />
+          <Collapse
+            padding="0 xl"
+            items={[
+              'Button',
+              'Button Group',
+              'Card',
+              'Checkbox',
+              'Code',
+              'Collapse',
+              'Component Wrapper',
+              'Context Menu',
+              'Error Message',
+              'Grid',
+              'Dropdown',
+              'Icon',
+              'Input',
+              'Kanban',
+              'Line',
+              'Modal',
+              'Spacer',
+              'Tag',
+              'Text',
+              'Text Area',
+              'Theme Changer',
+              'Toast',
+              'Toggle',
+              'Store Provider',
+              'Tabs',
+              'Layout',
+              'Footer',
+              'Image Gallery'
+            ]}
+          >
+            Components
+          </Collapse>
+          <Line margin="s" />
+          <Collapse padding="0 xl" onClick={() => navigate('/icons')}>
+            Icons
+          </Collapse>
+          <Line margin="s" />
+          <Collapse padding="0 xl" onClick={() => navigate('/demo')}>
+            Demo
+          </Collapse>
+          <Line margin="s" />
+          <Collapse padding="0 xl" onClick={() => navigate('/templates')}>
+            Templates
+          </Collapse>
+        </Navigation>
         <div>
           <div>
             <Routes>

@@ -73,6 +73,12 @@
   // Transition
   --transition: all 0.2s ease-in-out;
 
+  // Navbar
+  --navbarHeight: 65px;
+
+  // Mobile Menu Height
+  --mobileMenuButtonHeight: 50px;
+
   // Media Query
   --mobile: (max-width: 640px);
   --tablet: (max-width: 768px);

@@ -160,7 +160,7 @@ export const _getClassNames = ({
           _className.push(scss.marginRightM)
           break
         case 'l':
-          _className.push(scss.margingRightL)
+          _className.push(scss.marginRightL)
           break
         case 'xl':
           _className.push(scss.marginRightXL)

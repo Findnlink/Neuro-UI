@@ -1,9 +1,53 @@
 import { ImageGallery, ComponentWrapper } from '../'
+import Image500 from './data/500.jpg'
+import Image1000 from './data/1000.jpg'
+import Image1200 from './data/1200.jpg'
+import Image1400 from './data/1400.jpg'
+import Image1600 from './data/1600.jpg'
+import Image1800 from './data/1800.jpg'
 
 # ImageGallery
 
-<ImageGallery autoplay interval={3000} loop>
-  <Image src="https://picsum.photos/1000/1000" />
-  <Image src="https://picsum.photos/1000/1200" />
-  <Image src="https://picsum.photos/1000/1400" />
-</ImageGallery>
+<ComponentWrapper
+  options={[
+    { type: 'bool', name: 'primary', default: false },
+    { type: 'bool', name: 'disabled', default: false },
+    { type: 'bool', name: 'showPaginate', default: true },
+    { type: 'bool', name: 'showThumbnail', default: true },
+    { type: 'bool', name: 'autoplay', default: false },
+    { type: 'bool', name: 'loading', default: false },
+    {
+      type: 'array',
+      name: 'imageObjectFit',
+      default: 'contain',
+      values: ['contain', 'fill', 'cover']
+    },
+    {
+      type: 'array',
+      name: 'padding',
+      default: 's l',
+      values: ['0', 's', 'm', 'l', 'xl']
+    },
+    {
+      type: 'array',
+      name: 'margin',
+      default: 'm',
+      values: ['0', 's', 'm', 'l', 'xl']
+    },
+    {
+      type: 'string',
+      name: 'interval',
+      default: '3000',
+      values: '3000'
+    }
+  ]}
+>
+  <ImageGallery>
+    <Image src={Image500} />
+    <Image src={Image1000} />
+    <Image src={Image1200} />
+    <Image src={Image1400} />
+    <Image src={Image1600} />
+    <Image src={Image1800} />
+  </ImageGallery>
+</ComponentWrapper>

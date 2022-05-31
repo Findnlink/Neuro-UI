@@ -99,7 +99,7 @@ export const Icon = ({ icon, color, ...props }: IconProps) => {
               y2="4.288"
               transform="translate(2.117 9.714) rotate(-90)"
               fill="none"
-              stroke="#a7a8a8"
+              stroke="var(--text200)"
               strokeLinecap="round"
               strokeWidth="3"
             />
@@ -110,7 +110,7 @@ export const Icon = ({ icon, color, ...props }: IconProps) => {
               y2="4.288"
               transform="translate(2.117 5.916) rotate(-90)"
               fill="none"
-              stroke="#a7a8a8"
+              stroke="var(--text200)"
               strokeLinecap="round"
               strokeWidth="3"
             />
@@ -340,6 +340,44 @@ export const Icon = ({ icon, color, ...props }: IconProps) => {
             />
           </svg>
         )
+
+      case 'menu':
+        return (
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12">
+            <g id="Component_33_17" data-name="Component 33 – 17" transform="translate(1 1)">
+              <line
+                id="Line_869"
+                data-name="Line 869"
+                x1="13"
+                transform="translate(0 10)"
+                fill="none"
+                stroke="var(--text200)"
+                stroke-linecap="round"
+                stroke-width="2"
+              />
+              <line
+                id="Line_870"
+                data-name="Line 870"
+                x1="13"
+                transform="translate(0 5)"
+                fill="none"
+                stroke="var(--text200)"
+                stroke-linecap="round"
+                stroke-width="2"
+              />
+              <line
+                id="Line_1056"
+                data-name="Line 1056"
+                x1="13"
+                fill="none"
+                stroke="var(--text200)"
+                stroke-linecap="round"
+                stroke-width="2"
+              />
+            </g>
+          </svg>
+        )
+
       default:
         return <svg></svg>
     }

@@ -1,7 +1,8 @@
+import { ReactNode } from 'react'
 import { UtilInterface } from '../../util/interfaces'
 
 export interface NavigationProps<>extends UtilInterface {
-  logo?: string
-  children: []
-  type: 'horizontal' | 'vertical'
+  children: ReactNode
+  type: 'side' | 'top'
+  footer?: ReactNode
 }

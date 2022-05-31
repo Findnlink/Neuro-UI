@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavigationProps } from './Navigation.types'
 //@ts-ignore
 import scss from './Navigation.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
-import { Text, ThemeChanger, Collapse, Line, Image } from '../'
-import { useNavigate, Routes, Route } from 'react-router-dom'
+import { Flex, Icon, Text } from '../'
 
-export const Navigation = ({ logo, children, ...props }: NavigationProps) => {
-  let navigate = useNavigate()
+export const Navigation = ({ children, footer, type, ...props }: NavigationProps) => {
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const getClassNames = () => {
     let className = _getClassNames({
@@ -16,76 +15,48 @@ export const Navigation = ({ logo, children, ...props }: NavigationProps) => {
       ...props
     })
 
+    if (menuOpen) className.push(scss.menuOpen)
+    if (type) className.push(scss[type])
+
+    console.log('type', type, className)
+
     return className.join(' ')
   }
 
   return (
-    <nav data-testid={'Navigation'} className={getClassNames()}>
-      {/* <div className={scss.logo}>
-        
-      </div> */}
-      <div className={scss.dropdown}>
-        <Collapse
-          padding="0 xl"
-          items={['Introduction', 'Quick start', 'Contribute', 'Documentation']}
-        >
-          Getting Started
-        </Collapse>
-        <Line margin="s" />
-        <Collapse
-          padding="0 xl"
-          items={[
-            'Button',
-            'Button Group',
-            'Card',
-            'Checkbox',
-            'Code',
-            'Collapse',
-            'Component Wrapper',
-            'Context Menu',
-            'Error Message',
-            'Grid',
-            'Dropdown',
-            'Icon',
-            'Input',
-            'Kanban',
-            'Line',
-            'Modal',
-            'Spacer',
-            'Tag',
-            'Text',
-            'Text Area',
-            'Theme Changer',
-            'Toast',
-            'Toggle',
-            'Store Provider',
-            'Tabs',
-            'Layout',
-            'Footer',
-            'Image Gallery'
-          ]}
-        >
-          Components
-        </Collapse>
-        <Line margin="s" />
-        <Collapse padding="0 xl" onClick={() => navigate('/icons')}>
-          Icons
-        </Collapse>
-        <Line margin="s" />
-        <Collapse padding="0 xl" onClick={() => navigate('/demo')}>
-          Demo
-        </Collapse>
-        <Line margin="s" />
-        <Collapse padding="0 xl" onClick={() => navigate('/templates')}>
-          Templates
-        </Collapse>
-      </div>
-      <div className={scss.footer}>
-        <Text scale="s" padding="xl">
-          © {new Date().getFullYear()} Findnlink ·{' '}
-          <Text href="https://www.twitter.com">jaemil</Text>
-        </Text>
-      </div>
-    </nav>
+    <span data-testid={'Navigation'} className={getClassNames()}>
+      <Flex
+        onClick={() => setMenuOpen((prev) => !prev)}
+        padding="0 xl"
+        flexDirection="row"
+        alignItems="center"
+        pointer
+        _class={scss.mobileMenuButton}
+      >
+        <Icon icon={'menu'} />
+        {/* <Text margin="0 0 0 l">Menu</Text> */}
+      </Flex>
+
+      <nav>
+        <div className={scss.dropdown}>{children}</div>
+        {footer && <div className={scss.footer}>{footer}</div>}
+      </nav>
+    </span>
+    // <span data-testid={'Navigation'} className={getClassNames()}>
+    //   <nav>
+    //     <div className={scss.dropdown}>{children}</div>
+    //     {footer && <div className={scss.footer}>{footer}</div>}
+    //   </nav>
+    //   <Flex
+    //     onClick={() => setMenuOpen((prev) => !prev)}
+    //     padding="0 xl"
+    //     flexDirection="row"
+    //     alignItems="center"
+    //     pointer
+    //     _class={scss.mobileMenuButton}
+    //   >
+    //     <Icon icon={'menu'} />
+    //   </Flex>
+    // </span>
   )
 }

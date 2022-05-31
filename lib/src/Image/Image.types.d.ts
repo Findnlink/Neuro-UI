@@ -3,4 +3,5 @@ export interface ImageProps extends UtilInterface {
     src: string;
     width?: string;
     height?: string;
+    props?: any;
 }

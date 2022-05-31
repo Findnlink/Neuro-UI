@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { ImageGalleryProps, ImageGalleryThumbnailProps } from './ImageGallery.types'
 //@ts-ignore
 import scss from './ImageGallery.module.scss'
@@ -7,7 +7,15 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from 'popmotion'
 import { Icon } from '../'
 
-export const ImageGallery = ({ children, autoplay, interval, ...props }: ImageGalleryProps) => {
+export const ImageGallery = ({
+  children,
+  autoplay,
+  interval,
+  showPaginate,
+  showThumbnail,
+  imageObjectFit,
+  ...props
+}: ImageGalleryProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.imageGallery,
@@ -42,11 +50,14 @@ export const ImageGallery = ({ children, autoplay, interval, ...props }: ImageGa
   }, [paginate])
 
   return (
-    <div data-testid={'ImageGallery'} className={getClassNames()}>
+    <div
+      data-testid={'ImageGallery'}
+      data-imageobjectfit={imageObjectFit}
+      className={getClassNames()}
+    >
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={page}
-          src={children[imageIndex].props.src}
           custom={direction}
           variants={variants}
           initial="enter"
@@ -65,34 +76,52 @@ export const ImageGallery = ({ children, autoplay, interval, ...props }: ImageGa
               paginate(-1)
             }
           }}
+          {...children[imageIndex].props}
         />
       </AnimatePresence>
       <Icon _class={scss.next} onClick={() => paginate(1)} icon="arrow" />
       <Icon _class={scss.prev} onClick={() => paginate(-1)} icon="arrow" />
-      <div className={scss.paginateContainer}>
-        {children.map((item, index) => (
-          <motion.div>
-            {index === imageIndex ? (
-              <motion.div
-                key={index}
-                className={scss.paginate + ' ' + scss.overlay}
-                transition={spring}
-                layoutId={'imageGalleryId'}
-                animate={{ opacity: 1 }}
-              />
-            ) : null}
+      {showPaginate && (
+        <div className={scss.paginateContainer}>
+          {children.map((item, index) => (
+            <motion.div key={index}>
+              {index === imageIndex ? (
+                <motion.div
+                  className={scss.paginate + ' ' + scss.overlay}
+                  transition={spring}
+                  layoutId={'imageGalleryId'}
+                  animate={{ opacity: 1 }}
+                />
+              ) : null}
 
-            <motion.div
+              <motion.div
+                onClick={() => {
+                  setPage([index, index < imageIndex ? -1 : 1])
+                }}
+                animate={index === imageIndex ? { opacity: 0 } : { opacity: 0.8 }}
+                transition={{ duration: 0.2 }}
+                className={scss.paginate}
+              ></motion.div>
+            </motion.div>
+          ))}
+        </div>
+      )}
+      {showThumbnail && (
+        <div className={scss.thumbnailContainer}>
+          {children.map((item, index) => (
+            <motion.img
+              key={index}
               onClick={() => {
                 setPage([index, index < imageIndex ? -1 : 1])
               }}
-              animate={index === imageIndex ? { opacity: 0 } : { opacity: 0.8 }}
+              src={item.props.src}
+              animate={index === imageIndex ? { opacity: 1 } : { opacity: 0.5 }}
               transition={{ duration: 0.2 }}
-              className={scss.paginate}
-            ></motion.div>
-          </motion.div>
-        ))}
-      </div>
+              className={scss.thumbnail}
+            ></motion.img>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

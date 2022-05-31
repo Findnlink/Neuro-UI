@@ -1,9 +1,11 @@
-export interface FlexProps {
+import { HTMLAttributes } from 'react';
+import { UtilInterface } from '../../util/interfaces';
+export interface FlexProps extends HTMLAttributes<HTMLDivElement>, UtilInterface {
     children?: any;
     className?: string;
     container?: boolean;
     /****** Container Props ********/
-    flexDirection?: 'row' | 'column';
+    flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
     justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'initial' | 'inherit';
     flexWrap?: 'wrap' | 'nowrap' | 'wrap-reverse';
     alignItems?: 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'initial' | 'inherit';
