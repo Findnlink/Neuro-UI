@@ -53,7 +53,8 @@ import {
   TabsHeader,
   Tab,
   Collapse,
-  Line
+  Line,
+  Spacer
 } from '../index'
 
 import { Routes, Route, useNavigate } from 'react-router-dom'
@@ -70,25 +71,24 @@ export default function Docs() {
             Neuro UI
           </Text>
         </Flex>
+
         <Navigation type="top">
-          <Flex flexDirection="row" alignItems="center" justifyContent="flex-end">
-            <Tabs id="navigation" hover margin="0 m 0 0">
-              <TabsHeader>
-                <Tab href="https://www.findnlink.com" index={0}>
-                  Findnlink
-                </Tab>
-                <Tab href="https://github.com/Findnlink/Neuro-UI" index={1}>
-                  GitHub
-                </Tab>
-                <Tab href="https://www.npmjs.com/package/@findnlink/neuro-ui'" index={2}>
-                  NPM
-                </Tab>
-                <Tab index={3}>
-                  <ThemeChanger />
-                </Tab>
-              </TabsHeader>
-            </Tabs>
-          </Flex>
+          <Tabs id="navigation" hover margin="0 m 0 0">
+            <TabsHeader>
+              <Tab href="https://www.findnlink.com" index={0}>
+                Findnlink
+              </Tab>
+              <Tab href="https://github.com/Findnlink/Neuro-UI" index={1}>
+                GitHub
+              </Tab>
+              <Tab href="https://www.npmjs.com/package/@findnlink/neuro-ui'" index={2}>
+                NPM
+              </Tab>
+              <Tab index={3}>
+                <ThemeChanger />
+              </Tab>
+            </TabsHeader>
+          </Tabs>
         </Navigation>
 
         <Navigation
@@ -100,6 +100,7 @@ export default function Docs() {
             </Text>
           }
         >
+          <Spacer padding="s 0 0 0" />
           <Collapse
             padding="0 xl"
             items={['Introduction', 'Quick start', 'Contribute', 'Documentation']}
@@ -155,6 +156,7 @@ export default function Docs() {
             Templates
           </Collapse>
         </Navigation>
+
         <div>
           <div>
             <Routes>

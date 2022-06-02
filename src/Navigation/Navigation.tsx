@@ -27,14 +27,13 @@ export const Navigation = ({ children, footer, type, ...props }: NavigationProps
     <span data-testid={'Navigation'} className={getClassNames()}>
       <Flex
         onClick={() => setMenuOpen((prev) => !prev)}
-        padding="0 xl"
         flexDirection="row"
         alignItems="center"
         pointer
         _class={scss.mobileMenuButton}
       >
-        <Icon icon={'menu'} />
-        {/* <Text margin="0 0 0 l">Menu</Text> */}
+        <Icon margin="0 xl" icon={'menu'} />
+        {type === 'side' && <Text>Menu</Text>}
       </Flex>
 
       <nav>
