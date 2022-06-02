@@ -25,7 +25,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media only screen and (max-width: 640px) {
   .navigation {
     overflow-y: hidden !important;
     width: 100%;
