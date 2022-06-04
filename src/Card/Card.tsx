@@ -5,12 +5,13 @@ import scss from './Card.module.scss'
 import { _getClassNames } from '../../util/getClassNames'
 import { motion } from 'framer-motion'
 
-export const Card = ({ children, loading, ...props }: CardProps) => {
+export const Card = ({ children, loading, onClick, disabled, ...props }: CardProps) => {
   const getClassNames = () => {
     let className = _getClassNames({
       parent: scss.card,
       scss,
       loading,
+      disabled,
       ...props
     })
 
@@ -36,9 +37,10 @@ export const Card = ({ children, loading, ...props }: CardProps) => {
       onHoverStart={() => {
         setHover(true)
       }}
-      // onHoverEnd={() => {
-      //   setHover(false)
-      // }}
+      onClick={(e: any) => {
+        if (disabled || loading) return
+        if (onClick) onClick(e)
+      }}
     >
       {!loading && <>{children}</>}
     </motion.div>

@@ -42,7 +42,7 @@ export const Tag = ({ children, href, ...props }: TagProps) => {
             {children}
           </a>
         ) : (
-          children.map((tag, index) => (
+          children.map((tag: string | any, index: number) => (
             <motion.a
               href={href && href[index] !== '' ? href[index] : '//:0'}
               target="_blank"
