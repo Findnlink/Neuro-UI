@@ -1,0 +1,14 @@
+:root {
+  // --button-background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%) !important;
+  --button-background: blue !important;
+  --button-color: red !important;
+  //--button-transition: all 1s ease-in-out !important;
+  --button-font: normal bold 20px Arial !important;
+
+  --button_hover-background: red !important;
+  --button_hover-color: blue !important;
+  //--button_hover-font: normal bold 20px Arial !important;
+
+  --button_active-background: white !important;
+  --button_active-color: black !important;
+}

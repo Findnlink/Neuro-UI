@@ -12,6 +12,8 @@ export const Button = ({
   disabled,
   loading,
   htmlProps,
+  style,
+  variables,
   ...props
 }: ButtonProps) => {
   //const defaultProps = { children: 'Button', size: 'XL', ...props } as ButtonProps
@@ -38,6 +40,7 @@ export const Button = ({
       }}
       className={getClassNames()}
       // Warning: Received `true` for a non-boolean attribute `primary` with {...props}
+      style={style}
       {...htmlProps}
     >
       {children}

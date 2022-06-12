@@ -16,6 +16,7 @@ export interface UtilInterface {
   margin?: '0' | 's' | 'm' | 'l' | 'xl' | string
   padding?: '0' | 's' | 'm' | 'l' | 'xl' | string
   htmlProps?: any
+  variables?: { default: {}; hover: {}; active: {} }
   // key?: number
   // ref?: any
 }

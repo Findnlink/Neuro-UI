@@ -1,0 +1,22 @@
+// Sets the
+@mixin setVars($css_variables, $prefix) {
+  :root {
+    @each $name, $value in $css_variables {
+      @each $_name in $prefix {
+        @if (str-index($_name, '_')) {
+          // set the property to unset for button_hover, button_active...
+          --#{$_name}-#{$name}: unset;
+        } @else {
+          --#{$_name}-#{$name}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+// Writes
+@mixin getVars($css_variables, $prefix, $fallback: '') {
+  @each $name in $css_variables {
+    #{$name}: var(--#{$prefix}-#{$name}, var(--#{$fallback}-#{$name}));
+  }
+}
