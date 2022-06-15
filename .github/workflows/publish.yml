@@ -17,8 +17,12 @@ jobs:
         with:
           node-version: 17.7.1
           registry-url: https://registry.npmjs.org
-      - name: 🏗 build
-        run: npm run build:lib
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: build:lib
       - name: 🚀 publish
         run: npm publish --access public
         env:
