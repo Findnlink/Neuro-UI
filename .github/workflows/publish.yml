@@ -18,7 +18,7 @@ jobs:
           node-version: 17.7.1
           registry-url: https://registry.npmjs.org
       - name: 🏗 build
-        run: npm build:lib
+        run: npm run build:lib
       - name: 🚀 publish
         run: npm publish --access public
         env:
