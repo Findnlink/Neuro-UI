@@ -1,3 +1,3 @@
 /// <reference types="react" />
 import { NavigationProps } from './Navigation.types';
-export declare const Navigation: ({ logo, children, ...props }: NavigationProps) => JSX.Element;
+export declare const Navigation: ({ children, footer, type, ...props }: NavigationProps) => JSX.Element;

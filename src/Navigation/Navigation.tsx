@@ -24,7 +24,7 @@ export const Navigation = ({ children, footer, type, ...props }: NavigationProps
   }
 
   return (
-    <span data-testid={'Navigation'} className={getClassNames()}>
+    <span data-testid={'Navigation'} className={getClassNames()} {...props}>
       <Flex
         onClick={() => setMenuOpen((prev) => !prev)}
         flexDirection="row"
@@ -41,21 +41,5 @@ export const Navigation = ({ children, footer, type, ...props }: NavigationProps
         {footer && <div className={scss.footer}>{footer}</div>}
       </nav>
     </span>
-    // <span data-testid={'Navigation'} className={getClassNames()}>
-    //   <nav>
-    //     <div className={scss.dropdown}>{children}</div>
-    //     {footer && <div className={scss.footer}>{footer}</div>}
-    //   </nav>
-    //   <Flex
-    //     onClick={() => setMenuOpen((prev) => !prev)}
-    //     padding="0 xl"
-    //     flexDirection="row"
-    //     alignItems="center"
-    //     pointer
-    //     _class={scss.mobileMenuButton}
-    //   >
-    //     <Icon icon={'menu'} />
-    //   </Flex>
-    // </span>
   )
 }

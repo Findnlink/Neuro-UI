@@ -4,8 +4,7 @@
 $class: 'button';
 $hover: $class + '_hover';
 $active: $class + '_active';
-// $after: $class + '_after';
-// $before: $class + '_before';
+
 $vars: (
   'cursor',
   'transition',
@@ -13,93 +12,88 @@ $vars: (
   'color',
   'font',
   'border',
+  'border-radius',
   'box-shadow',
   'padding',
-  'filter'
+  'margin',
+  'filter',
+  'transform'
 );
 
-@include setVars(
-  (
-    cursor: pointer,
-    transition: unset,
-    background: unset,
-    color: unset,
-    font: var(--fontM) Arial,
-    border: unset,
-    box-shadow: unset,
-    padding: unset,
-    filter: unset
-  ),
-  ($class, $hover, $active)
-);
-
-.button {
-  @include getVars($vars, $class, $class);
-
-  &:enabled {
-    &:hover {
-      @include getVars($vars, $hover, $class);
-    }
-
-    &:active {
-      @include getVars($vars, $active, $class);
-    }
-  }
-}
-
-// position: relative;
-// background-image: linear-gradient(to right, hsl(211, 100%, 50%), hsl(179, 100%, 30%));
-// z-index: 1;
-
-// &::before {
-//   position: absolute;
-//   content: '';
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   background-image: linear-gradient(to bottom, hsl(344, 100%, 50%), hsl(31, 100%, 40%));
-//   z-index: -1;
-//   transition: opacity 0.5s linear;
-//   opacity: 0;
-// }
+//@include setVars($vars, $class, ('hover', 'active'), ('primary'));
 
 // .button {
-//   transition: var(--transition);
-//   color: var(--text200);
-//   background-color: var(--bg200);
-//   font-size: var(--fontM);
-//   border-radius: var(--borderRadius);
-//   activedding: var(--activeddingS) var(--activeddingL);
-//   box-shadow: var(--dropShadow);
-//   cursor: pointer;
-//   border: var(--border) var(--text400);
-//   font-weight: var(--weightMedium);
-//   margin: var(--marginM);
+//   @include getVars($vars, $class, $class);
 
 //   &:enabled {
 //     &:hover {
-//       background-color: var(--bg300);
-//       transform: scale(1.05);
+//       @include getVars($vars, $class + '_hover', $class);
 //     }
 
 //     &:active {
-//       transition: none;
-//       box-shadow: var(--innerShadow);
-//       transform: scale(1);
+//       @include getVars($vars, $class + '_active', $class);
 //     }
 //   }
 
 //   &.primary {
-//     color: var(--text100);
-//     border-color: var(--primary);
-//     //font-weight: var(--weightBold);
-//     background-color: var(--primary20);
+//     @include getVars($vars, $class + '_primary', $class);
+
 //     &:enabled {
 //       &:hover {
-//         background-color: var(--primary70);
-//         border-color: var(--primary);
+//         @include getVars(
+//           $vars,
+//           $class + '_primary_hover',
+//           ($class + '_hover', $class + '_primary', $class)
+//         );
+//       }
+
+//       &:active {
+//         @include getVars(
+//           $vars,
+//           $class + '_primary_active',
+//           ($class + '_active', $class + '_primary', $class)
+//         );
 //       }
 //     }
 //   }
 // }
+
+.button {
+  transition: var(--transition);
+  color: var(--text200);
+  background-color: var(--bg200);
+  font-size: var(--fontM);
+  border-radius: var(--borderRadius);
+  padding: var(--paddingS) var(--paddingL);
+  box-shadow: var(--dropShadow);
+  cursor: pointer;
+  border: var(--border) var(--text400);
+  font-weight: var(--weightMedium);
+  margin: var(--marginM);
+
+  &:enabled {
+    &:hover {
+      background-color: var(--bg300);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transition: none;
+      box-shadow: var(--innerShadow);
+      transform: scale(1);
+    }
+  }
+
+  &.primary {
+    color: var(--text100);
+    border-color: var(--primary);
+    //font-weight: var(--weightBold);
+    background-color: var(--primary20);
+    &:enabled {
+      &:hover {
+        background-color: var(--primary70);
+        border-color: var(--primary);
+      }
+    }
+  }
+}

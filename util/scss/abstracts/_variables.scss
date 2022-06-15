@@ -1,13 +1,27 @@
-// Sets the
-@mixin setVars($css_variables, $prefix) {
+// Description:
+// Generates css variables based on parameters.
+
+// Params:
+// $variables: properties e.g. background, color...
+// $class: Name of the component e.g. button, card...
+// $pseudo: Pseudo-classes e.g. hover, active, focus...
+// $props: e.g. primary,
+
+// TODO: Remove
+
+@mixin setVars($variables, $class, $pseudos, $props) {
   :root {
-    @each $name, $value in $css_variables {
-      @each $_name in $prefix {
-        @if (str-index($_name, '_')) {
-          // set the property to unset for button_hover, button_active...
-          --#{$_name}-#{$name}: unset;
-        } @else {
-          --#{$_name}-#{$name}: #{$value};
+    @each $var in $variables {
+      --#{$class}-#{$var}: initial;
+
+      @each $prop in $props {
+        --#{$class}_#{$prop}-#{$var}: initial;
+      }
+
+      @each $pseudo in $pseudos {
+        --#{$class}#{$pseudo}-#{$var}: initial;
+        @each $prop in $props {
+          --#{$class}_#{$prop}_#{$pseudo}-#{$var}: initial;
         }
       }
     }
@@ -15,8 +29,29 @@
 }
 
 // Writes
-@mixin getVars($css_variables, $prefix, $fallback: '') {
+@mixin getVars($css_variables, $prefix, $fallbacks) {
   @each $name in $css_variables {
-    #{$name}: var(--#{$prefix}-#{$name}, var(--#{$fallback}-#{$name}));
+    // #{$name}: var(
+    //   --#{$prefix}-#{$name},
+    //   var(--#{$fallback}-#{$name}, var(--#{$fallback2}-#{$name}, var(--#{$fallback3}-#{$name})))
+    // );
+    // $fallbackString: '';
+    // @each $fallback in $fallbacks {
+    //   $fallbackString: $fallbackString + 'var(--#{$fallback}-#{$name},';
+    // }
+
+    // @each $fallback in $fallbacks {
+    //   $fallbackString: $fallbackString + ')';
+    // }
+
+    #{$name}: var(--#{$prefix}-#{$name});
+
+    // @each $fallback in $fallbacks {
+    //   #{$name}: var(--#{$fallback}-#{$name});
+    // }
   }
+}
+
+@mixin setBackground($color) {
+  background: $color;
 }

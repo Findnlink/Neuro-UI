@@ -1,14 +1,26 @@
 :root {
-  // --button-background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%) !important;
-  --button-background: blue !important;
-  --button-color: red !important;
-  //--button-transition: all 1s ease-in-out !important;
-  --button-font: normal bold 20px Arial !important;
+  --button-background: var(--bg200) !important;
+  --button-color: var(--text200) !important;
+  --button-transition: var(--transition) !important;
+  --button-font: normal var(--weightMedium) var(--fontM) Arial !important;
+  --button-border: var(--border) var(--text400) !important;
+  --button-border-radius: var(--borderRadius) !important;
+  --button-padding: var(--paddingS) var(--paddingL) !important;
+  --button-box-shadow: var(--dropShadow) !important;
+  --button-cursor: pointer !important;
+  --button-margin: var(--marginM) !important;
 
-  --button_hover-background: red !important;
-  --button_hover-color: blue !important;
-  //--button_hover-font: normal bold 20px Arial !important;
+  --button_hover-background: var(--bg300) !important;
+  --button_hover-transform: scale(1.05) !important;
 
-  --button_active-background: white !important;
-  --button_active-color: black !important;
+  --button_active-transition: none !important;
+  --button_active-box-shadow: var(--innerShadow) !important;
+  --button_active-transform: scale(1) !important;
+
+  --button_primary-background: var(--primary20) !important;
+  --button_primary-color: var(--text100) !important;
+  --button_primary-border: var(--border) var(--primary) !important;
+
+  --button_primary_hover-background: var(--primary70) !important;
+  --button_primary_hover-border: var(--border) var(--primary) !important;
 }

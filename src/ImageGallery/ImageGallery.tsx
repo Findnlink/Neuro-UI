@@ -54,6 +54,7 @@ export const ImageGallery = ({
       data-testid={'ImageGallery'}
       data-imageobjectfit={imageObjectFit}
       className={getClassNames()}
+      {...props}
     >
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
