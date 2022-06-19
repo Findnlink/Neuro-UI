@@ -1,3 +1,7 @@
+@use 'sass:string';
+
+// TODO: Remove
+
 // Description:
 // Generates css variables based on parameters.
 
@@ -7,51 +11,46 @@
 // $pseudo: Pseudo-classes e.g. hover, active, focus...
 // $props: e.g. primary,
 
-// TODO: Remove
+// @mixin setVars($variables, $class, $pseudos, $props) {
+//   :root {
+//     @each $var in $variables {
+//       --#{$class}-#{$var}: initial;
 
-@mixin setVars($variables, $class, $pseudos, $props) {
-  :root {
-    @each $var in $variables {
-      --#{$class}-#{$var}: initial;
+//       @each $prop in $props {
+//         --#{$class}_#{$prop}-#{$var}: initial;
+//       }
 
-      @each $prop in $props {
-        --#{$class}_#{$prop}-#{$var}: initial;
-      }
-
-      @each $pseudo in $pseudos {
-        --#{$class}#{$pseudo}-#{$var}: initial;
-        @each $prop in $props {
-          --#{$class}_#{$prop}_#{$pseudo}-#{$var}: initial;
-        }
-      }
-    }
-  }
-}
+//       @each $pseudo in $pseudos {
+//         --#{$class}#{$pseudo}-#{$var}: initial;
+//         @each $prop in $props {
+//           --#{$class}_#{$prop}_#{$pseudo}-#{$var}: initial;
+//         }
+//       }
+//     }
+//   }
+// }
 
 // Writes
-@mixin getVars($css_variables, $prefix, $fallbacks) {
-  @each $name in $css_variables {
-    // #{$name}: var(
-    //   --#{$prefix}-#{$name},
-    //   var(--#{$fallback}-#{$name}, var(--#{$fallback2}-#{$name}, var(--#{$fallback3}-#{$name})))
-    // );
-    // $fallbackString: '';
-    // @each $fallback in $fallbacks {
-    //   $fallbackString: $fallbackString + 'var(--#{$fallback}-#{$name},';
-    // }
+@mixin getVars($variables, $prefix, $fallbacks) {
+  @each $name in $variables {
+    // generate
 
-    // @each $fallback in $fallbacks {
-    //   $fallbackString: $fallbackString + ')';
-    // }
-
-    #{$name}: var(--#{$prefix}-#{$name});
-
-    // @each $fallback in $fallbacks {
-    //   #{$name}: var(--#{$fallback}-#{$name});
-    // }
+    #{$name}: var(--#{$prefix}-#{$name}, generateFallback($fallbacks, $name));
   }
 }
 
-@mixin setBackground($color) {
-  background: $color;
+// returns custom fallbacks with
+@function generateFallback($fallbacks, $name) {
+  $fallbackString: '';
+  @each $fallback in $fallbacks {
+    $fallbackString: $fallbackString + ' var(--#{$fallback}-#{$name},';
+  }
+
+  $fallbackString: string.slice($fallbackString, 0, -2);
+
+  @each $fallback in $fallbacks {
+    $fallbackString: $fallbackString + ')';
+  }
+
+  @return string.unquote($fallbackString);
 }

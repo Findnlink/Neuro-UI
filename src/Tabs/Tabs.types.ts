@@ -20,7 +20,7 @@ export interface TabProps<>extends HTMLAttributes<HTMLDivElement>, UtilInterface
 }
 
 export interface TabsContentProps<>extends HTMLAttributes<HTMLDivElement>, UtilInterface {
-  children: string[]
+  children: string[] | ReactNode[]
 }
 
 export interface TabsContextProps {

@@ -6,6 +6,6 @@ export interface ModalProps<>extends HTMLAttributes<HTMLDivElement>, UtilInterfa
   open: boolean
   onClose: () => void
   type?: null | 'confirm'
-  onConfirm?: () => void
+  onConfirm?: () => any
   i18n?: { yes: string; no: string }
 }
