@@ -1,8 +1,9 @@
+import { ReactChild, ReactChildren } from 'react'
 import { UtilInterface } from '../../util/interfaces'
 import { ImageProps } from '../Image/Image.types'
 
 export interface ImageGalleryProps<>extends UtilInterface {
-  children: ImageProps[]
+  children: ReactChild | ReactChildren
   autoplay?: boolean
   interval?: number
   showPaginate?: boolean

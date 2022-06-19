@@ -1,8 +1,9 @@
-import { ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
 //TODO: Fix disabled?: boolean, add animation: ???
 export interface UtilInterface {
   _class?: string
+  style?: CSSProperties
   primary?: boolean
   disabled?: boolean
   loading?: boolean

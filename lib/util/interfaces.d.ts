@@ -1,5 +1,7 @@
+import { CSSProperties } from 'react';
 export interface UtilInterface {
     _class?: string;
+    style?: CSSProperties;
     primary?: boolean;
     disabled?: boolean;
     loading?: boolean;
