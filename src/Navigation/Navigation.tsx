@@ -32,7 +32,7 @@ export const Navigation = ({ children, footer, type, ...props }: NavigationProps
         pointer
         _class={scss.mobileMenuButton}
       >
-        <Icon margin="0 xl" icon={'menu'} />
+        {menuOpen ? <Icon margin="0 xl" icon={'cross'} /> : <Icon margin="0 xl" icon={'menu'} />}
         {type === 'side' && <Text>Menu</Text>}
       </Flex>
 
