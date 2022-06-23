@@ -17,7 +17,7 @@ const generateCSS = () => {
   }
 
   if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-color')) {
-    map.set('background', 'var(--button-color)')
+    map.set('color', 'var(--button-color)')
   }
 
   console.log(Object.fromEntries(map))
