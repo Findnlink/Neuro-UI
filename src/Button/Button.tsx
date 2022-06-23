@@ -4,6 +4,27 @@ import scss from './Button.module.scss'
 import { ButtonProps } from './Button.types'
 import { _getClassNames } from '../../util/getClassNames'
 
+import { styled } from '@stitches/react'
+
+const generateCSS = () => {
+  const map = new Map()
+
+  if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-background')) {
+    map.set(
+      'backgroundColor',
+      window.getComputedStyle(document.documentElement).getPropertyValue('--button-background')
+    )
+  }
+
+  console.log(map)
+
+  return Object.fromEntries(map)
+}
+
+//const ButtonStyled = styled('button', generateCSS())
+
+const ButtonStyled = styled('button', generateCSS())
+
 /** This is a special button */
 export const Button = ({
   children,
@@ -14,6 +35,7 @@ export const Button = ({
   htmlProps,
   style,
   variables,
+  primary,
   ...props
 }: ButtonProps) => {
   //const defaultProps = { children: 'Button', size: 'XL', ...props } as ButtonProps
@@ -31,19 +53,20 @@ export const Button = ({
   }
 
   return (
-    <button
+    <ButtonStyled
       data-testid={'button'}
       onClick={(e: any) => {
         if (disabled || loading) return
         if (onClick) onClick(e)
         if (href) window.open(href, '_blank')
       }}
-      className={getClassNames()}
+      //className={getClassNames()}
       // Warning: Received `true` for a non-boolean attribute `primary` with {...props}
-      style={style}
+      //style={style}
+
       {...htmlProps}
     >
       {children}
-    </button>
+    </ButtonStyled>
   )
 }
