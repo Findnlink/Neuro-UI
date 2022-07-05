@@ -1,26 +1,109 @@
+//Variables
 :root {
-  --button-background: var(--bg200) !important;
-  --button-color: var(--text200) !important;
-  --button-transition: var(--transition) !important;
-  --button-font: normal var(--weightNormal) var(--fontM) inherit !important;
-  --button-border: var(--border) var(--text400) !important;
-  --button-border-radius: var(--borderRadius) !important;
-  --button-padding: var(--paddingS) var(--paddingL) !important;
-  --button-box-shadow: var(--dropShadow) !important;
-  --button-cursor: pointer !important;
-  --button-margin: var(--marginM) !important;
+  --black: black;
+  --white: white;
 
-  --button_hover-background: var(--bg300) !important;
-  --button_hover-transform: scale(1.05) !important;
+  // Text
+  --text100: #eeeeee;
+  --text200: #d5d5d5;
+  --text300: #696969;
+  --text400: #262626;
 
-  --button_active-transition: none !important;
-  --button_active-box-shadow: var(--innerShadow) !important;
-  --button_active-transform: scale(1) !important;
+  // Background
+  --bg100: #141414;
+  --bg200: #1a1a1a;
+  --bg300: #1e1e1e;
 
-  --button_primary-background: var(--primary20) !important;
-  --button_primary-color: var(--text100) !important;
-  --button_primary-border: var(--border) var(--primary) !important;
+  // Primary
+  --primary: #796aff;
+  --primary70: #796aff70;
+  --primary20: #796aff20;
 
-  --button_primary_hover-background: var(--primary70) !important;
-  --button_primary_hover-border: var(--border) var(--primary) !important;
+  // Secondary
+  --secondary: #3121bd;
+  --secondary70: #3121bd70;
+  --secondary20: #3121bd20;
+
+  // Tag Background: --primary but 10% lighter
+  --tagBg: #6051e6;
+
+  // Shadow
+  --dropShadow: 0px 3px 5px 0px #00000020;
+  --dropShadowHover: 0px 3px 10px 0px #00000070;
+  --innerShadow: inset 0px 3px 5px 0px #00000050;
+
+  // Font
+  --fontS: 12px;
+  --fontM: 14px;
+  --fontL: 16px;
+  --fontXL: 20px;
+  --fontXXL: 32px;
+
+  --weightLight: 300;
+  --weightNormal: 500;
+  --weightBold: 700;
+
+  // Border
+  --borderRadius: 5px;
+  --border: 2px solid;
+  --error: #ff6a6a;
+
+  // Padding
+  --padding0: 0px;
+  --paddingS: 4px;
+  --paddingM: 8px;
+  --paddingL: 12px;
+  --paddingXL: 16px;
+
+  // Margin
+  --margin0: 0px;
+  --marginS: 4px;
+  --marginM: 8px;
+  --marginL: 12px;
+  --marginXL: 16px;
+
+  // Modal Background
+  --modal: 0, 0, 0, 0.5;
+
+  // Transition
+  --transition: all 0.2s ease-in-out;
+
+  // Navbar
+  --navbarHeight: 65px;
+
+  // Mobile Menu Sidebar height
+  --mobileMenuButtonHeight: 50px;
+
+  // Media Query
+  --mobile: (max-width: 640px);
+  --tablet: (max-width: 768px);
+}
+
+.dark {
+  //default root variables
+}
+
+.light {
+  // Text
+  --text100: #2a2a2a;
+  --text200: #585757;
+  --text300: #969696;
+  --text400: #eeeeee;
+
+  // Background
+  --bg100: #fafafa;
+  --bg200: white;
+  --bg300: #f7f7f7;
+
+  // --primary but 10% lighter
+  --tagBg: #9384ff;
+
+  // Shadow
+  --dropShadow: 0px 2px 5px 0px #00000020;
+  --dropShadowHover: 0px 3px 10px 0px #00000030;
+  --innerShadow: inset 0px 3px 5px 0px #00000010;
+
+  // Border
+  --borderRadius: 5px;
+  --border: 2px solid;
 }

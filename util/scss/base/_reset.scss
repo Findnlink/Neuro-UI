@@ -509,3 +509,8 @@ input,
 select {
   vertical-align: middle;
 }
+
+body {
+  background-color: var(--bg100);
+  color: var(--text200);
+}

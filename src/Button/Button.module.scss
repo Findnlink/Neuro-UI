@@ -1,99 +1,41 @@
 @use '../../util/util.scss';
-//@import '../../util/scss/styles.scss';
 
-$class: 'button';
-$hover: $class + '_hover';
-$active: $class + '_active';
+.button {
+  transition: var(--transition);
+  color: var(--text200);
+  background-color: var(--bg200);
+  font-size: var(--fontM);
+  border-radius: var(--borderRadius);
+  padding: var(--paddingS) var(--paddingL);
+  box-shadow: var(--dropShadow);
+  cursor: pointer;
+  border: var(--border) var(--text400);
+  font-weight: var(--weightMedium);
+  margin: var(--marginM);
 
-$vars: (
-  'cursor',
-  'transition',
-  'background',
-  'color',
-  'font',
-  'border',
-  'border-radius',
-  'box-shadow',
-  'padding',
-  'margin',
-  'filter',
-  'transform'
-);
+  &:enabled {
+    &:hover {
+      background-color: var(--bg300);
+      transform: scale(1.05);
+    }
 
-//@include setVars($vars, $class, ('hover', 'active'), ('primary'));
+    &:active {
+      transition: none;
+      box-shadow: var(--innerShadow);
+      transform: scale(1);
+    }
+  }
 
-// .button {
-//   @include getVars($vars, $class, $class);
-
-//   &:enabled {
-//     &:hover {
-//       @include getVars($vars, $class + '_hover', $class);
-//     }
-
-//     &:active {
-//       @include getVars($vars, $class + '_active', $class);
-//     }
-//   }
-
-//   &.primary {
-//     @include getVars($vars, $class + '_primary', $class);
-
-//     &:enabled {
-//       &:hover {
-//         @include getVars(
-//           $vars,
-//           $class + '_primary_hover',
-//           ($class + '_hover', $class + '_primary', $class)
-//         );
-//       }
-
-//       &:active {
-//         @include getVars(
-//           $vars,
-//           $class + '_primary_active',
-//           ($class + '_active', $class + '_primary', $class)
-//         );
-//       }
-//     }
-//   }
-// }
-
-// .button {
-//   transition: var(--transition);
-//   color: var(--text200);
-//   background-color: var(--bg200);
-//   font-size: var(--fontM);
-//   border-radius: var(--borderRadius);
-//   padding: var(--paddingS) var(--paddingL);
-//   box-shadow: var(--dropShadow);
-//   cursor: pointer;
-//   border: var(--border) var(--text400);
-//   font-weight: var(--weightMedium);
-//   margin: var(--marginM);
-
-//   &:enabled {
-//     &:hover {
-//       background-color: var(--bg300);
-//       transform: scale(1.05);
-//     }
-
-//     &:active {
-//       transition: none;
-//       box-shadow: var(--innerShadow);
-//       transform: scale(1);
-//     }
-//   }
-
-//   &.primary {
-//     color: var(--text100);
-//     border-color: var(--primary);
-//     //font-weight: var(--weightBold);
-//     background-color: var(--primary20);
-//     &:enabled {
-//       &:hover {
-//         background-color: var(--primary70);
-//         border-color: var(--primary);
-//       }
-//     }
-//   }
-// }
+  &.primary {
+    color: var(--text100);
+    border-color: var(--primary);
+    //font-weight: var(--weightBold);
+    background-color: var(--primary20);
+    &:enabled {
+      &:hover {
+        background-color: var(--primary70);
+        border-color: var(--primary);
+      }
+    }
+  }
+}
