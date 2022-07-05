@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 //@ts-ignore
 import scss from './Button.module.scss'
 import { ButtonProps } from './Button.types'
@@ -8,24 +8,6 @@ import { styled, setup } from 'goober'
 //import { styled } from '@stitches/react'
 
 setup(React.createElement)
-
-const generateCSS = () => {
-  const map = new Map()
-
-  if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-background')) {
-    map.set('background', 'var(--button-background)')
-  }
-
-  if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-color')) {
-    map.set('color', 'var(--button-color)')
-  }
-
-  console.log(Object.fromEntries(map))
-
-  return Object.fromEntries(map)
-}
-
-const ButtonStyled = styled('button')(generateCSS())
 
 //const ButtonStyled = styled('button', generateCSS())
 
@@ -58,6 +40,40 @@ export const Button = ({
     return className.join(' ')
   }
 
+  const [themeToggle, setThemeToggle] = useState(true)
+
+  const generateCSS = () => {
+    const map = new Map()
+
+    if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-background')) {
+      map.set('background', 'var(--button-background)')
+    }
+
+    if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-color')) {
+      map.set('color', 'var(--button-color)')
+    }
+
+    console.log(Object.fromEntries(map))
+
+    return Object.fromEntries(map)
+  }
+
+  const ButtonStyled = styled('button')(generateCSS())
+
+  const addCssVar = (add: boolean) => {
+    let root = document.documentElement
+
+    if (add) {
+      root.style.setProperty('--button-background', 'red')
+    } else {
+      root.style.removeProperty('--button-background')
+    }
+
+    //ButtonStyled = styled('button')(generateCSS())
+
+    setThemeToggle((prev) => !prev)
+  }
+
   return (
     <ButtonStyled
       data-testid={'button'}
@@ -65,12 +81,16 @@ export const Button = ({
         if (disabled || loading) return
         if (onClick) onClick(e)
         if (href) window.open(href, '_blank')
+
+        addCssVar(themeToggle)
       }}
-      //className={getClassNames()}
+      //themeToggle={themeToggle}
+      //onClick={() => addCssVar()}
+      className={getClassNames()}
       // Warning: Received `true` for a non-boolean attribute `primary` with {...props}
       //style={style}
 
-      {...htmlProps}
+      // {...htmlProps}
     >
       {children}
     </ButtonStyled>

@@ -11,7 +11,7 @@ import QuickStart from './pages/QuickStart.mdx'
 import Icons from './pages/Icons.mdx'
 import Introduction from './pages/Introduction.mdx'
 
-import Button from '../Button/Button.mdx'
+import ButtonMDX from '../Button/Button.mdx'
 import ButtonGroup from '../ButtonGroup/ButtonGroup.mdx'
 import Card from '../Card/Card.mdx'
 import Checkbox from '../Checkbox/Checkbox.mdx'
@@ -54,7 +54,8 @@ import {
   Tab,
   Collapse,
   Line,
-  Spacer
+  Spacer,
+  Button
 } from '../index'
 
 import { Routes, Route, useNavigate } from 'react-router-dom'
@@ -73,6 +74,10 @@ export default function Docs() {
         </Flex>
 
         <Navigation type="top">
+          <Flex flexDirection="row" justifyContent="space-around">
+            <Button>Change Style</Button>
+            <Button>Remove Style</Button>
+          </Flex>
           <Tabs id="navigation" hover margin="0 m 0 0">
             <TabsHeader>
               <Tab href="https://www.findnlink.com" index={0}>
@@ -168,7 +173,7 @@ export default function Docs() {
               <Route path="/demo" element={<Demo />} />
               <Route path="/errormessage" element={<ErrorMessageMDX />} />
               <Route path="/templates" element={<Templates />} />
-              <Route path="/button" element={<Button />} />
+              <Route path="/button" element={<ButtonMDX />} />
               <Route path="/buttongroup" element={<ButtonGroup />} />
               <Route path="/card" element={<Card />} />
               <Route path="/checkbox" element={<Checkbox />} />

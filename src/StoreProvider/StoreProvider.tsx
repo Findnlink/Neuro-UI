@@ -6,6 +6,7 @@ import { Toast } from '../Toast'
 //@ts-ignore
 import scss from './StoreProvider.module.scss'
 import { SplashScreen } from '../SplashScreen'
+import ThemeProvider from '../ThemeChanger/ThemeProvider'
 
 export const StoreProvider = ({
   children,
@@ -34,11 +35,15 @@ export const StoreProvider = ({
     )
   }
 
+  useEffect(() => {
+    console.log('theme', theme)
+  }, [theme])
+
   return (
     <div data-testid={'StoreProvider'} className={theme}>
       {showToasts()}
       {!disableSplashScreen && <SplashScreen />}
-      {children}
+      <ThemeProvider>{children}</ThemeProvider>
     </div>
   )
 }
