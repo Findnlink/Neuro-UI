@@ -3,7 +3,7 @@ import { UtilInterface } from '../../util/interfaces'
 import { ImageProps } from '../Image/Image.types'
 
 export interface ImageGalleryProps<>extends UtilInterface {
-  children: ImageProps[]
+  children: any
   autoplay?: boolean
   interval?: number
   showPaginate?: boolean

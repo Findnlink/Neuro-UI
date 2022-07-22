@@ -12,6 +12,7 @@
   background-color: rgba(var(--modal));
   color: var(--text200);
   transition: opacity 0.2s ease-in-out;
+  max-height: 100vh;
 
   &.open {
     opacity: 1;
@@ -34,15 +35,23 @@
   .inner {
     transition: all 0.3s ease-in-out;
     background-color: var(--bg200);
-    padding: 20px;
+    //padding: 20px;
     border-radius: var(--borderRadius);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 20px 60px 20px 20px;
-    max-width: 400px;
+    max-width: 500px;
+    //overflow-y: scroll;
+    //max-height: 90vh;
     box-shadow: 0px 0px 5px 0px var(--shadow);
+
+    .child {
+      padding: 20px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
 
     .close {
       position: absolute;

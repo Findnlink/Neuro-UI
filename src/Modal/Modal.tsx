@@ -28,7 +28,7 @@ export const Modal = ({ children, open, onClose, type, onConfirm, i18n, ...props
   return (
     <div onClick={() => onClose()} className={getClassNames()}>
       <div onClick={handleChildClick} className={scss.inner}>
-        {children}
+        <div className={scss.child}>{children}</div>
         <div className={scss.close} onClick={() => onClose()}>
           <Icon icon={'cross'} />
         </div>
