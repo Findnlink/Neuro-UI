@@ -84,7 +84,7 @@ export const ImageGallery = ({
       <Icon _class={scss.prev} onClick={() => paginate(-1)} icon="arrow" />
       {showPaginate && (
         <div className={scss.paginateContainer}>
-          {children.map((item, index) => (
+          {children.map((item: any, index: number) => (
             <motion.div key={index}>
               {index === imageIndex ? (
                 <motion.div
@@ -109,7 +109,7 @@ export const ImageGallery = ({
       )}
       {showThumbnail && (
         <div className={scss.thumbnailContainer}>
-          {children.map((item, index) => (
+          {children.map((item: any, index: number) => (
             <motion.img
               key={index}
               onClick={() => {
