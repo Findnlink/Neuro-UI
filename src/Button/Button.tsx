@@ -4,10 +4,9 @@ import scss from './Button.module.scss'
 import { ButtonProps } from './Button.types'
 import { _getClassNames } from '../../util/getClassNames'
 import { styled, setup } from 'goober'
+import { useStore } from '../store'
 
 //import { styled } from '@stitches/react'
-
-setup(React.createElement)
 
 //const ButtonStyled = styled('button', generateCSS())
 
@@ -40,7 +39,9 @@ export const Button = ({
     return className.join(' ')
   }
 
-  const [themeToggle, setThemeToggle] = useState(true)
+  const [theme, setTheme] = useStore((s) => [s.theme, s.setTheme])
+
+  //const [themeToggle, setThemeToggle] = useState(true)
 
   const generateCSS = () => {
     const map = new Map()
@@ -60,20 +61,6 @@ export const Button = ({
 
   const ButtonStyled = styled('button')(generateCSS())
 
-  const addCssVar = (add: boolean) => {
-    let root = document.documentElement
-
-    if (add) {
-      root.style.setProperty('--button-background', 'red')
-    } else {
-      root.style.removeProperty('--button-background')
-    }
-
-    //ButtonStyled = styled('button')(generateCSS())
-
-    setThemeToggle((prev) => !prev)
-  }
-
   return (
     <ButtonStyled
       data-testid={'button'}
@@ -82,14 +69,14 @@ export const Button = ({
         if (onClick) onClick(e)
         if (href) window.open(href, '_blank')
 
-        addCssVar(themeToggle)
+        //addCssVar(themeToggle)
       }}
       //themeToggle={themeToggle}
       //onClick={() => addCssVar()}
-      className={getClassNames()}
+      className={scss.button}
       // Warning: Received `true` for a non-boolean attribute `primary` with {...props}
-      //style={style}
-
+      style={style}
+      data-theme={theme}
       // {...htmlProps}
     >
       {children}
