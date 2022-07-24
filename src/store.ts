@@ -11,7 +11,7 @@ type Store = {
 }
 
 export const useStore = create<Store>((set, get) => ({
-  theme: 'dark',
+  theme: 'neuro dark',
   setTheme: (theme) => set({ theme }),
   isLoading: true,
   setIsLoading: (isLoading) => set({ isLoading }),

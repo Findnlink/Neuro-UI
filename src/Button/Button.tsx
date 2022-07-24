@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import scss from './Button.module.scss'
 import { ButtonProps } from './Button.types'
 import { _getClassNames } from '../../util/getClassNames'
-import { styled, setup } from 'goober'
+import { styled } from 'goober'
 import { useStore } from '../store'
 
 //import { styled } from '@stitches/react'
@@ -39,27 +39,64 @@ export const Button = ({
     return className.join(' ')
   }
 
-  const [theme, setTheme] = useStore((s) => [s.theme, s.setTheme])
+  const [theme] = useStore((s) => [s.theme, s.setTheme])
 
   //const [themeToggle, setThemeToggle] = useState(true)
 
-  const generateCSS = () => {
-    const map = new Map()
+  const generateCSS = (props: any) => {
+    // const map = new Map()
+    // const mapPrimary = new Map()
+
+    // if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-background')) {
+    //   map.set('background', 'var(--button-background)')
+    // }
+
+    // if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-color')) {
+    //   map.set('color', 'var(--button-color)')
+    // }
+
+    //.primary
+    // if (
+    //   window
+    //     .getComputedStyle(document.documentElement)
+    //     .getPropertyValue('--button-background--primary')
+    // ) {
+    //   mapPrimary.set('background', 'var(--button-background--primary)')
+    // }
+
+    let cssString = ''
 
     if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-background')) {
-      map.set('background', 'var(--button-background)')
+      cssString += 'background: var(--button-background);'
     }
 
     if (window.getComputedStyle(document.documentElement).getPropertyValue('--button-color')) {
-      map.set('color', 'var(--button-color)')
+      cssString += 'color: var(--button-color);'
     }
 
-    console.log(Object.fromEntries(map))
+    if (primary) {
+      cssString += '&.primary {'
 
-    return Object.fromEntries(map)
+      if (
+        window
+          .getComputedStyle(document.documentElement)
+          .getPropertyValue('--button-background--primary')
+      ) {
+        cssString += 'background: var(--button-background--primary);'
+      }
+
+      cssString += '}'
+      //console.log(cssString)
+    }
+
+    console.log(props)
+
+    //console.log(JSON.stringify(map) + '.primary {' + Object.fromEntries(mapPrimary) + '}')
+
+    return cssString
   }
 
-  const ButtonStyled = styled('button')(generateCSS())
+  const ButtonStyled = styled('button')((props) => generateCSS(props))
 
   return (
     <ButtonStyled
@@ -73,10 +110,11 @@ export const Button = ({
       }}
       //themeToggle={themeToggle}
       //onClick={() => addCssVar()}
-      className={scss.button}
+      className={'primary'}
       // Warning: Received `true` for a non-boolean attribute `primary` with {...props}
       style={style}
       data-theme={theme}
+
       // {...htmlProps}
     >
       {children}

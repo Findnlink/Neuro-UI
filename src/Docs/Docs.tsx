@@ -74,10 +74,6 @@ export default function Docs() {
         </Flex>
 
         <Navigation type="top">
-          <Flex flexDirection="row" justifyContent="space-around">
-            <Button>Change Style</Button>
-            <Button>Remove Style</Button>
-          </Flex>
           <Tabs id="navigation" hover margin="0 m 0 0">
             <TabsHeader>
               <Tab href="https://www.findnlink.com" index={0}>
