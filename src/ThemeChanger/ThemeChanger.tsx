@@ -42,23 +42,26 @@ export const ThemeChanger = ({ ...props }: ThemeChangerProps) => {
       case 'neuro dark':
         root.style.setProperty('--button-background', 'black')
         root.style.setProperty('--button-color', 'white')
-        root.style.setProperty('--button-background--primary', 'blue')
+        root.style.setProperty('--button-font-weight', 'bold')
+        root.style.setProperty('--button_primary-background', 'blue')
         break
       case 'neuro light':
         root.style.setProperty('--button-background', 'white')
         root.style.setProperty('--button-color', 'black')
-        root.style.setProperty('--button-background--primary', 'blue')
+        root.style.setProperty('--button-font-weight', 'light')
+        root.style.setProperty('--button_primary-background', 'blue')
         break
-
       default:
         break
     }
   }
 
-  const removeTheme = (style: any) => {
-    //TODO: remove all properties
-    style.removeProperty('--button-background')
-    style.removeProperty('--button-color-background')
+  const removeTheme = (style: CSSStyleDeclaration) => {
+    const regex = new RegExp(`(?=\:)(.*?)(?<=\;)`, 'g')
+
+    // remove the value of the property
+    const properties = style.cssText.replaceAll(regex, '').split(' ')
+    properties.forEach((property) => style.removeProperty(property))
   }
 
   return (
