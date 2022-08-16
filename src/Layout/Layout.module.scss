@@ -4,23 +4,37 @@
   width: 100%;
 
   &[data-type='default'] {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
+    display: grid;
+    background-color: var(--bg100);
+    grid-template-columns: 1fr;
+    grid-template-rows: var(--navbarHeight) 1fr;
+    grid-template-areas:
+      'navigation'
+      'content';
 
     > :nth-child(1) {
-      height: var(--navbarHeight);
-      position: fixed;
-      width: 100%;
+      grid-area: navigation;
+      overflow-y: none;
+      //height: calc(100vh - var(--navbarHeight));
     }
 
     > :nth-child(2) {
-      margin-top: var(--navbarHeight);
+      background-color: var(--bg100);
+      grid-area: content;
+      overflow-y: auto;
+      height: calc(100vh - var(--navbarHeight));
+      display: flex;
+      justify-content: center;
       width: 100%;
-    }
+      transition: var(--transition);
 
-    > :nth-child(3) {
+      > div {
+        width: 100%;
+        min-width: 0px;
+        max-width: 800px;
+        margin-top: 50px;
+        padding: 0 var(--paddingXL);
+      }
     }
   }
 
