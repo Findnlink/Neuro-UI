@@ -23,18 +23,8 @@
       grid-area: content;
       overflow-y: auto;
       height: calc(100vh - var(--navbarHeight));
-      display: flex;
-      justify-content: center;
       width: 100%;
       transition: var(--transition);
-
-      > div {
-        width: 100%;
-        min-width: 0px;
-        max-width: 800px;
-        margin-top: 50px;
-        padding: 0 var(--paddingXL);
-      }
     }
   }
 
