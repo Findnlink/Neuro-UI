@@ -25,19 +25,19 @@ export const Navigation = ({ children, footer, type, ...props }: NavigationProps
 
   return (
     <span data-testid={'Navigation'} className={getClassNames()} {...props}>
-      <Flex
-        onClick={() => setMenuOpen((prev) => !prev)}
-        flexDirection="row"
-        alignItems="center"
-        pointer
-        _class={scss.mobileMenuButton}
-      >
-        {menuOpen ? <Icon margin="0 xl" icon={'cross'} /> : <Icon margin="0 xl" icon={'menu'} />}
+      <Flex flexDirection="row" alignItems="center" _class={scss.mobileMenuButton}>
+        {menuOpen ? (
+          <Icon onClick={() => setMenuOpen((prev) => !prev)} padding="xl" icon={'cross'} />
+        ) : (
+          <Icon onClick={() => setMenuOpen((prev) => !prev)} padding="xl" icon={'menu'} />
+        )}
         {type === 'side' && <Text>Menu</Text>}
       </Flex>
 
       <nav>
-        <div className={scss.dropdown}>{children}</div>
+        <div onClick={() => setMenuOpen(false)} className={scss.dropdown}>
+          {children}
+        </div>
         {footer && <div className={scss.footer}>{footer}</div>}
       </nav>
     </span>
