@@ -40,6 +40,7 @@ import NavigationMDX from '../Navigation/Navigation.mdx'
 import LayoutMDX from '../Layout/Layout.mdx'
 import FooterMDX from '../Footer/Footer.mdx'
 import ImageGalleryMDX from '../ImageGallery/ImageGallery.mdx'
+import ScrollableMDX from '../Scrollable/Scrollable.mdx'
 
 import {
   Text,
@@ -139,7 +140,8 @@ export default function Docs() {
               'Tabs',
               'Layout',
               'Footer',
-              'Image Gallery'
+              'Image Gallery',
+              'Scrollable'
             ]}
           >
             Components
@@ -198,6 +200,7 @@ export default function Docs() {
               <Route path="/layout" element={<LayoutMDX />} />
               <Route path="/footer" element={<FooterMDX />} />
               <Route path="/imagegallery" element={<ImageGalleryMDX />} />
+              <Route path="/scrollable" element={<ScrollableMDX />} />
             </Routes>
           </div>
         </div>

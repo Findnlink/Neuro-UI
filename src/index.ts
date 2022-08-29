@@ -30,6 +30,7 @@ import { Tabs, TabsContent, TabsHeader, Tab } from './Tabs'
 import { Navigation } from './Navigation'
 import { Layout } from './Layout'
 import { ImageGallery } from './ImageGallery'
+import { Scrollable } from './Scrollable'
 
 export {
   Button,
@@ -69,5 +70,6 @@ export {
   Tab,
   Navigation,
   Layout,
-  ImageGallery
+  ImageGallery,
+  Scrollable
 }

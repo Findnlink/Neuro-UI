@@ -1,0 +1,61 @@
+@use '../../util/util.scss';
+
+.scrollable {
+  --code-color: darkred;
+  --code-bg-color: #aaaaaa;
+  --code-font-size: 14px;
+  --code-line-height: 1.4;
+  --scroll-bar-color: #ff0000;
+  --scroll-bar-bg-color: var(--bg100);
+
+  width: 300px;
+  overflow-y: hidden;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg100) var(--scroll-bar-bg-color);
+  transition: all 1s linear;
+  transition-delay: 1s;
+
+  &:hover {
+    scrollbar-color: var(--scroll-bar-color) var(--scroll-bar-bg-color);
+    transition-delay: 0s;
+  }
+
+  * {
+    scrollbar-width: thin;
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 1px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--scroll-bar-bg-color);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color);
+    border-radius: 20px;
+    border: 3px solid var(--scroll-bar-bg-color);
+  }
+
+  .children {
+    border: 1px solid gray;
+    display: flex;
+    max-height: 100px;
+    overflow: auto;
+    padding: 8px 7px 5px 15px;
+    margin: 0px 0px 0px 0px;
+
+    span {
+      margin: 30px;
+      border: 1px solid gray;
+    }
+  }
+}
