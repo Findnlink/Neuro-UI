@@ -352,8 +352,8 @@ export const Icon = ({ icon, color, ...props }: IconProps) => {
                 transform="translate(0 10)"
                 fill="none"
                 stroke="var(--text200)"
-                stroke-linecap="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeWidth="2"
               />
               <line
                 id="Line_870"
@@ -362,8 +362,8 @@ export const Icon = ({ icon, color, ...props }: IconProps) => {
                 transform="translate(0 5)"
                 fill="none"
                 stroke="var(--text200)"
-                stroke-linecap="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeWidth="2"
               />
               <line
                 id="Line_1056"
@@ -371,8 +371,8 @@ export const Icon = ({ icon, color, ...props }: IconProps) => {
                 x1="13"
                 fill="none"
                 stroke="var(--text200)"
-                stroke-linecap="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeWidth="2"
               />
             </g>
           </svg>

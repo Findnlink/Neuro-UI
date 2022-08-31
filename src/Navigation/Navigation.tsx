@@ -18,8 +18,6 @@ export const Navigation = ({ children, footer, type, ...props }: NavigationProps
     if (menuOpen) className.push(scss.menuOpen)
     if (type) className.push(scss[type])
 
-    console.log('type', type, className)
-
     return className.join(' ')
   }
 
