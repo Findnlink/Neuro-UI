@@ -84,6 +84,19 @@
 @media screen and (max-width: 992px) {
   .modal {
     .inner {
+      max-height: 75vh;
+      margin: 20px;
+
+      .close {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+
+        &:hover {
+          background-color: var(--bg300);
+        }
+      }
+
       .buttonWrapper {
         flex-direction: column;
 
