@@ -1,4 +1,4 @@
-# Neuro-UI
+# Neuro-UI (⚠️ Unmaintained)
 
 ## Project on Findnlink (soon public roadmap/kanban): [Neuro UI](https://www.findnlink.com/de/project/Neuro_UI)
 
